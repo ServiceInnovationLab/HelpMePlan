@@ -1,4 +1,6 @@
-## DIA web portal
+[![Build Status](https://travis-ci.org/ServiceInnovationLab/HelpMePlan.svg?branch=dev)](https://travis-ci.org/ServiceInnovationLab/HelpMePlan)
+
+## Help Me Plan - alpha app.
 
 A single page application that queries against a json file full of business requirements.
 
