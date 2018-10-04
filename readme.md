@@ -15,9 +15,13 @@ This project is templated using [moustache](https://mustache.github.io/) bundled
 3. `npm run bundle`
   - this will generate a new `dist/bundle.js` file permanently
 
-### Production
+### Running server
 - `npm start`
  - this runs our stock express server which grabs compiled assets from the `dist` folder
 
 
 then check out `localhost:8080`
+
+### Publishing to Github Pages
+
+- `npm run publish`
