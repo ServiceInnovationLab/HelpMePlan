@@ -22,7 +22,7 @@
     "lodash": "^4.17.4",
     "mustache-loader": "^0.4.1",
     "uport-connect": "^0.6.4",
-    "web3-provider-engine": "^13.2.8"
+    "web3-provider-engine": "^14.0.6"
   },
   "devDependencies": {
     "bootstrap-sass": "^3.3.7",
