@@ -2,11 +2,11 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define("Uport", [], factory);
+		define('Uport', [], factory);
 	else if(typeof exports === 'object')
-		exports["Uport"] = factory();
+		exports['Uport'] = factory();
 	else
-		root["Uport"] = factory();
+		root['Uport'] = factory();
 })(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -44,7 +44,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = '';
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -82,16 +82,16 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	var _typeof2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+	var _typeof2 = typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol' ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === 'function' && obj.constructor === Symbol && obj !== Symbol.prototype ? 'symbol' : typeof obj; };
 
-	Object.defineProperty(exports, "__esModule", {
+	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
-	var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol" ? function (obj) {
-	  return typeof obj === "undefined" ? "undefined" : _typeof2(obj);
+	var _typeof = typeof Symbol === 'function' && _typeof2(Symbol.iterator) === 'symbol' ? function (obj) {
+	  return typeof obj === 'undefined' ? 'undefined' : _typeof2(obj);
 	} : function (obj) {
-	  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof2(obj);
+	  return obj && typeof Symbol === 'function' && obj.constructor === Symbol && obj !== Symbol.prototype ? 'symbol' : typeof obj === 'undefined' ? 'undefined' : _typeof2(obj);
 	};
 
 	var _extends = Object.assign || function (target) {
@@ -107,7 +107,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _createClass = function () {
 	  function defineProperties(target, props) {
 	    for (var i = 0; i < props.length; i++) {
-	      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+	      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ('value' in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
 	    }
 	  }return function (Constructor, protoProps, staticProps) {
 	    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
@@ -130,7 +130,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _classCallCheck(instance, Constructor) {
 	  if (!(instance instanceof Constructor)) {
-	    throw new TypeError("Cannot call a class as a function");
+	    throw new TypeError('Cannot call a class as a function');
 	  }
 	}
 
@@ -292,7 +292,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
+	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
@@ -381,7 +381,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
+	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
@@ -448,12 +448,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
+	Object.defineProperty(exports, '__esModule', {
 	    value: true
 	});
 	exports.TokenSigner = undefined;
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	exports.createUnsignedToken = createUnsignedToken;
 
@@ -469,7 +469,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 	function createUnsignedToken(header, payload) {
 	    var tokenParts = [];
@@ -543,34 +543,34 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(Buffer) {"use strict";
+	/* WEBPACK VAR INJECTION */(function(Buffer) {'use strict';
 	var pad_string_1 = __webpack_require__(11);
 	function encode(input, encoding) {
-	    if (encoding === void 0) { encoding = "utf8"; }
+	    if (encoding === void 0) { encoding = 'utf8'; }
 	    if (Buffer.isBuffer(input)) {
-	        return fromBase64(input.toString("base64"));
+	        return fromBase64(input.toString('base64'));
 	    }
-	    return fromBase64(new Buffer(input, encoding).toString("base64"));
+	    return fromBase64(new Buffer(input, encoding).toString('base64'));
 	}
 	;
 	function decode(base64url, encoding) {
-	    if (encoding === void 0) { encoding = "utf8"; }
-	    return new Buffer(toBase64(base64url), "base64").toString(encoding);
+	    if (encoding === void 0) { encoding = 'utf8'; }
+	    return new Buffer(toBase64(base64url), 'base64').toString(encoding);
 	}
 	function toBase64(base64url) {
 	    base64url = base64url.toString();
 	    return pad_string_1.default(base64url)
-	        .replace(/\-/g, "+")
-	        .replace(/_/g, "/");
+	        .replace(/\-/g, '+')
+	        .replace(/_/g, '/');
 	}
 	function fromBase64(base64) {
 	    return base64
-	        .replace(/=/g, "")
-	        .replace(/\+/g, "-")
-	        .replace(/\//g, "_");
+	        .replace(/=/g, '')
+	        .replace(/\+/g, '-')
+	        .replace(/\//g, '_');
 	}
 	function toBuffer(base64url) {
-	    return new Buffer(toBase64(base64url), "base64");
+	    return new Buffer(toBase64(base64url), 'base64');
 	}
 	var base64url = encode;
 	base64url.encode = encode;
@@ -578,7 +578,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	base64url.toBase64 = toBase64;
 	base64url.fromBase64 = fromBase64;
 	base64url.toBuffer = toBuffer;
-	Object.defineProperty(exports, "__esModule", { value: true });
+	Object.defineProperty(exports, '__esModule', { value: true });
 	exports.default = base64url;
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7).Buffer))
@@ -2604,7 +2604,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(Buffer) {"use strict";
+	/* WEBPACK VAR INJECTION */(function(Buffer) {'use strict';
 	function padString(input) {
 	    var segmentLength = 4;
 	    var stringLength = input.length;
@@ -2618,11 +2618,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var buffer = new Buffer(paddedStringLength);
 	    buffer.write(input);
 	    while (padLength--) {
-	        buffer.write("=", position++);
+	        buffer.write('=', position++);
 	    }
 	    return buffer.toString();
 	}
-	Object.defineProperty(exports, "__esModule", { value: true });
+	Object.defineProperty(exports, '__esModule', { value: true });
 	exports.default = padString;
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7).Buffer))
@@ -2633,7 +2633,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
+	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 	exports.cryptoClients = exports.SECP256K1Client = undefined;
@@ -2653,12 +2653,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/* WEBPACK VAR INJECTION */(function(Buffer) {'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
+	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 	exports.SECP256K1Client = undefined;
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _elliptic = __webpack_require__(14);
 
@@ -2668,7 +2668,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _errors = __webpack_require__(102);
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 	var SECP256K1Client = exports.SECP256K1Client = function () {
 	  function SECP256K1Client() {
@@ -2776,61 +2776,61 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports) {
 
 	module.exports = {
-		"name": "elliptic",
-		"version": "6.4.0",
-		"description": "EC cryptography",
-		"main": "lib/elliptic.js",
-		"files": [
-			"lib"
+		'name': 'elliptic',
+		'version': '6.4.0',
+		'description': 'EC cryptography',
+		'main': 'lib/elliptic.js',
+		'files': [
+			'lib'
 		],
-		"scripts": {
-			"jscs": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
-			"jshint": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
-			"lint": "npm run jscs && npm run jshint",
-			"unit": "istanbul test _mocha --reporter=spec test/index.js",
-			"test": "npm run lint && npm run unit",
-			"version": "grunt dist && git add dist/"
+		'scripts': {
+			'jscs': 'jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js',
+			'jshint': 'jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js',
+			'lint': 'npm run jscs && npm run jshint',
+			'unit': 'istanbul test _mocha --reporter=spec test/index.js',
+			'test': 'npm run lint && npm run unit',
+			'version': 'grunt dist && git add dist/'
 		},
-		"repository": {
-			"type": "git",
-			"url": "git@github.com:indutny/elliptic"
+		'repository': {
+			'type': 'git',
+			'url': 'git@github.com:indutny/elliptic'
 		},
-		"keywords": [
-			"EC",
-			"Elliptic",
-			"curve",
-			"Cryptography"
+		'keywords': [
+			'EC',
+			'Elliptic',
+			'curve',
+			'Cryptography'
 		],
-		"author": "Fedor Indutny <fedor@indutny.com>",
-		"license": "MIT",
-		"bugs": {
-			"url": "https://github.com/indutny/elliptic/issues"
+		'author': 'Fedor Indutny <fedor@indutny.com>',
+		'license': 'MIT',
+		'bugs': {
+			'url': 'https://github.com/indutny/elliptic/issues'
 		},
-		"homepage": "https://github.com/indutny/elliptic",
-		"devDependencies": {
-			"brfs": "^1.4.3",
-			"coveralls": "^2.11.3",
-			"grunt": "^0.4.5",
-			"grunt-browserify": "^5.0.0",
-			"grunt-cli": "^1.2.0",
-			"grunt-contrib-connect": "^1.0.0",
-			"grunt-contrib-copy": "^1.0.0",
-			"grunt-contrib-uglify": "^1.0.1",
-			"grunt-mocha-istanbul": "^3.0.1",
-			"grunt-saucelabs": "^8.6.2",
-			"istanbul": "^0.4.2",
-			"jscs": "^2.9.0",
-			"jshint": "^2.6.0",
-			"mocha": "^2.1.0"
+		'homepage': 'https://github.com/indutny/elliptic',
+		'devDependencies': {
+			'brfs': '^1.4.3',
+			'coveralls': '^2.11.3',
+			'grunt': '^0.4.5',
+			'grunt-browserify': '^5.0.0',
+			'grunt-cli': '^1.2.0',
+			'grunt-contrib-connect': '^1.0.0',
+			'grunt-contrib-copy': '^1.0.0',
+			'grunt-contrib-uglify': '^1.0.1',
+			'grunt-mocha-istanbul': '^3.0.1',
+			'grunt-saucelabs': '^8.6.2',
+			'istanbul': '^0.4.2',
+			'jscs': '^2.9.0',
+			'jshint': '^2.6.0',
+			'mocha': '^2.1.0'
 		},
-		"dependencies": {
-			"bn.js": "^4.4.0",
-			"brorand": "^1.0.1",
-			"hash.js": "^1.0.0",
-			"hmac-drbg": "^1.0.0",
-			"inherits": "^2.0.1",
-			"minimalistic-assert": "^1.0.0",
-			"minimalistic-crypto-utils": "^1.0.0"
+		'dependencies': {
+			'bn.js': '^4.4.0',
+			'brorand': '^1.0.1',
+			'hash.js': '^1.0.0',
+			'hmac-drbg': '^1.0.0',
+			'inherits': '^2.0.1',
+			'minimalistic-assert': '^1.0.0',
+			'minimalistic-crypto-utils': '^1.0.0'
 		}
 	};
 
@@ -13526,8 +13526,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 
 	  Hash.prototype.update = function (data, enc) {
-	    if ("string" === typeof data) {
-	      enc = enc || "utf8"
+	    if ('string' === typeof data) {
+	      enc = enc || 'utf8'
 	      data = new Buffer(data, enc)
 	    }
 
@@ -18353,7 +18353,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
-	    "use strict";
+	    'use strict';
 
 	    if (global.setImmediate) {
 	        return;
@@ -18367,8 +18367,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    function setImmediate(callback) {
 	      // Callback can either be a function or a string
-	      if (typeof callback !== "function") {
-	        callback = new Function("" + callback);
+	      if (typeof callback !== 'function') {
+	        callback = new Function('' + callback);
 	      }
 	      // Copy function arguments
 	      var args = new Array(arguments.length - 1);
@@ -18444,7 +18444,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            global.onmessage = function() {
 	                postMessageIsAsynchronous = false;
 	            };
-	            global.postMessage("", "*");
+	            global.postMessage('', '*');
 	            global.onmessage = oldOnMessage;
 	            return postMessageIsAsynchronous;
 	        }
@@ -18455,23 +18455,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	        // * https://developer.mozilla.org/en/DOM/window.postMessage
 	        // * http://www.whatwg.org/specs/web-apps/current-work/multipage/comms.html#crossDocumentMessages
 
-	        var messagePrefix = "setImmediate$" + Math.random() + "$";
+	        var messagePrefix = 'setImmediate$' + Math.random() + '$';
 	        var onGlobalMessage = function(event) {
 	            if (event.source === global &&
-	                typeof event.data === "string" &&
+	                typeof event.data === 'string' &&
 	                event.data.indexOf(messagePrefix) === 0) {
 	                runIfPresent(+event.data.slice(messagePrefix.length));
 	            }
 	        };
 
 	        if (global.addEventListener) {
-	            global.addEventListener("message", onGlobalMessage, false);
+	            global.addEventListener('message', onGlobalMessage, false);
 	        } else {
-	            global.attachEvent("onmessage", onGlobalMessage);
+	            global.attachEvent('onmessage', onGlobalMessage);
 	        }
 
 	        registerImmediate = function(handle) {
-	            global.postMessage(messagePrefix + handle, "*");
+	            global.postMessage(messagePrefix + handle, '*');
 	        };
 	    }
 
@@ -18492,7 +18492,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        registerImmediate = function(handle) {
 	            // Create a <script> element; its readystatechange event will be fired asynchronously once it is inserted
 	            // into the document. Do so, thus queuing up the task. Remember to clean up once it's been called.
-	            var script = doc.createElement("script");
+	            var script = doc.createElement('script');
 	            script.onreadystatechange = function () {
 	                runIfPresent(handle);
 	                script.onreadystatechange = null;
@@ -18514,7 +18514,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    attachTo = attachTo && attachTo.setTimeout ? attachTo : global;
 
 	    // Don't get fooled by e.g. browserify environments.
-	    if ({}.toString.call(global.process) === "[object process]") {
+	    if ({}.toString.call(global.process) === '[object process]') {
 	        // For Node.js before 0.9
 	        installNextTickImplementation();
 
@@ -18526,7 +18526,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        // For web workers, where supported
 	        installMessageChannelImplementation();
 
-	    } else if (doc && "onreadystatechange" in doc.createElement("script")) {
+	    } else if (doc && 'onreadystatechange' in doc.createElement('script')) {
 	        // For IE 6–8
 	        installReadyStateChangeImplementation();
 
@@ -18537,7 +18537,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    attachTo.setImmediate = setImmediate;
 	    attachTo.clearImmediate = clearImmediate;
-	}(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
+	}(typeof self === 'undefined' ? typeof global === 'undefined' ? this : global : self));
 
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(53)))
 
@@ -19607,7 +19607,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/* WEBPACK VAR INJECTION */(function(Buffer) {'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
+	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 	exports.derToJose = derToJose;
@@ -19843,15 +19843,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
+	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === 'object' || typeof call === 'function') ? call : self; }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var MissingParametersError = exports.MissingParametersError = function (_Error) {
 	  _inherits(MissingParametersError, _Error);
@@ -19875,7 +19875,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
+	Object.defineProperty(exports, '__esModule', {
 	    value: true
 	});
 	exports.decodeToken = decodeToken;
@@ -19907,12 +19907,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
+	Object.defineProperty(exports, '__esModule', {
 	    value: true
 	});
 	exports.TokenVerifier = undefined;
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _base64url = __webpack_require__(5);
 
@@ -19926,7 +19926,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 	var TokenVerifier = exports.TokenVerifier = function () {
 	    function TokenVerifier(signingAlgorithm, rawPublicKey) {
@@ -19974,7 +19974,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
+	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 	exports.encode = encode;
@@ -20848,7 +20848,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	var window = __webpack_require__(112)
 	var isFunction = __webpack_require__(113)
 	var parseHeaders = __webpack_require__(114)
@@ -20856,10 +20856,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = createXHR
 	createXHR.XMLHttpRequest = window.XMLHttpRequest || noop
-	createXHR.XDomainRequest = "withCredentials" in (new createXHR.XMLHttpRequest()) ? createXHR.XMLHttpRequest : window.XDomainRequest
+	createXHR.XDomainRequest = 'withCredentials' in (new createXHR.XMLHttpRequest()) ? createXHR.XMLHttpRequest : window.XDomainRequest
 
-	forEachArray(["get", "put", "post", "patch", "head", "delete"], function(method) {
-	    createXHR[method === "delete" ? "del" : method] = function(uri, options, callback) {
+	forEachArray(['get', 'put', 'post', 'patch', 'head', 'delete'], function(method) {
+	    createXHR[method === 'delete' ? 'del' : method] = function(uri, options, callback) {
 	        options = initParams(uri, options, callback)
 	        options.method = method.toUpperCase()
 	        return _createXHR(options)
@@ -20884,7 +20884,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    if (isFunction(options)) {
 	        callback = options
-	        if (typeof uri === "string") {
+	        if (typeof uri === 'string') {
 	            params = {uri:uri}
 	        }
 	    } else {
@@ -20901,8 +20901,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	function _createXHR(options) {
-	    if(typeof options.callback === "undefined"){
-	        throw new Error("callback argument missing")
+	    if(typeof options.callback === 'undefined'){
+	        throw new Error('callback argument missing')
 	    }
 
 	    var called = false
@@ -20941,7 +20941,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function errorFunc(evt) {
 	        clearTimeout(timeoutTimer)
 	        if(!(evt instanceof Error)){
-	            evt = new Error("" + (evt || "Unknown XMLHttpRequest Error") )
+	            evt = new Error('' + (evt || 'Unknown XMLHttpRequest Error') )
 	        }
 	        evt.statusCode = 0
 	        return callback(evt, failureResponse)
@@ -20974,7 +20974,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                response.headers = parseHeaders(xhr.getAllResponseHeaders())
 	            }
 	        } else {
-	            err = new Error("Internal XMLHttpRequest Error")
+	            err = new Error('Internal XMLHttpRequest Error')
 	        }
 	        return callback(err, response, response.body)
 	    }
@@ -20992,7 +20992,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var key
 	    var aborted
 	    var uri = xhr.url = options.uri || options.url
-	    var method = xhr.method = options.method || "GET"
+	    var method = xhr.method = options.method || 'GET'
 	    var body = options.body || options.data
 	    var headers = xhr.headers = options.headers || {}
 	    var sync = !!options.sync
@@ -21007,11 +21007,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	        rawRequest: xhr
 	    }
 
-	    if ("json" in options && options.json !== false) {
+	    if ('json' in options && options.json !== false) {
 	        isJson = true
-	        headers["accept"] || headers["Accept"] || (headers["Accept"] = "application/json") //Don't override existing accept header declared by user
-	        if (method !== "GET" && method !== "HEAD") {
-	            headers["content-type"] || headers["Content-Type"] || (headers["Content-Type"] = "application/json") //Don't override existing accept header declared by user
+	        headers['accept'] || headers['Accept'] || (headers['Accept'] = 'application/json') //Don't override existing accept header declared by user
+	        if (method !== 'GET' && method !== 'HEAD') {
+	            headers['content-type'] || headers['Content-Type'] || (headers['Content-Type'] = 'application/json') //Don't override existing accept header declared by user
 	            body = JSON.stringify(options.json === true ? body : options.json)
 	        }
 	    }
@@ -21039,9 +21039,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        timeoutTimer = setTimeout(function(){
 	            if (aborted) return
 	            aborted = true//IE9 may still call readystatechange
-	            xhr.abort("timeout")
-	            var e = new Error("XMLHttpRequest timeout")
-	            e.code = "ETIMEDOUT"
+	            xhr.abort('timeout')
+	            var e = new Error('XMLHttpRequest timeout')
+	            e.code = 'ETIMEDOUT'
 	            errorFunc(e)
 	        }, options.timeout )
 	    }
@@ -21053,15 +21053,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 	        }
 	    } else if (options.headers && !isEmpty(options.headers)) {
-	        throw new Error("Headers cannot be set on an XDomainRequest object")
+	        throw new Error('Headers cannot be set on an XDomainRequest object')
 	    }
 
-	    if ("responseType" in options) {
+	    if ('responseType' in options) {
 	        xhr.responseType = options.responseType
 	    }
 
-	    if ("beforeSend" in options &&
-	        typeof options.beforeSend === "function"
+	    if ('beforeSend' in options &&
+	        typeof options.beforeSend === 'function'
 	    ) {
 	        options.beforeSend(xhr)
 	    }
@@ -21077,11 +21077,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	function getXml(xhr) {
-	    if (xhr.responseType === "document") {
+	    if (xhr.responseType === 'document') {
 	        return xhr.responseXML
 	    }
-	    var firefoxBugTakenEffect = xhr.responseXML && xhr.responseXML.documentElement.nodeName === "parsererror"
-	    if (xhr.responseType === "" && !firefoxBugTakenEffect) {
+	    var firefoxBugTakenEffect = xhr.responseXML && xhr.responseXML.documentElement.nodeName === 'parsererror'
+	    if (xhr.responseType === '' && !firefoxBugTakenEffect) {
 	        return xhr.responseXML
 	    }
 
@@ -21097,11 +21097,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/* WEBPACK VAR INJECTION */(function(global) {var win;
 
-	if (typeof window !== "undefined") {
+	if (typeof window !== 'undefined') {
 	    win = window;
-	} else if (typeof global !== "undefined") {
+	} else if (typeof global !== 'undefined') {
 	    win = global;
-	} else if (typeof self !== "undefined"){
+	} else if (typeof self !== 'undefined'){
 	    win = self;
 	} else {
 	    win = {};
@@ -21271,7 +21271,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
+	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 	exports.default = SimpleSigner;
@@ -21292,16 +21292,16 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	var _typeof2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+	var _typeof2 = typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol' ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === 'function' && obj.constructor === Symbol && obj !== Symbol.prototype ? 'symbol' : typeof obj; };
 
-	Object.defineProperty(exports, "__esModule", {
+	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
-	var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol" ? function (obj) {
-	  return typeof obj === "undefined" ? "undefined" : _typeof2(obj);
+	var _typeof = typeof Symbol === 'function' && _typeof2(Symbol.iterator) === 'symbol' ? function (obj) {
+	  return typeof obj === 'undefined' ? 'undefined' : _typeof2(obj);
 	} : function (obj) {
-	  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof2(obj);
+	  return obj && typeof Symbol === 'function' && obj.constructor === Symbol && obj !== Symbol.prototype ? 'symbol' : typeof obj === 'undefined' ? 'undefined' : _typeof2(obj);
 	};
 
 	function _toConsumableArray(arr) {
@@ -21656,7 +21656,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 	module.exports = function isHexPrefixed(str) {
 	  if (typeof str !== 'string') {
-	    throw new Error("[is-hex-prefixed] value must be type 'string', is currently type " + (typeof str) + ", while checking isHexPrefixed.");
+	    throw new Error("[is-hex-prefixed] value must be type 'string', is currently type " + (typeof str) + ', while checking isHexPrefixed.');
 	  }
 
 	  return str.slice(0, 2) === '0x';
