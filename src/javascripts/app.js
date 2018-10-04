@@ -25,11 +25,11 @@ require('web3');
 require('../../src/javascripts/uport-connect.js');
 require('../../src/javascripts/uport.js');
 
-import { Connect, SimpleSigner } from 'uport-connect'
+import { Connect, SimpleSigner } from 'uport-connect';
 
 function uportError(msg) {
-  $('#uportError').text(msg)
-  $('#uportError').removeClass('hidden')
+  $('#uportError').text(msg);
+  $('#uportError').removeClass('hidden');
 }
 
 const uportConnect = function() {
@@ -41,7 +41,7 @@ const uportConnect = function() {
     signer: SimpleSigner('2440cb4fc4b5e3b74fe6b4e79890b622fc23c0d5bd281d9f7b26790341453374'),
     network: 'rinkeby'
     //public key 0x040951f3c3f6919b3238768ad12fd24bff02b75d66c42632a377ff7f9553847dc6837e9e09625ad137b5fd6732331cd4ab9a4bd26d929a3e6a8170227975a0cdf8
-  })
+  });
 
   // Request credentials to login
   uport.requestCredentials({
@@ -55,9 +55,9 @@ const uportConnect = function() {
     if (typeof credentials['nz_resident'] == 'undefined') {
       $('#uportModal').modal('show');
       $('#uportModal').on('click', 'button.save', function() {
-        var nz_resident = $('#uport_resident').val()
+        var nz_resident = $('#uport_resident').val();
         if (nz_resident == '') {
-          uportError('You need to provide an answer for every question')
+          uportError('You need to provide an answer for every question');
         } else {
           uport.attestCredentials({
             sub: credentials['address'],
@@ -65,7 +65,7 @@ const uportConnect = function() {
               nz_resident: nz_resident,
             },
             exp: new Date().getTime() + 30 * 24 * 60 * 60 * 1000, // 30 days from now
-          })
+          });
           uportConnected(nz_resident, credentials);
         }
       });
@@ -77,40 +77,40 @@ const uportConnect = function() {
     console.log(error);
     $('#debugPanel').text(error);
     $('#uportError').removeClass('hidden');
-  })
-}
+  });
+};
 
 function uportConnected(nz_resident, credentials) {
   $('#uportModal').modal('hide');
-  $('#uport-connect').text('uPort Connected')
-  $('#uport-connect').removeClass('btn-info')
-  $('#uport-connect').addClass('btn-success')
+  $('#uport-connect').text('uPort Connected');
+  $('#uport-connect').removeClass('btn-info');
+  $('#uport-connect').addClass('btn-success');
 
   // Load User Image
   console.log(credentials);
   if (typeof credentials['image'] != 'undefined' && typeof credentials['image']['contentUrl'] != 'undefined') {
-    var image_url = 'https://ipfs.io' + credentials['image']['contentUrl']
-    $('#uport_img').attr('src', image_url)
-    $('#uport_img').removeClass('hidden')
+    var image_url = 'https://ipfs.io' + credentials['image']['contentUrl'];
+    $('#uport_img').attr('src', image_url);
+    $('#uport_img').removeClass('hidden');
   }
 
   // Load user object
   var nz_resident_answer = 'No';
   if (['yes', 'y', '1', 'true'].includes(nz_resident.toLowerCase()))
-    nz_resident_answer = 'Yes'
+    nz_resident_answer = 'Yes';
   user_obj['citizenOrResident?'] = nz_resident_answer;
   user_obj['proofOfIdentity?'] = 'Yes';
   user_obj['livingInNZ?'] = (credentials['country'] == 'NZ') ? 'Yes' : 'No';
 
   // Change hero text
-  $('h1.hero').first().text('What can I help you with, '+credentials['name'].substr(0,5)+'?')
+  $('h1.hero').first().text('What can I help you with, '+credentials['name'].substr(0,5)+'?');
 
   // Change anonymous toggle
   $('.bootstrap-switch-handle-on').text(credentials['name'].substr(0,5));
   $("[name='setting-anonymous']").bootstrapSwitch('state', true, true);
 
-  $('#input input[type="checkbox"]').attr('checked', 'checked')
-  $('#input input[type="checkbox"]').trigger('change')
+  $('#input input[type="checkbox"]').attr('checked', 'checked');
+  $('#input input[type="checkbox"]').trigger('change');
 }
 
 $('#uport-connect').on('click', uportConnect);
@@ -199,19 +199,19 @@ function questionsInit() {
   $('#criteria1').on('click', '#question_buttons button', function() {
     var question_id = $(this).closest('.question').attr('data-question-id');
     if ($('.event-container-binary').length){
-      setValue(question_id, $(this))
+      setValue(question_id, $(this));
     } else {
      if ($(this).hasClass('btn-warning')){
       //  If user selects contact ird button we select yes button after a delay
       // fake API call
-      var default_button = $('.btn-success')
-       $(this).addClass('animate-correct')
-       $(this).find('button').addClass('animate-correct')
+      var default_button = $('.btn-success');
+       $(this).addClass('animate-correct');
+       $(this).find('button').addClass('animate-correct');
        window.setTimeout(function() {
-         setValue(question_id, default_button)
+         setValue(question_id, default_button);
        }, 4000);
      } else {
-       setValue(question_id, $(this))
+       setValue(question_id, $(this));
      }
     }
   });
@@ -236,15 +236,15 @@ function setValue(question_id, button){
     askQuestion();
     updateCards();
     $(this).off(e);
-  })
+  });
 }
 
 
 function sortDivs(){
   $('.biz-rule-card').each(function(){
-    var bizCard = $(this)
+    var bizCard = $(this);
     if (bizCard.find('.red').length > 0){
-      $('#fails').append(bizCard)
+      $('#fails').append(bizCard);
     }
   });
 }
@@ -434,10 +434,10 @@ function renderQuestion(question_text, key, options) {
     value1: options[0],
     value2: options[1],
     value3: 'Validate with respective agency'
-  }
-  var accept_test = 'assessment'
+  };
+  var accept_test = 'assessment';
   if (question_text.indexOf(accept_test) >= 0){
-    var template = $('#questionMultiTpl').html()
+    var template = $('#questionMultiTpl').html();
   } else {
     var template = $('#questionTpl').html();
   }
