@@ -1,0 +1,229 @@
+{"agencies": [
+  {
+    "title": "WorkAndIncome",
+    "businessRules": [
+      {"name": "Superannuation",
+        "category": "retirement",
+        "requirements": {
+          "applicantMinimumAge65?": "true",
+          "10yearsInNzSince20": "true",
+          "5yearsInNzSince50": "true",
+          "citizenOrResident?": "true",
+          "livingInNZ?": "true"
+        }
+      },{
+        "name": "AccommodationSupplement",
+        "category": "hardship",
+        "requirements": {
+          "ongoingCosts?": "true",
+          "applicantMinimumAge16?": "true",
+          "citizenOrResident?": "true",
+          "livingInNZ?": "true",
+          "SocialHousingBenefit?": "true"
+        }
+      },{
+        "name": "DisabilityAllowance",
+        "category": "hardship",
+        "requirements": {
+          "disabilityMinimumTime6?": "true",
+          "ongoingCosts?": "true",
+          "citizenOrResident?": "true",
+          "livingInNZ?": "true"
+        }
+      },{
+        "name": "TemporaryAdditionalSupport",
+        "category": "hardship",
+        "requirements": {
+          "applicantMinimumAge16?": "true",
+          "citizenOrResident?": "true",
+          "hasExistingBenefit?": "false"
+        }
+      },{
+        "name": "SpecialNeedsGrant",
+        "category": "hardship",
+        "requirements": {
+          "urgent?": "true",
+          "citizenOrResident?": "true",
+          "livingInNZ?": "true"
+        }
+      },{
+        "name": "SuperGoldCard",
+        "category": "retirement",
+        "requirements": {
+          "pension?": "true"
+        }
+      },{
+        "name": "FuneralGrant",
+        "category": "retirement",
+        "requirements": {
+          "relatedOrGuardian?": "true",
+          "organiser?": "true",
+          "completedIncomeAndAssetTest?": "true"
+        }
+      },{
+        "name": "CommunityServicesCard",
+        "category": "childCare",
+        "requirements": {
+          "applicantMinimumAge16?": "true",
+          "dependentChild?": "false",
+          "incomeLessThan45800?": "true",
+          "citizenOrResident?": "true",
+          "livingInNZ?": "true",
+          "refugeeOrProtectionStatus?": "true"
+        }
+      },{
+        "name": "SoleParentSupport",
+        "category": "childCare",
+        "requirements": {
+          "singleCaregiver": "true",
+          "dependentChild?": "true",
+          "dependentChildMaxAge14?": "true",
+          "applicantMinimumAge20?": "true",
+          "applicantStatus": "true",
+          "applicantInsufficientFinances?": "true",
+          "citizenOrResident?": "true",
+          "livingInNZ?": "true",
+          "livingInNzMinimum2Years?": "true"
+        }
+      },{
+        "name": "SchoolAndYearStartupFund",
+        "category": "childCare",
+        "requirements": {
+          "alreadyReceiving": {
+            "OrphansBenefit": "true",
+            "UnsupportedChildsBenefit": "true"
+          },
+          "appliedBetweenMidJanEndFeb": "true"
+        }
+      },{
+        "name": "VeteransPension",
+        "category": "retirement",
+        "requirements": {
+          "ServedInMilitaryOrEmergency?": "true",
+          "citizenOrResident?": "true",
+          "livingInNZ?": "true",
+          "applicantMinimumAge65?": "true"
+        }
+      },{
+        "name": "ChildDisabilityAllowance",
+        "category": "childCare",
+        "requirements": {
+          "mainCaregiver?": "true",
+          "citizenOrResident?": "true",
+          "childAssessed?": "true",
+          "livingInNZ?": "true",
+          "applicantMinimumAge65?": "true",
+          "dependentChildMaxAge18?": "true"
+        }
+      },{
+        "name": "ChildCareSubsidy",
+        "category": "childCare",
+        "requirements": {
+          "mainCaregiver?": "true",
+          "citizenOrResident?": "true",
+          "incomeLessThan45800?": "true",
+          "livingInNZ?": "true",
+          "incomeAssessment": "true"
+        }
+      },{
+        "name": "UnsupportedChildBenefit",
+        "category": "childCare",
+        "requirements": {
+          "familyBreakdownHasOccurred?": "true",
+          "dependentChildMaxAge18?": "true",
+          "childFinanciallyDependent?": "true",
+          "childNeedsAssistance?": "true",
+          "applicantMinimumAge65?": "true",
+          "mainCaregiver?": "true",
+          "MainCaregiverMinimumTimeInMonthsIs12?": "true",
+          "citizenOrResident?": "true",
+          "applicantNotNormalCaregiver?": "true"
+        }
+      },{
+        "name": "EstablishmentGrant",
+        "category": "childCare",
+        "requirements": {
+          "alreadyReceiving": {
+            "OrphansBenefit": "true",
+            "UnsupportedChildsBenefit": "true"
+          }
+        }
+      }
+    ]
+  },{
+    "title": "ImmigrationServices",
+    "businessRules": [
+      {"name": "ParentOrGrandparentVisitorVisa",
+        "category": "immigration",
+        "requirements": {
+          "proofOfIdentity?": "true",
+          "InGoodHealth?": "true",
+          "OfGoodCharachter?": "true",
+          "IntendToMeetVisaConditions?": "true",
+          "SponsorIsChildOrParent?": "true",
+          "SponsorIsResidentOrCitizen?": "true",
+          "SponsorIsRelative?": "true",
+          "CoverOwnHealthcareCosts?": "true"
+        }
+      },{
+        "name": "ParentRetirementResidentVisa",
+        "category": "immigration",
+        "requirements": {
+          "proofOfIdentity?": "true"
+        }
+      }
+    ]
+  },{
+    "title": "JusticeServices",
+    "businessRules": [
+      {"name": "LegallyAppointOrRemoveGuardian",
+        "category": "childCare",
+        "requirements": {
+          "CompleteGuardianshipForm?": "true",
+          "CompleteDeclarationOfParentOfChildForm?": "true",
+          "IncludeCopyOfCriminalRecord?": "true",
+          "FileApplicationInPerson?": "true"
+        }
+      }
+    ]
+  },{
+    "title": "VeteransAffairs",
+    "businessRules": [
+      {"name": "VeteransIndependenceProgramme",
+        "category": "retirement",
+        "requirements": {
+          "BeingInMilitaryService": {
+            "Before1April1974?": "true",
+            "QualifyingOperationService": "true"
+          },
+          "RequireSupportToStayIndependent?": "true",
+          "CurrentlyLivingAtHome?": "true"
+        }
+      },{"name": "HearingAidAndAppliancesSupport",
+        "category": "retirement",
+        "requirements": {
+          "ServiceRelatedHearingLoss?": "true",
+          "ReceivingIncomeCompensationDueToHearingLoss?": "true"
+        }
+      }
+    ]
+  },{
+    "title": "HealthServices",
+    "businessRules": [
+      {"name": "HomeSupportServices",
+        "category": "retirement",
+        "requirements": {
+          "NeedsAssessmentCompleted?": "true"
+        }
+      },
+      {"name": "SupportServicesForOlderPeople",
+        "category": "retirement",
+        "requirements": {
+          "citizenOrResident?": "true",
+          "eligableForPublicHealthOrDisabilityServices?": "true",
+          "NeedsAssessmentCompleted?": "true"
+        }
+      }
+    ]
+  }]
+}

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Lab+ Prototype</title>
+	<meta charset="utf-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js">
+	</script>
+
+	<!-- ==================== TEMPLATES ==================== -->
+
+	<script id="questionTpl" type="text/template">
+		<div class="event-container fade-in event-container-binary" id="question_buttons">
+			<h4>{{question_text}}</h4>
+			<div class="row question" data-question-id="{{question_id}}">
+				<div class="col-lg-2 col-sm-2 col-md-offset-4 col-sm-offset-4 answer1">
+					<button type="button" class="btn btn-success">{{value1}}</button>
+				</div>
+				<div class="col-lg-2 col-sm-2 answer2">
+					<button type="button" class="btn btn-danger">{{value2}}</button>
+				</div>
+				<div class="col-lg-6 col-sm-6">
+				<h4>  </h4></div>
+			</div>
+		</div>
+	</script>
+
+	<script id="questionMultiTpl" type="text/template">
+		<div class="event-container slide-in event-container-multi" id="question_buttons">
+			<h4>{{question_text}}</h4>
+			<div class="row question" data-question-id="{{question_id}}">
+				<div class="col-lg-2 col-sm-2 col-md-offset-2 col-sm-offset-2 answer1">
+					<button type="button" class="btn btn-success">{{value1}}</button>
+				</div>
+				<div class="col-lg-2 col-sm-2 answer2">
+					<button type="button" class="btn btn-danger">{{value2}}</button>
+				</div>
+				<div class="col-lg-5 col-sm-5 answer3">
+					<button type="button" class="btn btn-warning" id="btn-contact-gov">{{value3}}</button>
+				</div>
+			</div>
+		</div>
+	</script>
+
+	<script id="bizRuleCardTpl" type="text/template">
+		<div class='col-lg-3 biz-rule-card' data-event-type="{{type}}">
+			<div class='panel panel-success' id="{{text}}">
+				<div class='panel-heading collapsed panel-heading-bizRule' data-target='#{{id}}' data-toggle="collapse">
+					<div class="row">
+						<div class="col-lg-10">
+							<div class='panel-title'>{{title}}</div>
+						</div>
+						<div class="col-lg-2">
+							<i class="material-icons expando-thingy">add</i>
+						</div>
+					</div>
+				</div>
+				<div class='panel-body requirement-panel collapse' id={{id}}>
+				</div>
+				<div class='panel-footer card-preview'>
+				</div>
+			</div>
+		</div class='card-preview'>
+	</script>
+
+	<script id="requirementsNumTpl" type="text/template">
+		<p class="requirement-count">{{checked}}/{{count}} requirements met </p>
+	</script>
+
+	<script id="benefitPanelTpl" type="text/template">
+			<div class='panel panel-default panel-collapse requirement text-left'>
+				<div class='panel-heading' data-toggle='collapse' href='#{{id}}'>
+					<div class="row">
+						<div class="col-lg-10 text-center">
+							<div class='panel-title'>{{requirement_name}}</div>
+						</div>
+						<div class="col-lg-2">
+							<i class="material-icons expando-thingy">add</i>
+						</div>
+					</div>
+				</div>
+				<div class='panel-body panel-collapse collapse' id='{{id}}'></div>
+			</div>
+	</script>
+
+	<script id="requirementTpl" type="text/template">
+		<p class="requirement text-center" data-requirement="{{requirement_data_attr}}">{{requirement_name}} <strong>{{requirement_value}}</strong></p>
+	</script>
+
+	<script id="applyAllTpl" type="text/template">
+		<div class="text-center event-container" id="input">
+			<div class="row">
+				<h4 class="question-text">Apply for available services</h4>
+				<div class="form-group question-group text-center">
+					<button type="button" data-toggle="modal" data-target="#applyModal" class="btn btn-info" id="apply-btn">Apply Now</button>
+				</div>
+			</div>
+		</div>
+	</script>
+
+	<script id="applyRowTpl" type="text/template">
+		<tr>
+			<td>{{bizRuleName}}</td>
+			<td></td>
+			<td class="text-right"><button class="btn user-obj-apply" type="button"><i class="material-icons"> &#xE86C;</i></button></td>
+		</tr>
+	</script>
+
+	<script id="applyRowErrorTpl" type="text/template">
+		<tr>
+			<td colspan="3" class="red-font">
+				<h4>Info doesn't match gov records, please click to correct it.</h4>
+			</td>
+		</tr>
+		<tr>
+			<td>{{bizRuleName}}</td>
+			<td class="red-font">{{requirement}}</td>
+			<td class="text-right"><button class="btn user-obj-correct" type="button"><i class="material-icons">&#xE881;</i></button></td>
+		</tr>
+	</script>
+
+	<script id="userObjRowTpl" type="text/template">
+		<tr class="requirement_row" data-requirement-id="{{requirement_id}}">
+			<td>{{requirement_name}}</td>
+			<td>
+				<button class="btn {{value1_class}}" type="button">Yes</button>
+			</td>
+			<td>
+				<button class="btn {{value2_class}}" type="button">No</button>
+			</td>
+		</tr>
+	</script>
+
+	<!-- ==================== TEMPLATES END ==================== -->
+
+</head>
+
+<body>
+	<div id="uportError" class="alert alert-danger alert-dismissible fade in hidden" role="alert">
+		<button type="button" class="close closeAlert" aria-label="Close"><span aria-hidden="true">×</span></button>
+		<h4>Oh boy! You got an error!</h4>
+		<p>uPort is still in an Alpha stage and not all phones are supported. Sometimes changing your uPort profile picture can resolve this issue by refreshing your saved information.</p>
+		<p>
+			<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#debugInfo" aria-expanded="false" aria-controls="debugInfo">
+			  Show debug information
+			</button>
+			<div class="collapse" id="debugInfo">
+			  <div class="well" id="debugPanel">
+			  </div>
+			</div>
+		</p>
+	</div>
+	<div class="container-fluid">
+
+		<!-- User Answers Modal -->
+		<div class="pull-left debug-container">
+			<a href="https://webtoolkit.govt.nz/blog/2017/06/lab-potential-future-states-for-government-service-delivery/" class="btn btn-info" id="user-obj-btn" target="_blank">What is this?</a>
+
+			<button type="button" class="btn btn-info" id="uport-connect">uPort Connect</button>
+
+			<div class="modal fade" id="uportModal" role="dialog" tabindex="-1">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-body">
+							<p id="uportError" class="hidden bg-danger"></p>
+							<div class="form-group">
+								<label for="uport_resident">Are you a resident of New Zealand?</label>
+								<input class="form-control" type="text" id="uport_resident">
+							</div>
+							<p>
+								<button class="save btn btn-primary">Save</button>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal fade" id="debugModal" role="dialog" tabindex="-1">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-body">
+							<table class="table user-obj">
+								<thead>
+									<tr>
+										<td>Requirement</td>
+										<td></td>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END User Answers Modal -->
+
+		<!-- Apply Modal -->
+		<div class="pull-left apply-container">
+			<div class="modal fade" id="applyModal" role="dialog" tabindex="-1">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-body">
+							<table class="table user-apply">
+								<thead>
+									<tr>
+										<td colspan="2"><h4>Benefits</h4></td>
+										<td class="text-right"><button class="btn user-apply-all" type="button">Apply for All</button></td>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END Apply Modal -->
+
+		<!-- Top right corner buttons -->
+		<div class="pull-right page-button-container">
+			<div class="text-right answers-container">
+				<input type="checkbox" name="setting-anonymous" data-on-text="John Smith" data-off-text="Anonymous" data-on-color="success" data-off-color="info" data-label-width="auto">
+				<button type="button" data-toggle="modal" data-target="#debugModal" class="btn btn-info text-left" id="user-obj-btn">My Answers</button>
+			</div>
+			<div class="answers-container">
+				<button class="btn btn-info">Upload Snapshot</button>
+				<button class="btn btn-info">Download Snapshot</button>
+			</div>
+		</div>
+		<!-- END Top right corner buttons -->
+
+		<img id="uport_img" src="" class="hidden" />
+
+		<div class="col-lg-6 text-center">
+			<div class="text-center">
+				<h1 class="hero">What can I help you with?</h1>
+			</div>
+			<div class="row text-center">
+				<div class='text-center event-container' id="input">
+					<div class="row">
+						<div class="col-lg-3 col-sm-3 life-events">
+							<div class="[ form-group ]">
+								<input type="checkbox" name="fancy-checkbox-immigration" id="fancy-checkbox-immigration" data-event-type="immigration" autocomplete="off" />
+								<div class="[ btn-group ]">
+									<label for="fancy-checkbox-immigration" class="[ btn btn-default ]">
+										<span class="[ glyphicon glyphicon-ok ]"></span>
+										<span> </span>
+									</label>
+									<label for="fancy-checkbox-immigration" class="[ btn btn-default active ]">
+											Immigration
+									</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-sm-3 life-events">
+							<div class="[ form-group ]">
+								<input type="checkbox" name="fancy-checkbox-retired" id="fancy-checkbox-retired" data-event-type="retirement" autocomplete="off" />
+								<div class="[ btn-group ]">
+									<label for="fancy-checkbox-retired" class="[ btn btn-default ]">
+										<span class="[ glyphicon glyphicon-ok ]"></span>
+										<span> </span>
+									</label>
+									<label for="fancy-checkbox-retired" class="[ btn btn-default active ]">
+											Retirement
+									</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-sm-3 life-events">
+							<div class="[ form-group ]">
+								<input type="checkbox" name="fancy-checkbox-health" id="fancy-checkbox-health" data-event-type="hardship" autocomplete="off" />
+								<div class="[ btn-group ]">
+									<label for="fancy-checkbox-health" class="[ btn btn-default ]">
+										<span class="[ glyphicon glyphicon-ok ]"></span>
+										<span> </span>
+									</label>
+									<label for="fancy-checkbox-health" class="[ btn btn-default active ]">
+											Health
+									</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-sm-3 life-events">
+							<div class="[ form-group ]">
+								<input type="checkbox" name="fancy-checkbox-childcare" id="fancy-checkbox-childcare" data-event-type="childCare" autocomplete="off" />
+								<div class="[ btn-group ]">
+									<label for="fancy-checkbox-childcare" class="[ btn btn-default ]" id="checkbox-childcare">
+										<span class="[ glyphicon glyphicon-ok ]"></span>
+										<span> </span>
+									</label>
+									<label for="fancy-checkbox-childcare" class="[ btn btn-default active ]">
+											Childcare
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6 text-center">
+			<div class="text-center">
+				<h1 class="hero">Tell us about your circumstances</h1>
+			</div>
+			<div class="row text-center background" id="criteria1"></div>
+			<div class="row text-center" id="criteria2"></div>
+		</div>
+		<div class="col-lg-12 text-center">
+			<div class="row text-center" id="results"></div>
+			<div class="row" id="list"></div>
+			<div class="row" id="fails"></div>
+		</div>
+	</div>
+	<script src='bundle.js'></script>
+</body>
+</html>
