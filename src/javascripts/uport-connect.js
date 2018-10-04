@@ -2,11 +2,11 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define("uportconnect", [], factory);
+		define('uportconnect', [], factory);
 	else if(typeof exports === 'object')
-		exports["uportconnect"] = factory();
+		exports['uportconnect'] = factory();
 	else
-		root["uportconnect"] = factory();
+		root['uportconnect'] = factory();
 })(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -70,7 +70,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = '';
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 238);
@@ -80,7 +80,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /* WEBPACK VAR INJECTION */(function(global) {/*!
  * The buffer module from node.js, for the browser.
  *
@@ -5345,7 +5345,7 @@ if (typeof Object.create === 'function') {
 		// CommonJS
 		module.exports = exports = factory();
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
 		define([], factory);
 	}
@@ -6105,7 +6105,7 @@ if (typeof Object.create === 'function') {
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var elliptic = exports;
@@ -6341,10 +6341,10 @@ g = (function() {
 
 try {
 	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
+	g = g || Function('return this')() || (1,eval)('this');
 } catch(e) {
 	// This works if the window reference is available
-	if(typeof window === "object")
+	if(typeof window === 'object')
 		g = window;
 }
 
@@ -6359,7 +6359,7 @@ module.exports = g;
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var assert = __webpack_require__(6);
@@ -6797,9 +6797,9 @@ module.exports = CipherBase
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core"], factory);
+		define(['./core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -7752,7 +7752,7 @@ var unitMap = {
  * @returns {String} right aligned string
  */
 var padLeft = function (string, chars, sign) {
-    return new Array(chars - string.length + 1).join(sign ? sign : "0") + string;
+    return new Array(chars - string.length + 1).join(sign ? sign : '0') + string;
 };
 
 /**
@@ -7765,7 +7765,7 @@ var padLeft = function (string, chars, sign) {
  * @returns {String} right aligned string
  */
 var padRight = function (string, chars, sign) {
-    return string + (new Array(chars - string.length + 1).join(sign ? sign : "0"));
+    return string + (new Array(chars - string.length + 1).join(sign ? sign : '0'));
 };
 
 /**
@@ -7777,7 +7777,7 @@ var padRight = function (string, chars, sign) {
  */
 var toUtf8 = function(hex) {
 // Find termination
-    var str = "";
+    var str = '';
     var i = 0, l = hex.length;
     if (hex.substring(0, 2) === '0x') {
         i = 2;
@@ -7801,7 +7801,7 @@ var toUtf8 = function(hex) {
  */
 var toAscii = function(hex) {
 // Find termination
-    var str = "";
+    var str = '';
     var i = 0, l = hex.length;
     if (hex.substring(0, 2) === '0x') {
         i = 2;
@@ -7824,7 +7824,7 @@ var toAscii = function(hex) {
  */
 var fromUtf8 = function(str) {
     str = utf8.encode(str);
-    var hex = "";
+    var hex = '';
     for(var i = 0; i < str.length; i++) {
         var code = str.charCodeAt(i);
         if (code === 0)
@@ -7833,7 +7833,7 @@ var fromUtf8 = function(str) {
         hex += n.length < 2 ? '0' + n : n;
     }
 
-    return "0x" + hex;
+    return '0x' + hex;
 };
 
 /**
@@ -7845,14 +7845,14 @@ var fromUtf8 = function(str) {
  * @returns {String} hex representation of input string
  */
 var fromAscii = function(str) {
-    var hex = "";
+    var hex = '';
     for(var i = 0; i < str.length; i++) {
         var code = str.charCodeAt(i);
         var n = code.toString(16);
         hex += n.length < 2 ? '0' + n : n;
     }
 
-    return "0x" + hex;
+    return '0x' + hex;
 };
 
 /**
@@ -7887,7 +7887,7 @@ var extractDisplayName = function (name) {
 var extractTypeName = function (name) {
     /// TODO: make it invulnerable
     var length = name.indexOf('(');
-    return length !== -1 ? name.substr(length + 1, name.length - 1 - (length + 1)).replace(' ', '') : "";
+    return length !== -1 ? name.substr(length + 1, name.length - 1 - (length + 1)).replace(' ', '') : '';
 };
 
 /**
@@ -8051,7 +8051,7 @@ var toBigNumber = function(number) {
 var toTwosComplement = function (number) {
     var bigNumber = toBigNumber(number).round();
     if (bigNumber.lessThan(0)) {
-        return new BigNumber("ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", 16).plus(bigNumber).plus(1);
+        return new BigNumber('ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff', 16).plus(bigNumber).plus(1);
     }
     return bigNumber;
 };
@@ -8307,7 +8307,7 @@ module.exports = {
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -8671,7 +8671,7 @@ function objectToString(o) {
 /* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 var inherits = __webpack_require__(1)
 var md5 = __webpack_require__(28)
@@ -8731,7 +8731,7 @@ module.exports = function createHash (alg) {
 /* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var utils = __webpack_require__(8);
@@ -8830,7 +8830,7 @@ BlockHash.prototype._pad = function pad() {
 /* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /* WEBPACK VAR INJECTION */(function(global, process) {
 
 function oldBrowser () {
@@ -9006,7 +9006,7 @@ var signedIsNegative = function (value) {
  * @returns {BigNumber} right-aligned output bytes formatted to big number
  */
 var formatOutputInt = function (param) {
-    var value = param.staticPart() || "0";
+    var value = param.staticPart() || '0';
 
     // check if it's negative number
     // it it is, return two's complement
@@ -9024,7 +9024,7 @@ var formatOutputInt = function (param) {
  * @returns {BigNumeber} right-aligned output bytes formatted to uint
  */
 var formatOutputUInt = function (param) {
-    var value = param.staticPart() || "0";
+    var value = param.staticPart() || '0';
     return new BigNumber(value, 16);
 };
 
@@ -9108,7 +9108,7 @@ var formatOutputString = function (param) {
  */
 var formatOutputAddress = function (param) {
     var value = param.staticPart();
-    return "0x" + value.slice(value.length - 40, value.length);
+    return '0x' + value.slice(value.length - 40, value.length);
 };
 
 module.exports = {
@@ -9134,10 +9134,10 @@ module.exports = {
 /* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
 exports.encode = encode;
@@ -9691,7 +9691,7 @@ exports.encrypt = function (self, chunk) {
 /* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 /*
  * A JavaScript implementation of the RSA Data Security, Inc. MD5 Message
@@ -9849,7 +9849,7 @@ module.exports = function md5 (buf) {
 /* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var curve = exports;
@@ -10052,7 +10052,7 @@ function decrypt (data, password) {
 /* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (!process.version ||
@@ -10122,7 +10122,7 @@ var SolidityType = function (config) {
  * @return {Bool} true if type match this SolidityType, otherwise false
  */
 SolidityType.prototype.isType = function (name) {
-    throw "this method should be overrwritten for type " + name;
+    throw 'this method should be overrwritten for type ' + name;
 };
 
 /**
@@ -10878,7 +10878,7 @@ function getr(priv) {
 /* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 exports.utils = __webpack_require__(149);
@@ -11221,10 +11221,10 @@ hash.ripemd160 = hash.ripemd.ripemd160;
 /* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
 exports.cryptoClients = exports.SECP256K1Client = undefined;
@@ -11242,10 +11242,10 @@ exports.cryptoClients = cryptoClients;
 /* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
     value: true
 });
 exports.decodeToken = decodeToken;
@@ -11502,7 +11502,7 @@ function base64DetectIncompleteChar(buffer) {
 /* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /* WEBPACK VAR INJECTION */(function(process, setImmediate, global) {// Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -12186,7 +12186,7 @@ exports.PassThrough = __webpack_require__(199);
 /* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 var inherits = __webpack_require__(1)
 var HashBase = __webpack_require__(168)
@@ -12723,7 +12723,7 @@ module.exports = Method;
 /* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var _Credentials = __webpack_require__(212);
@@ -12753,9 +12753,9 @@ module.exports = { Credentials: _Credentials2.default, SimpleSigner: _SimpleSign
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core"], factory);
+		define(['./core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -12893,9 +12893,9 @@ module.exports = { Credentials: _Credentials2.default, SimpleSigner: _SimpleSign
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3), __webpack_require__(144), __webpack_require__(143));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core", "./sha1", "./hmac"], factory);
+		define(['./core', './sha1', './hmac'], factory);
 	}
 	else {
 		// Global (browser)
@@ -13030,9 +13030,9 @@ module.exports = { Credentials: _Credentials2.default, SimpleSigner: _SimpleSign
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core"], factory);
+		define(['./core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -13454,13 +13454,13 @@ module.exports = function(module) {
 		module.paths = [];
 		// module.parent = undefined by default
 		if(!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
+		Object.defineProperty(module, 'loaded', {
 			enumerable: true,
 			get: function() {
 				return module.l;
 			}
 		});
-		Object.defineProperty(module, "id", {
+		Object.defineProperty(module, 'id', {
 			enumerable: true,
 			get: function() {
 				return module.i;
@@ -13476,18 +13476,18 @@ module.exports = function(module) {
 /* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+var _typeof = typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol' ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === 'function' && obj.constructor === Symbol && obj !== Symbol.prototype ? 'symbol' : typeof obj; };
 
 var _topicFactory = __webpack_require__(122);
 
@@ -13513,7 +13513,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 var INFURA_ROPSTEN = 'https://ropsten.infura.io';
 // Can use http provider from ethjs in the future.
@@ -17776,7 +17776,7 @@ StreamCipher.prototype._final = function () {
 /* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 var inherits = __webpack_require__(1)
 var Legacy = __webpack_require__(141)
@@ -17956,7 +17956,7 @@ function findPrime(bits, gen) {
 /* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var utils = __webpack_require__(8);
@@ -18068,7 +18068,7 @@ SHA256.prototype._digest = function digest(enc) {
 /* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var utils = __webpack_require__(8);
@@ -18405,7 +18405,7 @@ function g1_512_lo(xh, xl) {
 /* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var utils = __webpack_require__(8);
@@ -18490,7 +18490,7 @@ function isFunction (fn) {
  */
 module.exports = function isHexPrefixed(str) {
   if (typeof str !== 'string') {
-    throw new Error("[is-hex-prefixed] value must be type 'string', is currently type " + (typeof str) + ", while checking isHexPrefixed.");
+    throw new Error("[is-hex-prefixed] value must be type 'string', is currently type " + (typeof str) + ', while checking isHexPrefixed.');
   }
 
   return str.slice(0, 2) === '0x';
@@ -18513,155 +18513,155 @@ module.exports = Array.isArray || function (arr) {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"sha224WithRSAEncryption": {
-		"sign": "rsa",
-		"hash": "sha224",
-		"id": "302d300d06096086480165030402040500041c"
+	'sha224WithRSAEncryption': {
+		'sign': 'rsa',
+		'hash': 'sha224',
+		'id': '302d300d06096086480165030402040500041c'
 	},
-	"RSA-SHA224": {
-		"sign": "ecdsa/rsa",
-		"hash": "sha224",
-		"id": "302d300d06096086480165030402040500041c"
+	'RSA-SHA224': {
+		'sign': 'ecdsa/rsa',
+		'hash': 'sha224',
+		'id': '302d300d06096086480165030402040500041c'
 	},
-	"sha256WithRSAEncryption": {
-		"sign": "rsa",
-		"hash": "sha256",
-		"id": "3031300d060960864801650304020105000420"
+	'sha256WithRSAEncryption': {
+		'sign': 'rsa',
+		'hash': 'sha256',
+		'id': '3031300d060960864801650304020105000420'
 	},
-	"RSA-SHA256": {
-		"sign": "ecdsa/rsa",
-		"hash": "sha256",
-		"id": "3031300d060960864801650304020105000420"
+	'RSA-SHA256': {
+		'sign': 'ecdsa/rsa',
+		'hash': 'sha256',
+		'id': '3031300d060960864801650304020105000420'
 	},
-	"sha384WithRSAEncryption": {
-		"sign": "rsa",
-		"hash": "sha384",
-		"id": "3041300d060960864801650304020205000430"
+	'sha384WithRSAEncryption': {
+		'sign': 'rsa',
+		'hash': 'sha384',
+		'id': '3041300d060960864801650304020205000430'
 	},
-	"RSA-SHA384": {
-		"sign": "ecdsa/rsa",
-		"hash": "sha384",
-		"id": "3041300d060960864801650304020205000430"
+	'RSA-SHA384': {
+		'sign': 'ecdsa/rsa',
+		'hash': 'sha384',
+		'id': '3041300d060960864801650304020205000430'
 	},
-	"sha512WithRSAEncryption": {
-		"sign": "rsa",
-		"hash": "sha512",
-		"id": "3051300d060960864801650304020305000440"
+	'sha512WithRSAEncryption': {
+		'sign': 'rsa',
+		'hash': 'sha512',
+		'id': '3051300d060960864801650304020305000440'
 	},
-	"RSA-SHA512": {
-		"sign": "ecdsa/rsa",
-		"hash": "sha512",
-		"id": "3051300d060960864801650304020305000440"
+	'RSA-SHA512': {
+		'sign': 'ecdsa/rsa',
+		'hash': 'sha512',
+		'id': '3051300d060960864801650304020305000440'
 	},
-	"RSA-SHA1": {
-		"sign": "rsa",
-		"hash": "sha1",
-		"id": "3021300906052b0e03021a05000414"
+	'RSA-SHA1': {
+		'sign': 'rsa',
+		'hash': 'sha1',
+		'id': '3021300906052b0e03021a05000414'
 	},
-	"ecdsa-with-SHA1": {
-		"sign": "ecdsa",
-		"hash": "sha1",
-		"id": ""
+	'ecdsa-with-SHA1': {
+		'sign': 'ecdsa',
+		'hash': 'sha1',
+		'id': ''
 	},
-	"sha256": {
-		"sign": "ecdsa",
-		"hash": "sha256",
-		"id": ""
+	'sha256': {
+		'sign': 'ecdsa',
+		'hash': 'sha256',
+		'id': ''
 	},
-	"sha224": {
-		"sign": "ecdsa",
-		"hash": "sha224",
-		"id": ""
+	'sha224': {
+		'sign': 'ecdsa',
+		'hash': 'sha224',
+		'id': ''
 	},
-	"sha384": {
-		"sign": "ecdsa",
-		"hash": "sha384",
-		"id": ""
+	'sha384': {
+		'sign': 'ecdsa',
+		'hash': 'sha384',
+		'id': ''
 	},
-	"sha512": {
-		"sign": "ecdsa",
-		"hash": "sha512",
-		"id": ""
+	'sha512': {
+		'sign': 'ecdsa',
+		'hash': 'sha512',
+		'id': ''
 	},
-	"DSA-SHA": {
-		"sign": "dsa",
-		"hash": "sha1",
-		"id": ""
+	'DSA-SHA': {
+		'sign': 'dsa',
+		'hash': 'sha1',
+		'id': ''
 	},
-	"DSA-SHA1": {
-		"sign": "dsa",
-		"hash": "sha1",
-		"id": ""
+	'DSA-SHA1': {
+		'sign': 'dsa',
+		'hash': 'sha1',
+		'id': ''
 	},
-	"DSA": {
-		"sign": "dsa",
-		"hash": "sha1",
-		"id": ""
+	'DSA': {
+		'sign': 'dsa',
+		'hash': 'sha1',
+		'id': ''
 	},
-	"DSA-WITH-SHA224": {
-		"sign": "dsa",
-		"hash": "sha224",
-		"id": ""
+	'DSA-WITH-SHA224': {
+		'sign': 'dsa',
+		'hash': 'sha224',
+		'id': ''
 	},
-	"DSA-SHA224": {
-		"sign": "dsa",
-		"hash": "sha224",
-		"id": ""
+	'DSA-SHA224': {
+		'sign': 'dsa',
+		'hash': 'sha224',
+		'id': ''
 	},
-	"DSA-WITH-SHA256": {
-		"sign": "dsa",
-		"hash": "sha256",
-		"id": ""
+	'DSA-WITH-SHA256': {
+		'sign': 'dsa',
+		'hash': 'sha256',
+		'id': ''
 	},
-	"DSA-SHA256": {
-		"sign": "dsa",
-		"hash": "sha256",
-		"id": ""
+	'DSA-SHA256': {
+		'sign': 'dsa',
+		'hash': 'sha256',
+		'id': ''
 	},
-	"DSA-WITH-SHA384": {
-		"sign": "dsa",
-		"hash": "sha384",
-		"id": ""
+	'DSA-WITH-SHA384': {
+		'sign': 'dsa',
+		'hash': 'sha384',
+		'id': ''
 	},
-	"DSA-SHA384": {
-		"sign": "dsa",
-		"hash": "sha384",
-		"id": ""
+	'DSA-SHA384': {
+		'sign': 'dsa',
+		'hash': 'sha384',
+		'id': ''
 	},
-	"DSA-WITH-SHA512": {
-		"sign": "dsa",
-		"hash": "sha512",
-		"id": ""
+	'DSA-WITH-SHA512': {
+		'sign': 'dsa',
+		'hash': 'sha512',
+		'id': ''
 	},
-	"DSA-SHA512": {
-		"sign": "dsa",
-		"hash": "sha512",
-		"id": ""
+	'DSA-SHA512': {
+		'sign': 'dsa',
+		'hash': 'sha512',
+		'id': ''
 	},
-	"DSA-RIPEMD160": {
-		"sign": "dsa",
-		"hash": "rmd160",
-		"id": ""
+	'DSA-RIPEMD160': {
+		'sign': 'dsa',
+		'hash': 'rmd160',
+		'id': ''
 	},
-	"ripemd160WithRSA": {
-		"sign": "rsa",
-		"hash": "rmd160",
-		"id": "3021300906052b2403020105000414"
+	'ripemd160WithRSA': {
+		'sign': 'rsa',
+		'hash': 'rmd160',
+		'id': '3021300906052b2403020105000414'
 	},
-	"RSA-RIPEMD160": {
-		"sign": "rsa",
-		"hash": "rmd160",
-		"id": "3021300906052b2403020105000414"
+	'RSA-RIPEMD160': {
+		'sign': 'rsa',
+		'hash': 'rmd160',
+		'id': '3021300906052b2403020105000414'
 	},
-	"md5WithRSAEncryption": {
-		"sign": "rsa",
-		"hash": "md5",
-		"id": "3020300c06082a864886f70d020505000410"
+	'md5WithRSAEncryption': {
+		'sign': 'rsa',
+		'hash': 'md5',
+		'id': '3020300c06082a864886f70d020505000410'
 	},
-	"RSA-MD5": {
-		"sign": "rsa",
-		"hash": "md5",
-		"id": "3020300c06082a864886f70d020505000410"
+	'RSA-MD5': {
+		'sign': 'rsa',
+		'hash': 'md5',
+		'id': '3020300c06082a864886f70d020505000410'
 	}
 };
 
@@ -18670,30 +18670,30 @@ module.exports = {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"1.3.132.0.10": "secp256k1",
-	"1.3.132.0.33": "p224",
-	"1.2.840.10045.3.1.1": "p192",
-	"1.2.840.10045.3.1.7": "p256",
-	"1.3.132.0.34": "p384",
-	"1.3.132.0.35": "p521"
+	'1.3.132.0.10': 'secp256k1',
+	'1.3.132.0.33': 'p224',
+	'1.2.840.10045.3.1.1': 'p192',
+	'1.2.840.10045.3.1.7': 'p256',
+	'1.3.132.0.34': 'p384',
+	'1.3.132.0.35': 'p521'
 };
 
 /***/ }),
 /* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === 'object' || typeof call === 'function') ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var MissingParametersError = exports.MissingParametersError = function (_Error) {
   _inherits(MissingParametersError, _Error);
@@ -18715,10 +18715,10 @@ var MissingParametersError = exports.MissingParametersError = function (_Error) 
 /* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
@@ -18902,7 +18902,7 @@ MillerRabin.prototype.getDivisor = function getDivisor(n, k) {
 /* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var utils = exports;
@@ -19208,7 +19208,7 @@ module.exports = function xor(a, b) {
 /* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var replace = String.prototype.replace;
@@ -19233,7 +19233,7 @@ module.exports = {
 /* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var has = Object.prototype.hasOwnProperty;
@@ -19432,7 +19432,7 @@ exports.isBuffer = function (obj) {
 /* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /* WEBPACK VAR INJECTION */(function(global, process) {// Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -20446,7 +20446,7 @@ function indexOf(xs, x) {
 /* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -20666,7 +20666,7 @@ function done(stream, er, data) {
 /* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 /*<replacement>*/
@@ -21217,10 +21217,10 @@ exports.clearImmediate = clearImmediate;
 /* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
@@ -21348,9 +21348,9 @@ module.exports = function (value, options) {
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core"], factory);
+		define(['./core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -21652,7 +21652,7 @@ module.exports = function (value, options) {
 /* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 
@@ -24492,7 +24492,7 @@ function iterator(coll) {
 
 function onlyOnce(fn) {
     return function() {
-        if (fn === null) throw new Error("Callback was already called.");
+        if (fn === null) throw new Error('Callback was already called.');
         var callFn = fn;
         fn = null;
         callFn.apply(this, arguments);
@@ -25670,7 +25670,7 @@ function autoInject(tasks, callback) {
         } else {
             params = parseParams(taskFn);
             if (taskFn.length === 0 && !fnIsAsync && params.length === 0) {
-                throw new Error("autoInject task functions require explicit parameters.");
+                throw new Error('autoInject task functions require explicit parameters.');
             }
 
             // remove callback param
@@ -28153,7 +28153,7 @@ function retry(opts, task, callback) {
         } else if (typeof t === 'number' || typeof t === 'string') {
             acc.times = +t || DEFAULT_TIMES;
         } else {
-            throw new Error("Invalid arguments for async.retry");
+            throw new Error('Invalid arguments for async.retry');
         }
     }
 
@@ -28166,7 +28166,7 @@ function retry(opts, task, callback) {
     }
 
     if (typeof task !== 'function') {
-        throw new Error("Invalid arguments for async.retry");
+        throw new Error('Invalid arguments for async.retry');
     }
 
     var _task = wrapAsync(task);
@@ -29172,10 +29172,10 @@ Object.defineProperty(exports, '__esModule', { value: true });
 /* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
@@ -29354,14 +29354,14 @@ exports.default = TopicFactory;
 /* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _async = __webpack_require__(121);
 
@@ -29371,7 +29371,7 @@ var _mnid = __webpack_require__(23);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 /**
 *  A web3 style provider which can easily be wrapped with uPort functionality.
@@ -29507,10 +29507,10 @@ exports.default = UportSubprovider;
 /* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
 exports.default = randomString;
@@ -29529,7 +29529,7 @@ function randomString(length) {
 /* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 exports.byteLength = byteLength
@@ -29650,7 +29650,7 @@ function fromByteArray (uint8) {
 /* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
 var base64url = module.exports;
@@ -29681,35 +29681,35 @@ base64url.decode = function decode (str) {
 /* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 var pad_string_1 = __webpack_require__(128);
 function encode(input, encoding) {
-    if (encoding === void 0) { encoding = "utf8"; }
+    if (encoding === void 0) { encoding = 'utf8'; }
     if (Buffer.isBuffer(input)) {
-        return fromBase64(input.toString("base64"));
+        return fromBase64(input.toString('base64'));
     }
-    return fromBase64(new Buffer(input, encoding).toString("base64"));
+    return fromBase64(new Buffer(input, encoding).toString('base64'));
 }
 ;
 function decode(base64url, encoding) {
-    if (encoding === void 0) { encoding = "utf8"; }
-    return new Buffer(toBase64(base64url), "base64").toString(encoding);
+    if (encoding === void 0) { encoding = 'utf8'; }
+    return new Buffer(toBase64(base64url), 'base64').toString(encoding);
 }
 function toBase64(base64url) {
     base64url = base64url.toString();
     return pad_string_1.default(base64url)
-        .replace(/\-/g, "+")
-        .replace(/_/g, "/");
+        .replace(/\-/g, '+')
+        .replace(/_/g, '/');
 }
 function fromBase64(base64) {
     return base64
-        .replace(/=/g, "")
-        .replace(/\+/g, "-")
-        .replace(/\//g, "_");
+        .replace(/=/g, '')
+        .replace(/\+/g, '-')
+        .replace(/\//g, '_');
 }
 function toBuffer(base64url) {
-    return new Buffer(toBase64(base64url), "base64");
+    return new Buffer(toBase64(base64url), 'base64');
 }
 var base64url = encode;
 base64url.encode = encode;
@@ -29717,7 +29717,7 @@ base64url.decode = decode;
 base64url.toBase64 = toBase64;
 base64url.fromBase64 = fromBase64;
 base64url.toBuffer = toBuffer;
-Object.defineProperty(exports, "__esModule", { value: true });
+Object.defineProperty(exports, '__esModule', { value: true });
 exports.default = base64url;
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
@@ -29726,7 +29726,7 @@ exports.default = base64url;
 /* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 function padString(input) {
     var segmentLength = 4;
@@ -29741,11 +29741,11 @@ function padString(input) {
     var buffer = new Buffer(paddedStringLength);
     buffer.write(input);
     while (padLength--) {
-        buffer.write("=", position++);
+        buffer.write('=', position++);
     }
     return buffer.toString();
 }
-Object.defineProperty(exports, "__esModule", { value: true });
+Object.defineProperty(exports, '__esModule', { value: true });
 exports.default = padString;
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
@@ -30767,7 +30767,7 @@ function formatReturnValue(bn, enc, len) {
 /* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 var intSize = 4
 var zeroBuffer = new Buffer(intSize)
@@ -30805,7 +30805,7 @@ module.exports = function hash (buf, fn) {
 /* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 var inherits = __webpack_require__(1)
 var Buffer = __webpack_require__(9).Buffer
@@ -30858,7 +30858,7 @@ module.exports = Hmac
 /* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 exports.randomBytes = exports.rng = exports.pseudoRandomBytes = exports.prng = __webpack_require__(21)
@@ -30947,9 +30947,9 @@ var publicEncrypt = __webpack_require__(192)
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core"], factory);
+		define(['./core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -31095,9 +31095,9 @@ var publicEncrypt = __webpack_require__(192)
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core"], factory);
+		define(['./core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -31245,7 +31245,7 @@ var publicEncrypt = __webpack_require__(192)
 /* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var assert = __webpack_require__(6);
@@ -31317,7 +31317,7 @@ proto._update = function _update(inp, inOff, out, outOff) {
 /* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var assert = __webpack_require__(6);
@@ -31465,7 +31465,7 @@ Cipher.prototype._finalDecrypt = function _finalDecrypt() {
 /* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var assert = __webpack_require__(6);
@@ -31615,7 +31615,7 @@ DES.prototype._decrypt = function _decrypt(state, lStart, rStart, out, off) {
 /* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var assert = __webpack_require__(6);
@@ -31677,7 +31677,7 @@ EDE.prototype._unpad = DES.prototype._unpad;
 /* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 exports.readUInt32BE = function readUInt32BE(bytes, off) {
@@ -32160,7 +32160,7 @@ function formatReturnValue(bn, enc) {
 /* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var BN = __webpack_require__(2);
@@ -32542,7 +32542,7 @@ BasePoint.prototype.dblp = function dblp(k) {
 /* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var curve = __webpack_require__(29);
@@ -32982,7 +32982,7 @@ Point.prototype.mixedAdd = Point.prototype.add;
 /* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var curve = __webpack_require__(29);
@@ -33169,7 +33169,7 @@ Point.prototype.getX = function getX() {
 /* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var curve = __webpack_require__(29);
@@ -34114,7 +34114,7 @@ JPoint.prototype.isInfinity = function isInfinity() {
 /* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var curves = exports;
@@ -34326,7 +34326,7 @@ defineCurve('secp256k1', {
 /* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var BN = __webpack_require__(2);
@@ -34573,7 +34573,7 @@ EC.prototype.getKeyRecoveryParam = function(e, signature, Q, enc) {
 /* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var BN = __webpack_require__(2);
@@ -34699,7 +34699,7 @@ KeyPair.prototype.inspect = function inspect() {
 /* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var BN = __webpack_require__(2);
@@ -34841,7 +34841,7 @@ Signature.prototype.toDER = function toDER(enc) {
 /* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var hash = __webpack_require__(41);
@@ -34966,7 +34966,7 @@ EDDSA.prototype.isPoint = function isPoint(val) {
 /* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var elliptic = __webpack_require__(4);
@@ -35069,7 +35069,7 @@ module.exports = KeyPair;
 /* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var BN = __webpack_require__(2);
@@ -35928,7 +35928,7 @@ module.exports = {
 /* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var utils = exports;
@@ -36055,7 +36055,7 @@ utils.intFromLE = intFromLE;
 /* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
 var isHexPrefixed = __webpack_require__(78);
@@ -36336,11 +36336,11 @@ function forEachObject(object, iterator, context) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var win;
 
-if (typeof window !== "undefined") {
+if (typeof window !== 'undefined') {
     win = window;
-} else if (typeof global !== "undefined") {
+} else if (typeof global !== 'undefined') {
     win = global;
-} else if (typeof self !== "undefined"){
+} else if (typeof self !== 'undefined'){
     win = self;
 } else {
     win = {};
@@ -36354,7 +36354,7 @@ module.exports = win;
 /* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 var Transform = __webpack_require__(35).Transform
 var inherits = __webpack_require__(1)
@@ -36445,7 +36445,7 @@ module.exports = HashBase
 /* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var utils = __webpack_require__(8);
@@ -36499,7 +36499,7 @@ Hmac.prototype.digest = function digest(enc) {
 /* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var utils = __webpack_require__(8);
@@ -36652,7 +36652,7 @@ var sh = [
 /* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 exports.sha1 = __webpack_require__(172);
@@ -36666,7 +36666,7 @@ exports.sha512 = __webpack_require__(75);
 /* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var utils = __webpack_require__(8);
@@ -36747,7 +36747,7 @@ SHA1.prototype._digest = function digest(enc) {
 /* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var utils = __webpack_require__(8);
@@ -36784,7 +36784,7 @@ SHA224.prototype._digest = function digest(enc) {
 /* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var utils = __webpack_require__(8);
@@ -36826,7 +36826,7 @@ SHA384.prototype._digest = function digest(enc) {
 /* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var hash = __webpack_require__(41);
@@ -37052,37 +37052,37 @@ module.exports = function(arr, obj){
 /***/ (function(module, exports) {
 
 module.exports = {
-	"modp1": {
-		"gen": "02",
-		"prime": "ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a63a3620ffffffffffffffff"
+	'modp1': {
+		'gen': '02',
+		'prime': 'ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a63a3620ffffffffffffffff'
 	},
-	"modp2": {
-		"gen": "02",
-		"prime": "ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece65381ffffffffffffffff"
+	'modp2': {
+		'gen': '02',
+		'prime': 'ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece65381ffffffffffffffff'
 	},
-	"modp5": {
-		"gen": "02",
-		"prime": "ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca237327ffffffffffffffff"
+	'modp5': {
+		'gen': '02',
+		'prime': 'ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca237327ffffffffffffffff'
 	},
-	"modp14": {
-		"gen": "02",
-		"prime": "ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca18217c32905e462e36ce3be39e772c180e86039b2783a2ec07a28fb5c55df06f4c52c9de2bcbf6955817183995497cea956ae515d2261898fa051015728e5a8aacaa68ffffffffffffffff"
+	'modp14': {
+		'gen': '02',
+		'prime': 'ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca18217c32905e462e36ce3be39e772c180e86039b2783a2ec07a28fb5c55df06f4c52c9de2bcbf6955817183995497cea956ae515d2261898fa051015728e5a8aacaa68ffffffffffffffff'
 	},
-	"modp15": {
-		"gen": "02",
-		"prime": "ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca18217c32905e462e36ce3be39e772c180e86039b2783a2ec07a28fb5c55df06f4c52c9de2bcbf6955817183995497cea956ae515d2261898fa051015728e5a8aaac42dad33170d04507a33a85521abdf1cba64ecfb850458dbef0a8aea71575d060c7db3970f85a6e1e4c7abf5ae8cdb0933d71e8c94e04a25619dcee3d2261ad2ee6bf12ffa06d98a0864d87602733ec86a64521f2b18177b200cbbe117577a615d6c770988c0bad946e208e24fa074e5ab3143db5bfce0fd108e4b82d120a93ad2caffffffffffffffff"
+	'modp15': {
+		'gen': '02',
+		'prime': 'ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca18217c32905e462e36ce3be39e772c180e86039b2783a2ec07a28fb5c55df06f4c52c9de2bcbf6955817183995497cea956ae515d2261898fa051015728e5a8aaac42dad33170d04507a33a85521abdf1cba64ecfb850458dbef0a8aea71575d060c7db3970f85a6e1e4c7abf5ae8cdb0933d71e8c94e04a25619dcee3d2261ad2ee6bf12ffa06d98a0864d87602733ec86a64521f2b18177b200cbbe117577a615d6c770988c0bad946e208e24fa074e5ab3143db5bfce0fd108e4b82d120a93ad2caffffffffffffffff'
 	},
-	"modp16": {
-		"gen": "02",
-		"prime": "ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca18217c32905e462e36ce3be39e772c180e86039b2783a2ec07a28fb5c55df06f4c52c9de2bcbf6955817183995497cea956ae515d2261898fa051015728e5a8aaac42dad33170d04507a33a85521abdf1cba64ecfb850458dbef0a8aea71575d060c7db3970f85a6e1e4c7abf5ae8cdb0933d71e8c94e04a25619dcee3d2261ad2ee6bf12ffa06d98a0864d87602733ec86a64521f2b18177b200cbbe117577a615d6c770988c0bad946e208e24fa074e5ab3143db5bfce0fd108e4b82d120a92108011a723c12a787e6d788719a10bdba5b2699c327186af4e23c1a946834b6150bda2583e9ca2ad44ce8dbbbc2db04de8ef92e8efc141fbecaa6287c59474e6bc05d99b2964fa090c3a2233ba186515be7ed1f612970cee2d7afb81bdd762170481cd0069127d5b05aa993b4ea988d8fddc186ffb7dc90a6c08f4df435c934063199ffffffffffffffff"
+	'modp16': {
+		'gen': '02',
+		'prime': 'ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca18217c32905e462e36ce3be39e772c180e86039b2783a2ec07a28fb5c55df06f4c52c9de2bcbf6955817183995497cea956ae515d2261898fa051015728e5a8aaac42dad33170d04507a33a85521abdf1cba64ecfb850458dbef0a8aea71575d060c7db3970f85a6e1e4c7abf5ae8cdb0933d71e8c94e04a25619dcee3d2261ad2ee6bf12ffa06d98a0864d87602733ec86a64521f2b18177b200cbbe117577a615d6c770988c0bad946e208e24fa074e5ab3143db5bfce0fd108e4b82d120a92108011a723c12a787e6d788719a10bdba5b2699c327186af4e23c1a946834b6150bda2583e9ca2ad44ce8dbbbc2db04de8ef92e8efc141fbecaa6287c59474e6bc05d99b2964fa090c3a2233ba186515be7ed1f612970cee2d7afb81bdd762170481cd0069127d5b05aa993b4ea988d8fddc186ffb7dc90a6c08f4df435c934063199ffffffffffffffff'
 	},
-	"modp17": {
-		"gen": "02",
-		"prime": "ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca18217c32905e462e36ce3be39e772c180e86039b2783a2ec07a28fb5c55df06f4c52c9de2bcbf6955817183995497cea956ae515d2261898fa051015728e5a8aaac42dad33170d04507a33a85521abdf1cba64ecfb850458dbef0a8aea71575d060c7db3970f85a6e1e4c7abf5ae8cdb0933d71e8c94e04a25619dcee3d2261ad2ee6bf12ffa06d98a0864d87602733ec86a64521f2b18177b200cbbe117577a615d6c770988c0bad946e208e24fa074e5ab3143db5bfce0fd108e4b82d120a92108011a723c12a787e6d788719a10bdba5b2699c327186af4e23c1a946834b6150bda2583e9ca2ad44ce8dbbbc2db04de8ef92e8efc141fbecaa6287c59474e6bc05d99b2964fa090c3a2233ba186515be7ed1f612970cee2d7afb81bdd762170481cd0069127d5b05aa993b4ea988d8fddc186ffb7dc90a6c08f4df435c93402849236c3fab4d27c7026c1d4dcb2602646dec9751e763dba37bdf8ff9406ad9e530ee5db382f413001aeb06a53ed9027d831179727b0865a8918da3edbebcf9b14ed44ce6cbaced4bb1bdb7f1447e6cc254b332051512bd7af426fb8f401378cd2bf5983ca01c64b92ecf032ea15d1721d03f482d7ce6e74fef6d55e702f46980c82b5a84031900b1c9e59e7c97fbec7e8f323a97a7e36cc88be0f1d45b7ff585ac54bd407b22b4154aacc8f6d7ebf48e1d814cc5ed20f8037e0a79715eef29be32806a1d58bb7c5da76f550aa3d8a1fbff0eb19ccb1a313d55cda56c9ec2ef29632387fe8d76e3c0468043e8f663f4860ee12bf2d5b0b7474d6e694f91e6dcc4024ffffffffffffffff"
+	'modp17': {
+		'gen': '02',
+		'prime': 'ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca18217c32905e462e36ce3be39e772c180e86039b2783a2ec07a28fb5c55df06f4c52c9de2bcbf6955817183995497cea956ae515d2261898fa051015728e5a8aaac42dad33170d04507a33a85521abdf1cba64ecfb850458dbef0a8aea71575d060c7db3970f85a6e1e4c7abf5ae8cdb0933d71e8c94e04a25619dcee3d2261ad2ee6bf12ffa06d98a0864d87602733ec86a64521f2b18177b200cbbe117577a615d6c770988c0bad946e208e24fa074e5ab3143db5bfce0fd108e4b82d120a92108011a723c12a787e6d788719a10bdba5b2699c327186af4e23c1a946834b6150bda2583e9ca2ad44ce8dbbbc2db04de8ef92e8efc141fbecaa6287c59474e6bc05d99b2964fa090c3a2233ba186515be7ed1f612970cee2d7afb81bdd762170481cd0069127d5b05aa993b4ea988d8fddc186ffb7dc90a6c08f4df435c93402849236c3fab4d27c7026c1d4dcb2602646dec9751e763dba37bdf8ff9406ad9e530ee5db382f413001aeb06a53ed9027d831179727b0865a8918da3edbebcf9b14ed44ce6cbaced4bb1bdb7f1447e6cc254b332051512bd7af426fb8f401378cd2bf5983ca01c64b92ecf032ea15d1721d03f482d7ce6e74fef6d55e702f46980c82b5a84031900b1c9e59e7c97fbec7e8f323a97a7e36cc88be0f1d45b7ff585ac54bd407b22b4154aacc8f6d7ebf48e1d814cc5ed20f8037e0a79715eef29be32806a1d58bb7c5da76f550aa3d8a1fbff0eb19ccb1a313d55cda56c9ec2ef29632387fe8d76e3c0468043e8f663f4860ee12bf2d5b0b7474d6e694f91e6dcc4024ffffffffffffffff'
 	},
-	"modp18": {
-		"gen": "02",
-		"prime": "ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca18217c32905e462e36ce3be39e772c180e86039b2783a2ec07a28fb5c55df06f4c52c9de2bcbf6955817183995497cea956ae515d2261898fa051015728e5a8aaac42dad33170d04507a33a85521abdf1cba64ecfb850458dbef0a8aea71575d060c7db3970f85a6e1e4c7abf5ae8cdb0933d71e8c94e04a25619dcee3d2261ad2ee6bf12ffa06d98a0864d87602733ec86a64521f2b18177b200cbbe117577a615d6c770988c0bad946e208e24fa074e5ab3143db5bfce0fd108e4b82d120a92108011a723c12a787e6d788719a10bdba5b2699c327186af4e23c1a946834b6150bda2583e9ca2ad44ce8dbbbc2db04de8ef92e8efc141fbecaa6287c59474e6bc05d99b2964fa090c3a2233ba186515be7ed1f612970cee2d7afb81bdd762170481cd0069127d5b05aa993b4ea988d8fddc186ffb7dc90a6c08f4df435c93402849236c3fab4d27c7026c1d4dcb2602646dec9751e763dba37bdf8ff9406ad9e530ee5db382f413001aeb06a53ed9027d831179727b0865a8918da3edbebcf9b14ed44ce6cbaced4bb1bdb7f1447e6cc254b332051512bd7af426fb8f401378cd2bf5983ca01c64b92ecf032ea15d1721d03f482d7ce6e74fef6d55e702f46980c82b5a84031900b1c9e59e7c97fbec7e8f323a97a7e36cc88be0f1d45b7ff585ac54bd407b22b4154aacc8f6d7ebf48e1d814cc5ed20f8037e0a79715eef29be32806a1d58bb7c5da76f550aa3d8a1fbff0eb19ccb1a313d55cda56c9ec2ef29632387fe8d76e3c0468043e8f663f4860ee12bf2d5b0b7474d6e694f91e6dbe115974a3926f12fee5e438777cb6a932df8cd8bec4d073b931ba3bc832b68d9dd300741fa7bf8afc47ed2576f6936ba424663aab639c5ae4f5683423b4742bf1c978238f16cbe39d652de3fdb8befc848ad922222e04a4037c0713eb57a81a23f0c73473fc646cea306b4bcbc8862f8385ddfa9d4b7fa2c087e879683303ed5bdd3a062b3cf5b3a278a66d2a13f83f44f82ddf310ee074ab6a364597e899a0255dc164f31cc50846851df9ab48195ded7ea1b1d510bd7ee74d73faf36bc31ecfa268359046f4eb879f924009438b481c6cd7889a002ed5ee382bc9190da6fc026e479558e4475677e9aa9e3050e2765694dfc81f56e880b96e7160c980dd98edd3dfffffffffffffffff"
+	'modp18': {
+		'gen': '02',
+		'prime': 'ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca18217c32905e462e36ce3be39e772c180e86039b2783a2ec07a28fb5c55df06f4c52c9de2bcbf6955817183995497cea956ae515d2261898fa051015728e5a8aaac42dad33170d04507a33a85521abdf1cba64ecfb850458dbef0a8aea71575d060c7db3970f85a6e1e4c7abf5ae8cdb0933d71e8c94e04a25619dcee3d2261ad2ee6bf12ffa06d98a0864d87602733ec86a64521f2b18177b200cbbe117577a615d6c770988c0bad946e208e24fa074e5ab3143db5bfce0fd108e4b82d120a92108011a723c12a787e6d788719a10bdba5b2699c327186af4e23c1a946834b6150bda2583e9ca2ad44ce8dbbbc2db04de8ef92e8efc141fbecaa6287c59474e6bc05d99b2964fa090c3a2233ba186515be7ed1f612970cee2d7afb81bdd762170481cd0069127d5b05aa993b4ea988d8fddc186ffb7dc90a6c08f4df435c93402849236c3fab4d27c7026c1d4dcb2602646dec9751e763dba37bdf8ff9406ad9e530ee5db382f413001aeb06a53ed9027d831179727b0865a8918da3edbebcf9b14ed44ce6cbaced4bb1bdb7f1447e6cc254b332051512bd7af426fb8f401378cd2bf5983ca01c64b92ecf032ea15d1721d03f482d7ce6e74fef6d55e702f46980c82b5a84031900b1c9e59e7c97fbec7e8f323a97a7e36cc88be0f1d45b7ff585ac54bd407b22b4154aacc8f6d7ebf48e1d814cc5ed20f8037e0a79715eef29be32806a1d58bb7c5da76f550aa3d8a1fbff0eb19ccb1a313d55cda56c9ec2ef29632387fe8d76e3c0468043e8f663f4860ee12bf2d5b0b7474d6e694f91e6dbe115974a3926f12fee5e438777cb6a932df8cd8bec4d073b931ba3bc832b68d9dd300741fa7bf8afc47ed2576f6936ba424663aab639c5ae4f5683423b4742bf1c978238f16cbe39d652de3fdb8befc848ad922222e04a4037c0713eb57a81a23f0c73473fc646cea306b4bcbc8862f8385ddfa9d4b7fa2c087e879683303ed5bdd3a062b3cf5b3a278a66d2a13f83f44f82ddf310ee074ab6a364597e899a0255dc164f31cc50846851df9ab48195ded7ea1b1d510bd7ee74d73faf36bc31ecfa268359046f4eb879f924009438b481c6cd7889a002ed5ee382bc9190da6fc026e479558e4475677e9aa9e3050e2765694dfc81f56e880b96e7160c980dd98edd3dfffffffffffffffff'
 	}
 };
 
@@ -37091,128 +37091,128 @@ module.exports = {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"_args": [
+	'_args': [
 		[
 			{
-				"raw": "elliptic@^6.3.2",
-				"scope": null,
-				"escapedName": "elliptic",
-				"name": "elliptic",
-				"rawSpec": "^6.3.2",
-				"spec": ">=6.3.2 <7.0.0",
-				"type": "range"
+				'raw': 'elliptic@^6.3.2',
+				'scope': null,
+				'escapedName': 'elliptic',
+				'name': 'elliptic',
+				'rawSpec': '^6.3.2',
+				'spec': '>=6.3.2 <7.0.0',
+				'type': 'range'
 			},
-			"/Users/matt/Dropbox/3months/uport-connect/node_modules/jsontokens"
+			'/Users/matt/Dropbox/3months/uport-connect/node_modules/jsontokens'
 		]
 	],
-	"_from": "elliptic@>=6.3.2 <7.0.0",
-	"_id": "elliptic@6.4.0",
-	"_inCache": true,
-	"_location": "/elliptic",
-	"_nodeVersion": "7.0.0",
-	"_npmOperationalInternal": {
-		"host": "packages-18-east.internal.npmjs.com",
-		"tmp": "tmp/elliptic-6.4.0.tgz_1487798866428_0.30510620190761983"
+	'_from': 'elliptic@>=6.3.2 <7.0.0',
+	'_id': 'elliptic@6.4.0',
+	'_inCache': true,
+	'_location': '/elliptic',
+	'_nodeVersion': '7.0.0',
+	'_npmOperationalInternal': {
+		'host': 'packages-18-east.internal.npmjs.com',
+		'tmp': 'tmp/elliptic-6.4.0.tgz_1487798866428_0.30510620190761983'
 	},
-	"_npmUser": {
-		"name": "indutny",
-		"email": "fedor@indutny.com"
+	'_npmUser': {
+		'name': 'indutny',
+		'email': 'fedor@indutny.com'
 	},
-	"_npmVersion": "3.10.8",
-	"_phantomChildren": {},
-	"_requested": {
-		"raw": "elliptic@^6.3.2",
-		"scope": null,
-		"escapedName": "elliptic",
-		"name": "elliptic",
-		"rawSpec": "^6.3.2",
-		"spec": ">=6.3.2 <7.0.0",
-		"type": "range"
+	'_npmVersion': '3.10.8',
+	'_phantomChildren': {},
+	'_requested': {
+		'raw': 'elliptic@^6.3.2',
+		'scope': null,
+		'escapedName': 'elliptic',
+		'name': 'elliptic',
+		'rawSpec': '^6.3.2',
+		'spec': '>=6.3.2 <7.0.0',
+		'type': 'range'
 	},
-	"_requiredBy": [
-		"/browserify-sign",
-		"/create-ecdh",
-		"/jsontokens",
-		"/secp256k1"
+	'_requiredBy': [
+		'/browserify-sign',
+		'/create-ecdh',
+		'/jsontokens',
+		'/secp256k1'
 	],
-	"_resolved": "https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz",
-	"_shasum": "cac9af8762c85836187003c8dfe193e5e2eae5df",
-	"_shrinkwrap": null,
-	"_spec": "elliptic@^6.3.2",
-	"_where": "/Users/matt/Dropbox/3months/uport-connect/node_modules/jsontokens",
-	"author": {
-		"name": "Fedor Indutny",
-		"email": "fedor@indutny.com"
+	'_resolved': 'https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz',
+	'_shasum': 'cac9af8762c85836187003c8dfe193e5e2eae5df',
+	'_shrinkwrap': null,
+	'_spec': 'elliptic@^6.3.2',
+	'_where': '/Users/matt/Dropbox/3months/uport-connect/node_modules/jsontokens',
+	'author': {
+		'name': 'Fedor Indutny',
+		'email': 'fedor@indutny.com'
 	},
-	"bugs": {
-		"url": "https://github.com/indutny/elliptic/issues"
+	'bugs': {
+		'url': 'https://github.com/indutny/elliptic/issues'
 	},
-	"dependencies": {
-		"bn.js": "^4.4.0",
-		"brorand": "^1.0.1",
-		"hash.js": "^1.0.0",
-		"hmac-drbg": "^1.0.0",
-		"inherits": "^2.0.1",
-		"minimalistic-assert": "^1.0.0",
-		"minimalistic-crypto-utils": "^1.0.0"
+	'dependencies': {
+		'bn.js': '^4.4.0',
+		'brorand': '^1.0.1',
+		'hash.js': '^1.0.0',
+		'hmac-drbg': '^1.0.0',
+		'inherits': '^2.0.1',
+		'minimalistic-assert': '^1.0.0',
+		'minimalistic-crypto-utils': '^1.0.0'
 	},
-	"description": "EC cryptography",
-	"devDependencies": {
-		"brfs": "^1.4.3",
-		"coveralls": "^2.11.3",
-		"grunt": "^0.4.5",
-		"grunt-browserify": "^5.0.0",
-		"grunt-cli": "^1.2.0",
-		"grunt-contrib-connect": "^1.0.0",
-		"grunt-contrib-copy": "^1.0.0",
-		"grunt-contrib-uglify": "^1.0.1",
-		"grunt-mocha-istanbul": "^3.0.1",
-		"grunt-saucelabs": "^8.6.2",
-		"istanbul": "^0.4.2",
-		"jscs": "^2.9.0",
-		"jshint": "^2.6.0",
-		"mocha": "^2.1.0"
+	'description': 'EC cryptography',
+	'devDependencies': {
+		'brfs': '^1.4.3',
+		'coveralls': '^2.11.3',
+		'grunt': '^0.4.5',
+		'grunt-browserify': '^5.0.0',
+		'grunt-cli': '^1.2.0',
+		'grunt-contrib-connect': '^1.0.0',
+		'grunt-contrib-copy': '^1.0.0',
+		'grunt-contrib-uglify': '^1.0.1',
+		'grunt-mocha-istanbul': '^3.0.1',
+		'grunt-saucelabs': '^8.6.2',
+		'istanbul': '^0.4.2',
+		'jscs': '^2.9.0',
+		'jshint': '^2.6.0',
+		'mocha': '^2.1.0'
 	},
-	"directories": {},
-	"dist": {
-		"shasum": "cac9af8762c85836187003c8dfe193e5e2eae5df",
-		"tarball": "https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz"
+	'directories': {},
+	'dist': {
+		'shasum': 'cac9af8762c85836187003c8dfe193e5e2eae5df',
+		'tarball': 'https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz'
 	},
-	"files": [
-		"lib"
+	'files': [
+		'lib'
 	],
-	"gitHead": "6b0d2b76caae91471649c8e21f0b1d3ba0f96090",
-	"homepage": "https://github.com/indutny/elliptic",
-	"keywords": [
-		"EC",
-		"Elliptic",
-		"curve",
-		"Cryptography"
+	'gitHead': '6b0d2b76caae91471649c8e21f0b1d3ba0f96090',
+	'homepage': 'https://github.com/indutny/elliptic',
+	'keywords': [
+		'EC',
+		'Elliptic',
+		'curve',
+		'Cryptography'
 	],
-	"license": "MIT",
-	"main": "lib/elliptic.js",
-	"maintainers": [
+	'license': 'MIT',
+	'main': 'lib/elliptic.js',
+	'maintainers': [
 		{
-			"name": "indutny",
-			"email": "fedor@indutny.com"
+			'name': 'indutny',
+			'email': 'fedor@indutny.com'
 		}
 	],
-	"name": "elliptic",
-	"optionalDependencies": {},
-	"readme": "ERROR: No README data found!",
-	"repository": {
-		"type": "git",
-		"url": "git+ssh://git@github.com/indutny/elliptic.git"
+	'name': 'elliptic',
+	'optionalDependencies': {},
+	'readme': 'ERROR: No README data found!',
+	'repository': {
+		'type': 'git',
+		'url': 'git+ssh://git@github.com/indutny/elliptic.git'
 	},
-	"scripts": {
-		"jscs": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
-		"jshint": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
-		"lint": "npm run jscs && npm run jshint",
-		"test": "npm run lint && npm run unit",
-		"unit": "istanbul test _mocha --reporter=spec test/index.js",
-		"version": "grunt dist && git add dist/"
+	'scripts': {
+		'jscs': 'jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js',
+		'jshint': 'jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js',
+		'lint': 'npm run jscs && npm run jshint',
+		'test': 'npm run lint && npm run unit',
+		'unit': 'istanbul test _mocha --reporter=spec test/index.js',
+		'version': 'grunt dist && git add dist/'
 	},
-	"version": "6.4.0"
+	'version': '6.4.0'
 };
 
 /***/ }),
@@ -37220,28 +37220,28 @@ module.exports = {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"2.16.840.1.101.3.4.1.1": "aes-128-ecb",
-	"2.16.840.1.101.3.4.1.2": "aes-128-cbc",
-	"2.16.840.1.101.3.4.1.3": "aes-128-ofb",
-	"2.16.840.1.101.3.4.1.4": "aes-128-cfb",
-	"2.16.840.1.101.3.4.1.21": "aes-192-ecb",
-	"2.16.840.1.101.3.4.1.22": "aes-192-cbc",
-	"2.16.840.1.101.3.4.1.23": "aes-192-ofb",
-	"2.16.840.1.101.3.4.1.24": "aes-192-cfb",
-	"2.16.840.1.101.3.4.1.41": "aes-256-ecb",
-	"2.16.840.1.101.3.4.1.42": "aes-256-cbc",
-	"2.16.840.1.101.3.4.1.43": "aes-256-ofb",
-	"2.16.840.1.101.3.4.1.44": "aes-256-cfb"
+	'2.16.840.1.101.3.4.1.1': 'aes-128-ecb',
+	'2.16.840.1.101.3.4.1.2': 'aes-128-cbc',
+	'2.16.840.1.101.3.4.1.3': 'aes-128-ofb',
+	'2.16.840.1.101.3.4.1.4': 'aes-128-cfb',
+	'2.16.840.1.101.3.4.1.21': 'aes-192-ecb',
+	'2.16.840.1.101.3.4.1.22': 'aes-192-cbc',
+	'2.16.840.1.101.3.4.1.23': 'aes-192-ofb',
+	'2.16.840.1.101.3.4.1.24': 'aes-192-cfb',
+	'2.16.840.1.101.3.4.1.41': 'aes-256-ecb',
+	'2.16.840.1.101.3.4.1.42': 'aes-256-cbc',
+	'2.16.840.1.101.3.4.1.43': 'aes-256-ofb',
+	'2.16.840.1.101.3.4.1.44': 'aes-256-cfb'
 };
 
 /***/ }),
 /* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
 exports.derToJose = derToJose;
@@ -37445,15 +37445,15 @@ function joseToDer(signature, alg) {
 /* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
 exports.SECP256K1Client = undefined;
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _elliptic = __webpack_require__(4);
 
@@ -37463,7 +37463,7 @@ var _ecdsaSigFormatter = __webpack_require__(181);
 
 var _errors = __webpack_require__(82);
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 var SECP256K1Client = exports.SECP256K1Client = function () {
   function SECP256K1Client() {
@@ -37551,15 +37551,15 @@ SECP256K1Client.ec = new _elliptic.ec('secp256k1');
 /* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
     value: true
 });
 exports.TokenSigner = undefined;
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 exports.createUnsignedToken = createUnsignedToken;
 
@@ -37575,7 +37575,7 @@ var _decode2 = _interopRequireDefault(_decode);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 function createUnsignedToken(header, payload) {
     var tokenParts = [];
@@ -37641,15 +37641,15 @@ var TokenSigner = exports.TokenSigner = function () {
 /* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
     value: true
 });
 exports.TokenVerifier = undefined;
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _base64url = __webpack_require__(36);
 
@@ -37663,7 +37663,7 @@ var _decode2 = _interopRequireDefault(_decode);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 var TokenVerifier = exports.TokenVerifier = function () {
     function TokenVerifier(signingAlgorithm, rawPublicKey) {
@@ -38203,279 +38203,279 @@ define(function () {
     var impl = {};
 
     impl.mobileDetectRules = {
-    "phones": {
-        "iPhone": "\\biPhone\\b|\\biPod\\b",
-        "BlackBerry": "BlackBerry|\\bBB10\\b|rim[0-9]+",
-        "HTC": "HTC|HTC.*(Sensation|Evo|Vision|Explorer|6800|8100|8900|A7272|S510e|C110e|Legend|Desire|T8282)|APX515CKT|Qtek9090|APA9292KT|HD_mini|Sensation.*Z710e|PG86100|Z715e|Desire.*(A8181|HD)|ADR6200|ADR6400L|ADR6425|001HT|Inspire 4G|Android.*\\bEVO\\b|T-Mobile G1|Z520m",
-        "Nexus": "Nexus One|Nexus S|Galaxy.*Nexus|Android.*Nexus.*Mobile|Nexus 4|Nexus 5|Nexus 6",
-        "Dell": "Dell.*Streak|Dell.*Aero|Dell.*Venue|DELL.*Venue Pro|Dell Flash|Dell Smoke|Dell Mini 3iX|XCD28|XCD35|\\b001DL\\b|\\b101DL\\b|\\bGS01\\b",
-        "Motorola": "Motorola|DROIDX|DROID BIONIC|\\bDroid\\b.*Build|Android.*Xoom|HRI39|MOT-|A1260|A1680|A555|A853|A855|A953|A955|A956|Motorola.*ELECTRIFY|Motorola.*i1|i867|i940|MB200|MB300|MB501|MB502|MB508|MB511|MB520|MB525|MB526|MB611|MB612|MB632|MB810|MB855|MB860|MB861|MB865|MB870|ME501|ME502|ME511|ME525|ME600|ME632|ME722|ME811|ME860|ME863|ME865|MT620|MT710|MT716|MT720|MT810|MT870|MT917|Motorola.*TITANIUM|WX435|WX445|XT300|XT301|XT311|XT316|XT317|XT319|XT320|XT390|XT502|XT530|XT531|XT532|XT535|XT603|XT610|XT611|XT615|XT681|XT701|XT702|XT711|XT720|XT800|XT806|XT860|XT862|XT875|XT882|XT883|XT894|XT901|XT907|XT909|XT910|XT912|XT928|XT926|XT915|XT919|XT925|XT1021|\\bMoto E\\b",
-        "Samsung": "\\bSamsung\\b|SM-G9250|GT-19300|SGH-I337|BGT-S5230|GT-B2100|GT-B2700|GT-B2710|GT-B3210|GT-B3310|GT-B3410|GT-B3730|GT-B3740|GT-B5510|GT-B5512|GT-B5722|GT-B6520|GT-B7300|GT-B7320|GT-B7330|GT-B7350|GT-B7510|GT-B7722|GT-B7800|GT-C3010|GT-C3011|GT-C3060|GT-C3200|GT-C3212|GT-C3212I|GT-C3262|GT-C3222|GT-C3300|GT-C3300K|GT-C3303|GT-C3303K|GT-C3310|GT-C3322|GT-C3330|GT-C3350|GT-C3500|GT-C3510|GT-C3530|GT-C3630|GT-C3780|GT-C5010|GT-C5212|GT-C6620|GT-C6625|GT-C6712|GT-E1050|GT-E1070|GT-E1075|GT-E1080|GT-E1081|GT-E1085|GT-E1087|GT-E1100|GT-E1107|GT-E1110|GT-E1120|GT-E1125|GT-E1130|GT-E1160|GT-E1170|GT-E1175|GT-E1180|GT-E1182|GT-E1200|GT-E1210|GT-E1225|GT-E1230|GT-E1390|GT-E2100|GT-E2120|GT-E2121|GT-E2152|GT-E2220|GT-E2222|GT-E2230|GT-E2232|GT-E2250|GT-E2370|GT-E2550|GT-E2652|GT-E3210|GT-E3213|GT-I5500|GT-I5503|GT-I5700|GT-I5800|GT-I5801|GT-I6410|GT-I6420|GT-I7110|GT-I7410|GT-I7500|GT-I8000|GT-I8150|GT-I8160|GT-I8190|GT-I8320|GT-I8330|GT-I8350|GT-I8530|GT-I8700|GT-I8703|GT-I8910|GT-I9000|GT-I9001|GT-I9003|GT-I9010|GT-I9020|GT-I9023|GT-I9070|GT-I9082|GT-I9100|GT-I9103|GT-I9220|GT-I9250|GT-I9300|GT-I9305|GT-I9500|GT-I9505|GT-M3510|GT-M5650|GT-M7500|GT-M7600|GT-M7603|GT-M8800|GT-M8910|GT-N7000|GT-S3110|GT-S3310|GT-S3350|GT-S3353|GT-S3370|GT-S3650|GT-S3653|GT-S3770|GT-S3850|GT-S5210|GT-S5220|GT-S5229|GT-S5230|GT-S5233|GT-S5250|GT-S5253|GT-S5260|GT-S5263|GT-S5270|GT-S5300|GT-S5330|GT-S5350|GT-S5360|GT-S5363|GT-S5369|GT-S5380|GT-S5380D|GT-S5560|GT-S5570|GT-S5600|GT-S5603|GT-S5610|GT-S5620|GT-S5660|GT-S5670|GT-S5690|GT-S5750|GT-S5780|GT-S5830|GT-S5839|GT-S6102|GT-S6500|GT-S7070|GT-S7200|GT-S7220|GT-S7230|GT-S7233|GT-S7250|GT-S7500|GT-S7530|GT-S7550|GT-S7562|GT-S7710|GT-S8000|GT-S8003|GT-S8500|GT-S8530|GT-S8600|SCH-A310|SCH-A530|SCH-A570|SCH-A610|SCH-A630|SCH-A650|SCH-A790|SCH-A795|SCH-A850|SCH-A870|SCH-A890|SCH-A930|SCH-A950|SCH-A970|SCH-A990|SCH-I100|SCH-I110|SCH-I400|SCH-I405|SCH-I500|SCH-I510|SCH-I515|SCH-I600|SCH-I730|SCH-I760|SCH-I770|SCH-I830|SCH-I910|SCH-I920|SCH-I959|SCH-LC11|SCH-N150|SCH-N300|SCH-R100|SCH-R300|SCH-R351|SCH-R400|SCH-R410|SCH-T300|SCH-U310|SCH-U320|SCH-U350|SCH-U360|SCH-U365|SCH-U370|SCH-U380|SCH-U410|SCH-U430|SCH-U450|SCH-U460|SCH-U470|SCH-U490|SCH-U540|SCH-U550|SCH-U620|SCH-U640|SCH-U650|SCH-U660|SCH-U700|SCH-U740|SCH-U750|SCH-U810|SCH-U820|SCH-U900|SCH-U940|SCH-U960|SCS-26UC|SGH-A107|SGH-A117|SGH-A127|SGH-A137|SGH-A157|SGH-A167|SGH-A177|SGH-A187|SGH-A197|SGH-A227|SGH-A237|SGH-A257|SGH-A437|SGH-A517|SGH-A597|SGH-A637|SGH-A657|SGH-A667|SGH-A687|SGH-A697|SGH-A707|SGH-A717|SGH-A727|SGH-A737|SGH-A747|SGH-A767|SGH-A777|SGH-A797|SGH-A817|SGH-A827|SGH-A837|SGH-A847|SGH-A867|SGH-A877|SGH-A887|SGH-A897|SGH-A927|SGH-B100|SGH-B130|SGH-B200|SGH-B220|SGH-C100|SGH-C110|SGH-C120|SGH-C130|SGH-C140|SGH-C160|SGH-C170|SGH-C180|SGH-C200|SGH-C207|SGH-C210|SGH-C225|SGH-C230|SGH-C417|SGH-C450|SGH-D307|SGH-D347|SGH-D357|SGH-D407|SGH-D415|SGH-D780|SGH-D807|SGH-D980|SGH-E105|SGH-E200|SGH-E315|SGH-E316|SGH-E317|SGH-E335|SGH-E590|SGH-E635|SGH-E715|SGH-E890|SGH-F300|SGH-F480|SGH-I200|SGH-I300|SGH-I320|SGH-I550|SGH-I577|SGH-I600|SGH-I607|SGH-I617|SGH-I627|SGH-I637|SGH-I677|SGH-I700|SGH-I717|SGH-I727|SGH-i747M|SGH-I777|SGH-I780|SGH-I827|SGH-I847|SGH-I857|SGH-I896|SGH-I897|SGH-I900|SGH-I907|SGH-I917|SGH-I927|SGH-I937|SGH-I997|SGH-J150|SGH-J200|SGH-L170|SGH-L700|SGH-M110|SGH-M150|SGH-M200|SGH-N105|SGH-N500|SGH-N600|SGH-N620|SGH-N625|SGH-N700|SGH-N710|SGH-P107|SGH-P207|SGH-P300|SGH-P310|SGH-P520|SGH-P735|SGH-P777|SGH-Q105|SGH-R210|SGH-R220|SGH-R225|SGH-S105|SGH-S307|SGH-T109|SGH-T119|SGH-T139|SGH-T209|SGH-T219|SGH-T229|SGH-T239|SGH-T249|SGH-T259|SGH-T309|SGH-T319|SGH-T329|SGH-T339|SGH-T349|SGH-T359|SGH-T369|SGH-T379|SGH-T409|SGH-T429|SGH-T439|SGH-T459|SGH-T469|SGH-T479|SGH-T499|SGH-T509|SGH-T519|SGH-T539|SGH-T559|SGH-T589|SGH-T609|SGH-T619|SGH-T629|SGH-T639|SGH-T659|SGH-T669|SGH-T679|SGH-T709|SGH-T719|SGH-T729|SGH-T739|SGH-T746|SGH-T749|SGH-T759|SGH-T769|SGH-T809|SGH-T819|SGH-T839|SGH-T919|SGH-T929|SGH-T939|SGH-T959|SGH-T989|SGH-U100|SGH-U200|SGH-U800|SGH-V205|SGH-V206|SGH-X100|SGH-X105|SGH-X120|SGH-X140|SGH-X426|SGH-X427|SGH-X475|SGH-X495|SGH-X497|SGH-X507|SGH-X600|SGH-X610|SGH-X620|SGH-X630|SGH-X700|SGH-X820|SGH-X890|SGH-Z130|SGH-Z150|SGH-Z170|SGH-ZX10|SGH-ZX20|SHW-M110|SPH-A120|SPH-A400|SPH-A420|SPH-A460|SPH-A500|SPH-A560|SPH-A600|SPH-A620|SPH-A660|SPH-A700|SPH-A740|SPH-A760|SPH-A790|SPH-A800|SPH-A820|SPH-A840|SPH-A880|SPH-A900|SPH-A940|SPH-A960|SPH-D600|SPH-D700|SPH-D710|SPH-D720|SPH-I300|SPH-I325|SPH-I330|SPH-I350|SPH-I500|SPH-I600|SPH-I700|SPH-L700|SPH-M100|SPH-M220|SPH-M240|SPH-M300|SPH-M305|SPH-M320|SPH-M330|SPH-M350|SPH-M360|SPH-M370|SPH-M380|SPH-M510|SPH-M540|SPH-M550|SPH-M560|SPH-M570|SPH-M580|SPH-M610|SPH-M620|SPH-M630|SPH-M800|SPH-M810|SPH-M850|SPH-M900|SPH-M910|SPH-M920|SPH-M930|SPH-N100|SPH-N200|SPH-N240|SPH-N300|SPH-N400|SPH-Z400|SWC-E100|SCH-i909|GT-N7100|GT-N7105|SCH-I535|SM-N900A|SGH-I317|SGH-T999L|GT-S5360B|GT-I8262|GT-S6802|GT-S6312|GT-S6310|GT-S5312|GT-S5310|GT-I9105|GT-I8510|GT-S6790N|SM-G7105|SM-N9005|GT-S5301|GT-I9295|GT-I9195|SM-C101|GT-S7392|GT-S7560|GT-B7610|GT-I5510|GT-S7582|GT-S7530E|GT-I8750|SM-G9006V|SM-G9008V|SM-G9009D|SM-G900A|SM-G900D|SM-G900F|SM-G900H|SM-G900I|SM-G900J|SM-G900K|SM-G900L|SM-G900M|SM-G900P|SM-G900R4|SM-G900S|SM-G900T|SM-G900V|SM-G900W8|SHV-E160K|SCH-P709|SCH-P729|SM-T2558|GT-I9205|SM-G9350|SM-J120F|SM-G920F|SM-G920V|SM-G930F|SM-N910C",
-        "LG": "\\bLG\\b;|LG[- ]?(C800|C900|E400|E610|E900|E-900|F160|F180K|F180L|F180S|730|855|L160|LS740|LS840|LS970|LU6200|MS690|MS695|MS770|MS840|MS870|MS910|P500|P700|P705|VM696|AS680|AS695|AX840|C729|E970|GS505|272|C395|E739BK|E960|L55C|L75C|LS696|LS860|P769BK|P350|P500|P509|P870|UN272|US730|VS840|VS950|LN272|LN510|LS670|LS855|LW690|MN270|MN510|P509|P769|P930|UN200|UN270|UN510|UN610|US670|US740|US760|UX265|UX840|VN271|VN530|VS660|VS700|VS740|VS750|VS910|VS920|VS930|VX9200|VX11000|AX840A|LW770|P506|P925|P999|E612|D955|D802|MS323)",
-        "Sony": "SonyST|SonyLT|SonyEricsson|SonyEricssonLT15iv|LT18i|E10i|LT28h|LT26w|SonyEricssonMT27i|C5303|C6902|C6903|C6906|C6943|D2533",
-        "Asus": "Asus.*Galaxy|PadFone.*Mobile",
-        "NokiaLumia": "Lumia [0-9]{3,4}",
-        "Micromax": "Micromax.*\\b(A210|A92|A88|A72|A111|A110Q|A115|A116|A110|A90S|A26|A51|A35|A54|A25|A27|A89|A68|A65|A57|A90)\\b",
-        "Palm": "PalmSource|Palm",
-        "Vertu": "Vertu|Vertu.*Ltd|Vertu.*Ascent|Vertu.*Ayxta|Vertu.*Constellation(F|Quest)?|Vertu.*Monika|Vertu.*Signature",
-        "Pantech": "PANTECH|IM-A850S|IM-A840S|IM-A830L|IM-A830K|IM-A830S|IM-A820L|IM-A810K|IM-A810S|IM-A800S|IM-T100K|IM-A725L|IM-A780L|IM-A775C|IM-A770K|IM-A760S|IM-A750K|IM-A740S|IM-A730S|IM-A720L|IM-A710K|IM-A690L|IM-A690S|IM-A650S|IM-A630K|IM-A600S|VEGA PTL21|PT003|P8010|ADR910L|P6030|P6020|P9070|P4100|P9060|P5000|CDM8992|TXT8045|ADR8995|IS11PT|P2030|P6010|P8000|PT002|IS06|CDM8999|P9050|PT001|TXT8040|P2020|P9020|P2000|P7040|P7000|C790",
-        "Fly": "IQ230|IQ444|IQ450|IQ440|IQ442|IQ441|IQ245|IQ256|IQ236|IQ255|IQ235|IQ245|IQ275|IQ240|IQ285|IQ280|IQ270|IQ260|IQ250",
-        "Wiko": "KITE 4G|HIGHWAY|GETAWAY|STAIRWAY|DARKSIDE|DARKFULL|DARKNIGHT|DARKMOON|SLIDE|WAX 4G|RAINBOW|BLOOM|SUNSET|GOA(?!nna)|LENNY|BARRY|IGGY|OZZY|CINK FIVE|CINK PEAX|CINK PEAX 2|CINK SLIM|CINK SLIM 2|CINK +|CINK KING|CINK PEAX|CINK SLIM|SUBLIM",
-        "iMobile": "i-mobile (IQ|i-STYLE|idea|ZAA|Hitz)",
-        "SimValley": "\\b(SP-80|XT-930|SX-340|XT-930|SX-310|SP-360|SP60|SPT-800|SP-120|SPT-800|SP-140|SPX-5|SPX-8|SP-100|SPX-8|SPX-12)\\b",
-        "Wolfgang": "AT-B24D|AT-AS50HD|AT-AS40W|AT-AS55HD|AT-AS45q2|AT-B26D|AT-AS50Q",
-        "Alcatel": "Alcatel",
-        "Nintendo": "Nintendo 3DS",
-        "Amoi": "Amoi",
-        "INQ": "INQ",
-        "GenericPhone": "Tapatalk|PDA;|SAGEM|\\bmmp\\b|pocket|\\bpsp\\b|symbian|Smartphone|smartfon|treo|up.browser|up.link|vodafone|\\bwap\\b|nokia|Series40|Series60|S60|SonyEricsson|N900|MAUI.*WAP.*Browser"
+    'phones': {
+        'iPhone': '\\biPhone\\b|\\biPod\\b',
+        'BlackBerry': 'BlackBerry|\\bBB10\\b|rim[0-9]+',
+        'HTC': 'HTC|HTC.*(Sensation|Evo|Vision|Explorer|6800|8100|8900|A7272|S510e|C110e|Legend|Desire|T8282)|APX515CKT|Qtek9090|APA9292KT|HD_mini|Sensation.*Z710e|PG86100|Z715e|Desire.*(A8181|HD)|ADR6200|ADR6400L|ADR6425|001HT|Inspire 4G|Android.*\\bEVO\\b|T-Mobile G1|Z520m',
+        'Nexus': 'Nexus One|Nexus S|Galaxy.*Nexus|Android.*Nexus.*Mobile|Nexus 4|Nexus 5|Nexus 6',
+        'Dell': 'Dell.*Streak|Dell.*Aero|Dell.*Venue|DELL.*Venue Pro|Dell Flash|Dell Smoke|Dell Mini 3iX|XCD28|XCD35|\\b001DL\\b|\\b101DL\\b|\\bGS01\\b',
+        'Motorola': 'Motorola|DROIDX|DROID BIONIC|\\bDroid\\b.*Build|Android.*Xoom|HRI39|MOT-|A1260|A1680|A555|A853|A855|A953|A955|A956|Motorola.*ELECTRIFY|Motorola.*i1|i867|i940|MB200|MB300|MB501|MB502|MB508|MB511|MB520|MB525|MB526|MB611|MB612|MB632|MB810|MB855|MB860|MB861|MB865|MB870|ME501|ME502|ME511|ME525|ME600|ME632|ME722|ME811|ME860|ME863|ME865|MT620|MT710|MT716|MT720|MT810|MT870|MT917|Motorola.*TITANIUM|WX435|WX445|XT300|XT301|XT311|XT316|XT317|XT319|XT320|XT390|XT502|XT530|XT531|XT532|XT535|XT603|XT610|XT611|XT615|XT681|XT701|XT702|XT711|XT720|XT800|XT806|XT860|XT862|XT875|XT882|XT883|XT894|XT901|XT907|XT909|XT910|XT912|XT928|XT926|XT915|XT919|XT925|XT1021|\\bMoto E\\b',
+        'Samsung': '\\bSamsung\\b|SM-G9250|GT-19300|SGH-I337|BGT-S5230|GT-B2100|GT-B2700|GT-B2710|GT-B3210|GT-B3310|GT-B3410|GT-B3730|GT-B3740|GT-B5510|GT-B5512|GT-B5722|GT-B6520|GT-B7300|GT-B7320|GT-B7330|GT-B7350|GT-B7510|GT-B7722|GT-B7800|GT-C3010|GT-C3011|GT-C3060|GT-C3200|GT-C3212|GT-C3212I|GT-C3262|GT-C3222|GT-C3300|GT-C3300K|GT-C3303|GT-C3303K|GT-C3310|GT-C3322|GT-C3330|GT-C3350|GT-C3500|GT-C3510|GT-C3530|GT-C3630|GT-C3780|GT-C5010|GT-C5212|GT-C6620|GT-C6625|GT-C6712|GT-E1050|GT-E1070|GT-E1075|GT-E1080|GT-E1081|GT-E1085|GT-E1087|GT-E1100|GT-E1107|GT-E1110|GT-E1120|GT-E1125|GT-E1130|GT-E1160|GT-E1170|GT-E1175|GT-E1180|GT-E1182|GT-E1200|GT-E1210|GT-E1225|GT-E1230|GT-E1390|GT-E2100|GT-E2120|GT-E2121|GT-E2152|GT-E2220|GT-E2222|GT-E2230|GT-E2232|GT-E2250|GT-E2370|GT-E2550|GT-E2652|GT-E3210|GT-E3213|GT-I5500|GT-I5503|GT-I5700|GT-I5800|GT-I5801|GT-I6410|GT-I6420|GT-I7110|GT-I7410|GT-I7500|GT-I8000|GT-I8150|GT-I8160|GT-I8190|GT-I8320|GT-I8330|GT-I8350|GT-I8530|GT-I8700|GT-I8703|GT-I8910|GT-I9000|GT-I9001|GT-I9003|GT-I9010|GT-I9020|GT-I9023|GT-I9070|GT-I9082|GT-I9100|GT-I9103|GT-I9220|GT-I9250|GT-I9300|GT-I9305|GT-I9500|GT-I9505|GT-M3510|GT-M5650|GT-M7500|GT-M7600|GT-M7603|GT-M8800|GT-M8910|GT-N7000|GT-S3110|GT-S3310|GT-S3350|GT-S3353|GT-S3370|GT-S3650|GT-S3653|GT-S3770|GT-S3850|GT-S5210|GT-S5220|GT-S5229|GT-S5230|GT-S5233|GT-S5250|GT-S5253|GT-S5260|GT-S5263|GT-S5270|GT-S5300|GT-S5330|GT-S5350|GT-S5360|GT-S5363|GT-S5369|GT-S5380|GT-S5380D|GT-S5560|GT-S5570|GT-S5600|GT-S5603|GT-S5610|GT-S5620|GT-S5660|GT-S5670|GT-S5690|GT-S5750|GT-S5780|GT-S5830|GT-S5839|GT-S6102|GT-S6500|GT-S7070|GT-S7200|GT-S7220|GT-S7230|GT-S7233|GT-S7250|GT-S7500|GT-S7530|GT-S7550|GT-S7562|GT-S7710|GT-S8000|GT-S8003|GT-S8500|GT-S8530|GT-S8600|SCH-A310|SCH-A530|SCH-A570|SCH-A610|SCH-A630|SCH-A650|SCH-A790|SCH-A795|SCH-A850|SCH-A870|SCH-A890|SCH-A930|SCH-A950|SCH-A970|SCH-A990|SCH-I100|SCH-I110|SCH-I400|SCH-I405|SCH-I500|SCH-I510|SCH-I515|SCH-I600|SCH-I730|SCH-I760|SCH-I770|SCH-I830|SCH-I910|SCH-I920|SCH-I959|SCH-LC11|SCH-N150|SCH-N300|SCH-R100|SCH-R300|SCH-R351|SCH-R400|SCH-R410|SCH-T300|SCH-U310|SCH-U320|SCH-U350|SCH-U360|SCH-U365|SCH-U370|SCH-U380|SCH-U410|SCH-U430|SCH-U450|SCH-U460|SCH-U470|SCH-U490|SCH-U540|SCH-U550|SCH-U620|SCH-U640|SCH-U650|SCH-U660|SCH-U700|SCH-U740|SCH-U750|SCH-U810|SCH-U820|SCH-U900|SCH-U940|SCH-U960|SCS-26UC|SGH-A107|SGH-A117|SGH-A127|SGH-A137|SGH-A157|SGH-A167|SGH-A177|SGH-A187|SGH-A197|SGH-A227|SGH-A237|SGH-A257|SGH-A437|SGH-A517|SGH-A597|SGH-A637|SGH-A657|SGH-A667|SGH-A687|SGH-A697|SGH-A707|SGH-A717|SGH-A727|SGH-A737|SGH-A747|SGH-A767|SGH-A777|SGH-A797|SGH-A817|SGH-A827|SGH-A837|SGH-A847|SGH-A867|SGH-A877|SGH-A887|SGH-A897|SGH-A927|SGH-B100|SGH-B130|SGH-B200|SGH-B220|SGH-C100|SGH-C110|SGH-C120|SGH-C130|SGH-C140|SGH-C160|SGH-C170|SGH-C180|SGH-C200|SGH-C207|SGH-C210|SGH-C225|SGH-C230|SGH-C417|SGH-C450|SGH-D307|SGH-D347|SGH-D357|SGH-D407|SGH-D415|SGH-D780|SGH-D807|SGH-D980|SGH-E105|SGH-E200|SGH-E315|SGH-E316|SGH-E317|SGH-E335|SGH-E590|SGH-E635|SGH-E715|SGH-E890|SGH-F300|SGH-F480|SGH-I200|SGH-I300|SGH-I320|SGH-I550|SGH-I577|SGH-I600|SGH-I607|SGH-I617|SGH-I627|SGH-I637|SGH-I677|SGH-I700|SGH-I717|SGH-I727|SGH-i747M|SGH-I777|SGH-I780|SGH-I827|SGH-I847|SGH-I857|SGH-I896|SGH-I897|SGH-I900|SGH-I907|SGH-I917|SGH-I927|SGH-I937|SGH-I997|SGH-J150|SGH-J200|SGH-L170|SGH-L700|SGH-M110|SGH-M150|SGH-M200|SGH-N105|SGH-N500|SGH-N600|SGH-N620|SGH-N625|SGH-N700|SGH-N710|SGH-P107|SGH-P207|SGH-P300|SGH-P310|SGH-P520|SGH-P735|SGH-P777|SGH-Q105|SGH-R210|SGH-R220|SGH-R225|SGH-S105|SGH-S307|SGH-T109|SGH-T119|SGH-T139|SGH-T209|SGH-T219|SGH-T229|SGH-T239|SGH-T249|SGH-T259|SGH-T309|SGH-T319|SGH-T329|SGH-T339|SGH-T349|SGH-T359|SGH-T369|SGH-T379|SGH-T409|SGH-T429|SGH-T439|SGH-T459|SGH-T469|SGH-T479|SGH-T499|SGH-T509|SGH-T519|SGH-T539|SGH-T559|SGH-T589|SGH-T609|SGH-T619|SGH-T629|SGH-T639|SGH-T659|SGH-T669|SGH-T679|SGH-T709|SGH-T719|SGH-T729|SGH-T739|SGH-T746|SGH-T749|SGH-T759|SGH-T769|SGH-T809|SGH-T819|SGH-T839|SGH-T919|SGH-T929|SGH-T939|SGH-T959|SGH-T989|SGH-U100|SGH-U200|SGH-U800|SGH-V205|SGH-V206|SGH-X100|SGH-X105|SGH-X120|SGH-X140|SGH-X426|SGH-X427|SGH-X475|SGH-X495|SGH-X497|SGH-X507|SGH-X600|SGH-X610|SGH-X620|SGH-X630|SGH-X700|SGH-X820|SGH-X890|SGH-Z130|SGH-Z150|SGH-Z170|SGH-ZX10|SGH-ZX20|SHW-M110|SPH-A120|SPH-A400|SPH-A420|SPH-A460|SPH-A500|SPH-A560|SPH-A600|SPH-A620|SPH-A660|SPH-A700|SPH-A740|SPH-A760|SPH-A790|SPH-A800|SPH-A820|SPH-A840|SPH-A880|SPH-A900|SPH-A940|SPH-A960|SPH-D600|SPH-D700|SPH-D710|SPH-D720|SPH-I300|SPH-I325|SPH-I330|SPH-I350|SPH-I500|SPH-I600|SPH-I700|SPH-L700|SPH-M100|SPH-M220|SPH-M240|SPH-M300|SPH-M305|SPH-M320|SPH-M330|SPH-M350|SPH-M360|SPH-M370|SPH-M380|SPH-M510|SPH-M540|SPH-M550|SPH-M560|SPH-M570|SPH-M580|SPH-M610|SPH-M620|SPH-M630|SPH-M800|SPH-M810|SPH-M850|SPH-M900|SPH-M910|SPH-M920|SPH-M930|SPH-N100|SPH-N200|SPH-N240|SPH-N300|SPH-N400|SPH-Z400|SWC-E100|SCH-i909|GT-N7100|GT-N7105|SCH-I535|SM-N900A|SGH-I317|SGH-T999L|GT-S5360B|GT-I8262|GT-S6802|GT-S6312|GT-S6310|GT-S5312|GT-S5310|GT-I9105|GT-I8510|GT-S6790N|SM-G7105|SM-N9005|GT-S5301|GT-I9295|GT-I9195|SM-C101|GT-S7392|GT-S7560|GT-B7610|GT-I5510|GT-S7582|GT-S7530E|GT-I8750|SM-G9006V|SM-G9008V|SM-G9009D|SM-G900A|SM-G900D|SM-G900F|SM-G900H|SM-G900I|SM-G900J|SM-G900K|SM-G900L|SM-G900M|SM-G900P|SM-G900R4|SM-G900S|SM-G900T|SM-G900V|SM-G900W8|SHV-E160K|SCH-P709|SCH-P729|SM-T2558|GT-I9205|SM-G9350|SM-J120F|SM-G920F|SM-G920V|SM-G930F|SM-N910C',
+        'LG': '\\bLG\\b;|LG[- ]?(C800|C900|E400|E610|E900|E-900|F160|F180K|F180L|F180S|730|855|L160|LS740|LS840|LS970|LU6200|MS690|MS695|MS770|MS840|MS870|MS910|P500|P700|P705|VM696|AS680|AS695|AX840|C729|E970|GS505|272|C395|E739BK|E960|L55C|L75C|LS696|LS860|P769BK|P350|P500|P509|P870|UN272|US730|VS840|VS950|LN272|LN510|LS670|LS855|LW690|MN270|MN510|P509|P769|P930|UN200|UN270|UN510|UN610|US670|US740|US760|UX265|UX840|VN271|VN530|VS660|VS700|VS740|VS750|VS910|VS920|VS930|VX9200|VX11000|AX840A|LW770|P506|P925|P999|E612|D955|D802|MS323)',
+        'Sony': 'SonyST|SonyLT|SonyEricsson|SonyEricssonLT15iv|LT18i|E10i|LT28h|LT26w|SonyEricssonMT27i|C5303|C6902|C6903|C6906|C6943|D2533',
+        'Asus': 'Asus.*Galaxy|PadFone.*Mobile',
+        'NokiaLumia': 'Lumia [0-9]{3,4}',
+        'Micromax': 'Micromax.*\\b(A210|A92|A88|A72|A111|A110Q|A115|A116|A110|A90S|A26|A51|A35|A54|A25|A27|A89|A68|A65|A57|A90)\\b',
+        'Palm': 'PalmSource|Palm',
+        'Vertu': 'Vertu|Vertu.*Ltd|Vertu.*Ascent|Vertu.*Ayxta|Vertu.*Constellation(F|Quest)?|Vertu.*Monika|Vertu.*Signature',
+        'Pantech': 'PANTECH|IM-A850S|IM-A840S|IM-A830L|IM-A830K|IM-A830S|IM-A820L|IM-A810K|IM-A810S|IM-A800S|IM-T100K|IM-A725L|IM-A780L|IM-A775C|IM-A770K|IM-A760S|IM-A750K|IM-A740S|IM-A730S|IM-A720L|IM-A710K|IM-A690L|IM-A690S|IM-A650S|IM-A630K|IM-A600S|VEGA PTL21|PT003|P8010|ADR910L|P6030|P6020|P9070|P4100|P9060|P5000|CDM8992|TXT8045|ADR8995|IS11PT|P2030|P6010|P8000|PT002|IS06|CDM8999|P9050|PT001|TXT8040|P2020|P9020|P2000|P7040|P7000|C790',
+        'Fly': 'IQ230|IQ444|IQ450|IQ440|IQ442|IQ441|IQ245|IQ256|IQ236|IQ255|IQ235|IQ245|IQ275|IQ240|IQ285|IQ280|IQ270|IQ260|IQ250',
+        'Wiko': 'KITE 4G|HIGHWAY|GETAWAY|STAIRWAY|DARKSIDE|DARKFULL|DARKNIGHT|DARKMOON|SLIDE|WAX 4G|RAINBOW|BLOOM|SUNSET|GOA(?!nna)|LENNY|BARRY|IGGY|OZZY|CINK FIVE|CINK PEAX|CINK PEAX 2|CINK SLIM|CINK SLIM 2|CINK +|CINK KING|CINK PEAX|CINK SLIM|SUBLIM',
+        'iMobile': 'i-mobile (IQ|i-STYLE|idea|ZAA|Hitz)',
+        'SimValley': '\\b(SP-80|XT-930|SX-340|XT-930|SX-310|SP-360|SP60|SPT-800|SP-120|SPT-800|SP-140|SPX-5|SPX-8|SP-100|SPX-8|SPX-12)\\b',
+        'Wolfgang': 'AT-B24D|AT-AS50HD|AT-AS40W|AT-AS55HD|AT-AS45q2|AT-B26D|AT-AS50Q',
+        'Alcatel': 'Alcatel',
+        'Nintendo': 'Nintendo 3DS',
+        'Amoi': 'Amoi',
+        'INQ': 'INQ',
+        'GenericPhone': 'Tapatalk|PDA;|SAGEM|\\bmmp\\b|pocket|\\bpsp\\b|symbian|Smartphone|smartfon|treo|up.browser|up.link|vodafone|\\bwap\\b|nokia|Series40|Series60|S60|SonyEricsson|N900|MAUI.*WAP.*Browser'
     },
-    "tablets": {
-        "iPad": "iPad|iPad.*Mobile",
-        "NexusTablet": "Android.*Nexus[\\s]+(7|9|10)",
-        "SamsungTablet": "SAMSUNG.*Tablet|Galaxy.*Tab|SC-01C|GT-P1000|GT-P1003|GT-P1010|GT-P3105|GT-P6210|GT-P6800|GT-P6810|GT-P7100|GT-P7300|GT-P7310|GT-P7500|GT-P7510|SCH-I800|SCH-I815|SCH-I905|SGH-I957|SGH-I987|SGH-T849|SGH-T859|SGH-T869|SPH-P100|GT-P3100|GT-P3108|GT-P3110|GT-P5100|GT-P5110|GT-P6200|GT-P7320|GT-P7511|GT-N8000|GT-P8510|SGH-I497|SPH-P500|SGH-T779|SCH-I705|SCH-I915|GT-N8013|GT-P3113|GT-P5113|GT-P8110|GT-N8010|GT-N8005|GT-N8020|GT-P1013|GT-P6201|GT-P7501|GT-N5100|GT-N5105|GT-N5110|SHV-E140K|SHV-E140L|SHV-E140S|SHV-E150S|SHV-E230K|SHV-E230L|SHV-E230S|SHW-M180K|SHW-M180L|SHW-M180S|SHW-M180W|SHW-M300W|SHW-M305W|SHW-M380K|SHW-M380S|SHW-M380W|SHW-M430W|SHW-M480K|SHW-M480S|SHW-M480W|SHW-M485W|SHW-M486W|SHW-M500W|GT-I9228|SCH-P739|SCH-I925|GT-I9200|GT-P5200|GT-P5210|GT-P5210X|SM-T311|SM-T310|SM-T310X|SM-T210|SM-T210R|SM-T211|SM-P600|SM-P601|SM-P605|SM-P900|SM-P901|SM-T217|SM-T217A|SM-T217S|SM-P6000|SM-T3100|SGH-I467|XE500|SM-T110|GT-P5220|GT-I9200X|GT-N5110X|GT-N5120|SM-P905|SM-T111|SM-T2105|SM-T315|SM-T320|SM-T320X|SM-T321|SM-T520|SM-T525|SM-T530NU|SM-T230NU|SM-T330NU|SM-T900|XE500T1C|SM-P605V|SM-P905V|SM-T337V|SM-T537V|SM-T707V|SM-T807V|SM-P600X|SM-P900X|SM-T210X|SM-T230|SM-T230X|SM-T325|GT-P7503|SM-T531|SM-T330|SM-T530|SM-T705|SM-T705C|SM-T535|SM-T331|SM-T800|SM-T700|SM-T537|SM-T807|SM-P907A|SM-T337A|SM-T537A|SM-T707A|SM-T807A|SM-T237|SM-T807P|SM-P607T|SM-T217T|SM-T337T|SM-T807T|SM-T116NQ|SM-P550|SM-T350|SM-T550|SM-T9000|SM-P9000|SM-T705Y|SM-T805|GT-P3113|SM-T710|SM-T810|SM-T815|SM-T360|SM-T533|SM-T113|SM-T335|SM-T715|SM-T560|SM-T670|SM-T677|SM-T377|SM-T567|SM-T357T|SM-T555|SM-T561|SM-T713|SM-T719|SM-T813|SM-T819|SM-T580|SM-T355Y|SM-T280|SM-T817A|SM-T820|SM-W700|SM-P580|SM-T587",
-        "Kindle": "Kindle|Silk.*Accelerated|Android.*\\b(KFOT|KFTT|KFJWI|KFJWA|KFOTE|KFSOWI|KFTHWI|KFTHWA|KFAPWI|KFAPWA|WFJWAE|KFSAWA|KFSAWI|KFASWI|KFARWI|KFFOWI|KFGIWI|KFMEWI)\\b|Android.*Silk\/[0-9.]+ like Chrome\/[0-9.]+ (?!Mobile)",
-        "SurfaceTablet": "Windows NT [0-9.]+; ARM;.*(Tablet|ARMBJS)",
-        "HPTablet": "HP Slate (7|8|10)|HP ElitePad 900|hp-tablet|EliteBook.*Touch|HP 8|Slate 21|HP SlateBook 10",
-        "AsusTablet": "^.*PadFone((?!Mobile).)*$|Transformer|TF101|TF101G|TF300T|TF300TG|TF300TL|TF700T|TF700KL|TF701T|TF810C|ME171|ME301T|ME302C|ME371MG|ME370T|ME372MG|ME172V|ME173X|ME400C|Slider SL101|\\bK00F\\b|\\bK00C\\b|\\bK00E\\b|\\bK00L\\b|TX201LA|ME176C|ME102A|\\bM80TA\\b|ME372CL|ME560CG|ME372CG|ME302KL| K010 | K011 | K017 | K01E |ME572C|ME103K|ME170C|ME171C|\\bME70C\\b|ME581C|ME581CL|ME8510C|ME181C|P01Y|PO1MA|P01Z",
-        "BlackBerryTablet": "PlayBook|RIM Tablet",
-        "HTCtablet": "HTC_Flyer_P512|HTC Flyer|HTC Jetstream|HTC-P715a|HTC EVO View 4G|PG41200|PG09410",
-        "MotorolaTablet": "xoom|sholest|MZ615|MZ605|MZ505|MZ601|MZ602|MZ603|MZ604|MZ606|MZ607|MZ608|MZ609|MZ615|MZ616|MZ617",
-        "NookTablet": "Android.*Nook|NookColor|nook browser|BNRV200|BNRV200A|BNTV250|BNTV250A|BNTV400|BNTV600|LogicPD Zoom2",
-        "AcerTablet": "Android.*; \\b(A100|A101|A110|A200|A210|A211|A500|A501|A510|A511|A700|A701|W500|W500P|W501|W501P|W510|W511|W700|G100|G100W|B1-A71|B1-710|B1-711|A1-810|A1-811|A1-830)\\b|W3-810|\\bA3-A10\\b|\\bA3-A11\\b|\\bA3-A20\\b|\\bA3-A30",
-        "ToshibaTablet": "Android.*(AT100|AT105|AT200|AT205|AT270|AT275|AT300|AT305|AT1S5|AT500|AT570|AT700|AT830)|TOSHIBA.*FOLIO",
-        "LGTablet": "\\bL-06C|LG-V909|LG-V900|LG-V700|LG-V510|LG-V500|LG-V410|LG-V400|LG-VK810\\b",
-        "FujitsuTablet": "Android.*\\b(F-01D|F-02F|F-05E|F-10D|M532|Q572)\\b",
-        "PrestigioTablet": "PMP3170B|PMP3270B|PMP3470B|PMP7170B|PMP3370B|PMP3570C|PMP5870C|PMP3670B|PMP5570C|PMP5770D|PMP3970B|PMP3870C|PMP5580C|PMP5880D|PMP5780D|PMP5588C|PMP7280C|PMP7280C3G|PMP7280|PMP7880D|PMP5597D|PMP5597|PMP7100D|PER3464|PER3274|PER3574|PER3884|PER5274|PER5474|PMP5097CPRO|PMP5097|PMP7380D|PMP5297C|PMP5297C_QUAD|PMP812E|PMP812E3G|PMP812F|PMP810E|PMP880TD|PMT3017|PMT3037|PMT3047|PMT3057|PMT7008|PMT5887|PMT5001|PMT5002",
-        "LenovoTablet": "Lenovo TAB|Idea(Tab|Pad)( A1|A10| K1|)|ThinkPad([ ]+)?Tablet|YT3-X90L|YT3-X90F|YT3-X90X|Lenovo.*(S2109|S2110|S5000|S6000|K3011|A3000|A3500|A1000|A2107|A2109|A1107|A5500|A7600|B6000|B8000|B8080)(-|)(FL|F|HV|H|)",
-        "DellTablet": "Venue 11|Venue 8|Venue 7|Dell Streak 10|Dell Streak 7",
-        "YarvikTablet": "Android.*\\b(TAB210|TAB211|TAB224|TAB250|TAB260|TAB264|TAB310|TAB360|TAB364|TAB410|TAB411|TAB420|TAB424|TAB450|TAB460|TAB461|TAB464|TAB465|TAB467|TAB468|TAB07-100|TAB07-101|TAB07-150|TAB07-151|TAB07-152|TAB07-200|TAB07-201-3G|TAB07-210|TAB07-211|TAB07-212|TAB07-214|TAB07-220|TAB07-400|TAB07-485|TAB08-150|TAB08-200|TAB08-201-3G|TAB08-201-30|TAB09-100|TAB09-211|TAB09-410|TAB10-150|TAB10-201|TAB10-211|TAB10-400|TAB10-410|TAB13-201|TAB274EUK|TAB275EUK|TAB374EUK|TAB462EUK|TAB474EUK|TAB9-200)\\b",
-        "MedionTablet": "Android.*\\bOYO\\b|LIFE.*(P9212|P9514|P9516|S9512)|LIFETAB",
-        "ArnovaTablet": "97G4|AN10G2|AN7bG3|AN7fG3|AN8G3|AN8cG3|AN7G3|AN9G3|AN7dG3|AN7dG3ST|AN7dG3ChildPad|AN10bG3|AN10bG3DT|AN9G2",
-        "IntensoTablet": "INM8002KP|INM1010FP|INM805ND|Intenso Tab|TAB1004",
-        "IRUTablet": "M702pro",
-        "MegafonTablet": "MegaFon V9|\\bZTE V9\\b|Android.*\\bMT7A\\b",
-        "EbodaTablet": "E-Boda (Supreme|Impresspeed|Izzycomm|Essential)",
-        "AllViewTablet": "Allview.*(Viva|Alldro|City|Speed|All TV|Frenzy|Quasar|Shine|TX1|AX1|AX2)",
-        "ArchosTablet": "\\b(101G9|80G9|A101IT)\\b|Qilive 97R|Archos5|\\bARCHOS (70|79|80|90|97|101|FAMILYPAD|)(b|c|)(G10| Cobalt| TITANIUM(HD|)| Xenon| Neon|XSK| 2| XS 2| PLATINUM| CARBON|GAMEPAD)\\b",
-        "AinolTablet": "NOVO7|NOVO8|NOVO10|Novo7Aurora|Novo7Basic|NOVO7PALADIN|novo9-Spark",
-        "NokiaLumiaTablet": "Lumia 2520",
-        "SonyTablet": "Sony.*Tablet|Xperia Tablet|Sony Tablet S|SO-03E|SGPT12|SGPT13|SGPT114|SGPT121|SGPT122|SGPT123|SGPT111|SGPT112|SGPT113|SGPT131|SGPT132|SGPT133|SGPT211|SGPT212|SGPT213|SGP311|SGP312|SGP321|EBRD1101|EBRD1102|EBRD1201|SGP351|SGP341|SGP511|SGP512|SGP521|SGP541|SGP551|SGP621|SGP612|SOT31",
-        "PhilipsTablet": "\\b(PI2010|PI3000|PI3100|PI3105|PI3110|PI3205|PI3210|PI3900|PI4010|PI7000|PI7100)\\b",
-        "CubeTablet": "Android.*(K8GT|U9GT|U10GT|U16GT|U17GT|U18GT|U19GT|U20GT|U23GT|U30GT)|CUBE U8GT",
-        "CobyTablet": "MID1042|MID1045|MID1125|MID1126|MID7012|MID7014|MID7015|MID7034|MID7035|MID7036|MID7042|MID7048|MID7127|MID8042|MID8048|MID8127|MID9042|MID9740|MID9742|MID7022|MID7010",
-        "MIDTablet": "M9701|M9000|M9100|M806|M1052|M806|T703|MID701|MID713|MID710|MID727|MID760|MID830|MID728|MID933|MID125|MID810|MID732|MID120|MID930|MID800|MID731|MID900|MID100|MID820|MID735|MID980|MID130|MID833|MID737|MID960|MID135|MID860|MID736|MID140|MID930|MID835|MID733|MID4X10",
-        "MSITablet": "MSI \\b(Primo 73K|Primo 73L|Primo 81L|Primo 77|Primo 93|Primo 75|Primo 76|Primo 73|Primo 81|Primo 91|Primo 90|Enjoy 71|Enjoy 7|Enjoy 10)\\b",
-        "SMiTTablet": "Android.*(\\bMID\\b|MID-560|MTV-T1200|MTV-PND531|MTV-P1101|MTV-PND530)",
-        "RockChipTablet": "Android.*(RK2818|RK2808A|RK2918|RK3066)|RK2738|RK2808A",
-        "FlyTablet": "IQ310|Fly Vision",
-        "bqTablet": "Android.*(bq)?.*(Elcano|Curie|Edison|Maxwell|Kepler|Pascal|Tesla|Hypatia|Platon|Newton|Livingstone|Cervantes|Avant|Aquaris [E|M]10)|Maxwell.*Lite|Maxwell.*Plus",
-        "HuaweiTablet": "MediaPad|MediaPad 7 Youth|IDEOS S7|S7-201c|S7-202u|S7-101|S7-103|S7-104|S7-105|S7-106|S7-201|S7-Slim",
-        "NecTablet": "\\bN-06D|\\bN-08D",
-        "PantechTablet": "Pantech.*P4100",
-        "BronchoTablet": "Broncho.*(N701|N708|N802|a710)",
-        "VersusTablet": "TOUCHPAD.*[78910]|\\bTOUCHTAB\\b",
-        "ZyncTablet": "z1000|Z99 2G|z99|z930|z999|z990|z909|Z919|z900",
-        "PositivoTablet": "TB07STA|TB10STA|TB07FTA|TB10FTA",
-        "NabiTablet": "Android.*\\bNabi",
-        "KoboTablet": "Kobo Touch|\\bK080\\b|\\bVox\\b Build|\\bArc\\b Build",
-        "DanewTablet": "DSlide.*\\b(700|701R|702|703R|704|802|970|971|972|973|974|1010|1012)\\b",
-        "TexetTablet": "NaviPad|TB-772A|TM-7045|TM-7055|TM-9750|TM-7016|TM-7024|TM-7026|TM-7041|TM-7043|TM-7047|TM-8041|TM-9741|TM-9747|TM-9748|TM-9751|TM-7022|TM-7021|TM-7020|TM-7011|TM-7010|TM-7023|TM-7025|TM-7037W|TM-7038W|TM-7027W|TM-9720|TM-9725|TM-9737W|TM-1020|TM-9738W|TM-9740|TM-9743W|TB-807A|TB-771A|TB-727A|TB-725A|TB-719A|TB-823A|TB-805A|TB-723A|TB-715A|TB-707A|TB-705A|TB-709A|TB-711A|TB-890HD|TB-880HD|TB-790HD|TB-780HD|TB-770HD|TB-721HD|TB-710HD|TB-434HD|TB-860HD|TB-840HD|TB-760HD|TB-750HD|TB-740HD|TB-730HD|TB-722HD|TB-720HD|TB-700HD|TB-500HD|TB-470HD|TB-431HD|TB-430HD|TB-506|TB-504|TB-446|TB-436|TB-416|TB-146SE|TB-126SE",
-        "PlaystationTablet": "Playstation.*(Portable|Vita)",
-        "TrekstorTablet": "ST10416-1|VT10416-1|ST70408-1|ST702xx-1|ST702xx-2|ST80208|ST97216|ST70104-2|VT10416-2|ST10216-2A|SurfTab",
-        "PyleAudioTablet": "\\b(PTBL10CEU|PTBL10C|PTBL72BC|PTBL72BCEU|PTBL7CEU|PTBL7C|PTBL92BC|PTBL92BCEU|PTBL9CEU|PTBL9CUK|PTBL9C)\\b",
-        "AdvanTablet": "Android.* \\b(E3A|T3X|T5C|T5B|T3E|T3C|T3B|T1J|T1F|T2A|T1H|T1i|E1C|T1-E|T5-A|T4|E1-B|T2Ci|T1-B|T1-D|O1-A|E1-A|T1-A|T3A|T4i)\\b ",
-        "DanyTechTablet": "Genius Tab G3|Genius Tab S2|Genius Tab Q3|Genius Tab G4|Genius Tab Q4|Genius Tab G-II|Genius TAB GII|Genius TAB GIII|Genius Tab S1",
-        "GalapadTablet": "Android.*\\bG1\\b",
-        "MicromaxTablet": "Funbook|Micromax.*\\b(P250|P560|P360|P362|P600|P300|P350|P500|P275)\\b",
-        "KarbonnTablet": "Android.*\\b(A39|A37|A34|ST8|ST10|ST7|Smart Tab3|Smart Tab2)\\b",
-        "AllFineTablet": "Fine7 Genius|Fine7 Shine|Fine7 Air|Fine8 Style|Fine9 More|Fine10 Joy|Fine11 Wide",
-        "PROSCANTablet": "\\b(PEM63|PLT1023G|PLT1041|PLT1044|PLT1044G|PLT1091|PLT4311|PLT4311PL|PLT4315|PLT7030|PLT7033|PLT7033D|PLT7035|PLT7035D|PLT7044K|PLT7045K|PLT7045KB|PLT7071KG|PLT7072|PLT7223G|PLT7225G|PLT7777G|PLT7810K|PLT7849G|PLT7851G|PLT7852G|PLT8015|PLT8031|PLT8034|PLT8036|PLT8080K|PLT8082|PLT8088|PLT8223G|PLT8234G|PLT8235G|PLT8816K|PLT9011|PLT9045K|PLT9233G|PLT9735|PLT9760G|PLT9770G)\\b",
-        "YONESTablet": "BQ1078|BC1003|BC1077|RK9702|BC9730|BC9001|IT9001|BC7008|BC7010|BC708|BC728|BC7012|BC7030|BC7027|BC7026",
-        "ChangJiaTablet": "TPC7102|TPC7103|TPC7105|TPC7106|TPC7107|TPC7201|TPC7203|TPC7205|TPC7210|TPC7708|TPC7709|TPC7712|TPC7110|TPC8101|TPC8103|TPC8105|TPC8106|TPC8203|TPC8205|TPC8503|TPC9106|TPC9701|TPC97101|TPC97103|TPC97105|TPC97106|TPC97111|TPC97113|TPC97203|TPC97603|TPC97809|TPC97205|TPC10101|TPC10103|TPC10106|TPC10111|TPC10203|TPC10205|TPC10503",
-        "GUTablet": "TX-A1301|TX-M9002|Q702|kf026",
-        "PointOfViewTablet": "TAB-P506|TAB-navi-7-3G-M|TAB-P517|TAB-P-527|TAB-P701|TAB-P703|TAB-P721|TAB-P731N|TAB-P741|TAB-P825|TAB-P905|TAB-P925|TAB-PR945|TAB-PL1015|TAB-P1025|TAB-PI1045|TAB-P1325|TAB-PROTAB[0-9]+|TAB-PROTAB25|TAB-PROTAB26|TAB-PROTAB27|TAB-PROTAB26XL|TAB-PROTAB2-IPS9|TAB-PROTAB30-IPS9|TAB-PROTAB25XXL|TAB-PROTAB26-IPS10|TAB-PROTAB30-IPS10",
-        "OvermaxTablet": "OV-(SteelCore|NewBase|Basecore|Baseone|Exellen|Quattor|EduTab|Solution|ACTION|BasicTab|TeddyTab|MagicTab|Stream|TB-08|TB-09)",
-        "HCLTablet": "HCL.*Tablet|Connect-3G-2.0|Connect-2G-2.0|ME Tablet U1|ME Tablet U2|ME Tablet G1|ME Tablet X1|ME Tablet Y2|ME Tablet Sync",
-        "DPSTablet": "DPS Dream 9|DPS Dual 7",
-        "VistureTablet": "V97 HD|i75 3G|Visture V4( HD)?|Visture V5( HD)?|Visture V10",
-        "CrestaTablet": "CTP(-)?810|CTP(-)?818|CTP(-)?828|CTP(-)?838|CTP(-)?888|CTP(-)?978|CTP(-)?980|CTP(-)?987|CTP(-)?988|CTP(-)?989",
-        "MediatekTablet": "\\bMT8125|MT8389|MT8135|MT8377\\b",
-        "ConcordeTablet": "Concorde([ ]+)?Tab|ConCorde ReadMan",
-        "GoCleverTablet": "GOCLEVER TAB|A7GOCLEVER|M1042|M7841|M742|R1042BK|R1041|TAB A975|TAB A7842|TAB A741|TAB A741L|TAB M723G|TAB M721|TAB A1021|TAB I921|TAB R721|TAB I720|TAB T76|TAB R70|TAB R76.2|TAB R106|TAB R83.2|TAB M813G|TAB I721|GCTA722|TAB I70|TAB I71|TAB S73|TAB R73|TAB R74|TAB R93|TAB R75|TAB R76.1|TAB A73|TAB A93|TAB A93.2|TAB T72|TAB R83|TAB R974|TAB R973|TAB A101|TAB A103|TAB A104|TAB A104.2|R105BK|M713G|A972BK|TAB A971|TAB R974.2|TAB R104|TAB R83.3|TAB A1042",
-        "ModecomTablet": "FreeTAB 9000|FreeTAB 7.4|FreeTAB 7004|FreeTAB 7800|FreeTAB 2096|FreeTAB 7.5|FreeTAB 1014|FreeTAB 1001 |FreeTAB 8001|FreeTAB 9706|FreeTAB 9702|FreeTAB 7003|FreeTAB 7002|FreeTAB 1002|FreeTAB 7801|FreeTAB 1331|FreeTAB 1004|FreeTAB 8002|FreeTAB 8014|FreeTAB 9704|FreeTAB 1003",
-        "VoninoTablet": "\\b(Argus[ _]?S|Diamond[ _]?79HD|Emerald[ _]?78E|Luna[ _]?70C|Onyx[ _]?S|Onyx[ _]?Z|Orin[ _]?HD|Orin[ _]?S|Otis[ _]?S|SpeedStar[ _]?S|Magnet[ _]?M9|Primus[ _]?94[ _]?3G|Primus[ _]?94HD|Primus[ _]?QS|Android.*\\bQ8\\b|Sirius[ _]?EVO[ _]?QS|Sirius[ _]?QS|Spirit[ _]?S)\\b",
-        "ECSTablet": "V07OT2|TM105A|S10OT1|TR10CS1",
-        "StorexTablet": "eZee[_']?(Tab|Go)[0-9]+|TabLC7|Looney Tunes Tab",
-        "VodafoneTablet": "SmartTab([ ]+)?[0-9]+|SmartTabII10|SmartTabII7|VF-1497",
-        "EssentielBTablet": "Smart[ ']?TAB[ ]+?[0-9]+|Family[ ']?TAB2",
-        "RossMoorTablet": "RM-790|RM-997|RMD-878G|RMD-974R|RMT-705A|RMT-701|RME-601|RMT-501|RMT-711",
-        "iMobileTablet": "i-mobile i-note",
-        "TolinoTablet": "tolino tab [0-9.]+|tolino shine",
-        "AudioSonicTablet": "\\bC-22Q|T7-QC|T-17B|T-17P\\b",
-        "AMPETablet": "Android.* A78 ",
-        "SkkTablet": "Android.* (SKYPAD|PHOENIX|CYCLOPS)",
-        "TecnoTablet": "TECNO P9",
-        "JXDTablet": "Android.* \\b(F3000|A3300|JXD5000|JXD3000|JXD2000|JXD300B|JXD300|S5800|S7800|S602b|S5110b|S7300|S5300|S602|S603|S5100|S5110|S601|S7100a|P3000F|P3000s|P101|P200s|P1000m|P200m|P9100|P1000s|S6600b|S908|P1000|P300|S18|S6600|S9100)\\b",
-        "iJoyTablet": "Tablet (Spirit 7|Essentia|Galatea|Fusion|Onix 7|Landa|Titan|Scooby|Deox|Stella|Themis|Argon|Unique 7|Sygnus|Hexen|Finity 7|Cream|Cream X2|Jade|Neon 7|Neron 7|Kandy|Scape|Saphyr 7|Rebel|Biox|Rebel|Rebel 8GB|Myst|Draco 7|Myst|Tab7-004|Myst|Tadeo Jones|Tablet Boing|Arrow|Draco Dual Cam|Aurix|Mint|Amity|Revolution|Finity 9|Neon 9|T9w|Amity 4GB Dual Cam|Stone 4GB|Stone 8GB|Andromeda|Silken|X2|Andromeda II|Halley|Flame|Saphyr 9,7|Touch 8|Planet|Triton|Unique 10|Hexen 10|Memphis 4GB|Memphis 8GB|Onix 10)",
-        "FX2Tablet": "FX2 PAD7|FX2 PAD10",
-        "XoroTablet": "KidsPAD 701|PAD[ ]?712|PAD[ ]?714|PAD[ ]?716|PAD[ ]?717|PAD[ ]?718|PAD[ ]?720|PAD[ ]?721|PAD[ ]?722|PAD[ ]?790|PAD[ ]?792|PAD[ ]?900|PAD[ ]?9715D|PAD[ ]?9716DR|PAD[ ]?9718DR|PAD[ ]?9719QR|PAD[ ]?9720QR|TelePAD1030|Telepad1032|TelePAD730|TelePAD731|TelePAD732|TelePAD735Q|TelePAD830|TelePAD9730|TelePAD795|MegaPAD 1331|MegaPAD 1851|MegaPAD 2151",
-        "ViewsonicTablet": "ViewPad 10pi|ViewPad 10e|ViewPad 10s|ViewPad E72|ViewPad7|ViewPad E100|ViewPad 7e|ViewSonic VB733|VB100a",
-        "OdysTablet": "LOOX|XENO10|ODYS[ -](Space|EVO|Xpress|NOON)|\\bXELIO\\b|Xelio10Pro|XELIO7PHONETAB|XELIO10EXTREME|XELIOPT2|NEO_QUAD10",
-        "CaptivaTablet": "CAPTIVA PAD",
-        "IconbitTablet": "NetTAB|NT-3702|NT-3702S|NT-3702S|NT-3603P|NT-3603P|NT-0704S|NT-0704S|NT-3805C|NT-3805C|NT-0806C|NT-0806C|NT-0909T|NT-0909T|NT-0907S|NT-0907S|NT-0902S|NT-0902S",
-        "TeclastTablet": "T98 4G|\\bP80\\b|\\bX90HD\\b|X98 Air|X98 Air 3G|\\bX89\\b|P80 3G|\\bX80h\\b|P98 Air|\\bX89HD\\b|P98 3G|\\bP90HD\\b|P89 3G|X98 3G|\\bP70h\\b|P79HD 3G|G18d 3G|\\bP79HD\\b|\\bP89s\\b|\\bA88\\b|\\bP10HD\\b|\\bP19HD\\b|G18 3G|\\bP78HD\\b|\\bA78\\b|\\bP75\\b|G17s 3G|G17h 3G|\\bP85t\\b|\\bP90\\b|\\bP11\\b|\\bP98t\\b|\\bP98HD\\b|\\bG18d\\b|\\bP85s\\b|\\bP11HD\\b|\\bP88s\\b|\\bA80HD\\b|\\bA80se\\b|\\bA10h\\b|\\bP89\\b|\\bP78s\\b|\\bG18\\b|\\bP85\\b|\\bA70h\\b|\\bA70\\b|\\bG17\\b|\\bP18\\b|\\bA80s\\b|\\bA11s\\b|\\bP88HD\\b|\\bA80h\\b|\\bP76s\\b|\\bP76h\\b|\\bP98\\b|\\bA10HD\\b|\\bP78\\b|\\bP88\\b|\\bA11\\b|\\bA10t\\b|\\bP76a\\b|\\bP76t\\b|\\bP76e\\b|\\bP85HD\\b|\\bP85a\\b|\\bP86\\b|\\bP75HD\\b|\\bP76v\\b|\\bA12\\b|\\bP75a\\b|\\bA15\\b|\\bP76Ti\\b|\\bP81HD\\b|\\bA10\\b|\\bT760VE\\b|\\bT720HD\\b|\\bP76\\b|\\bP73\\b|\\bP71\\b|\\bP72\\b|\\bT720SE\\b|\\bC520Ti\\b|\\bT760\\b|\\bT720VE\\b|T720-3GE|T720-WiFi",
-        "OndaTablet": "\\b(V975i|Vi30|VX530|V701|Vi60|V701s|Vi50|V801s|V719|Vx610w|VX610W|V819i|Vi10|VX580W|Vi10|V711s|V813|V811|V820w|V820|Vi20|V711|VI30W|V712|V891w|V972|V819w|V820w|Vi60|V820w|V711|V813s|V801|V819|V975s|V801|V819|V819|V818|V811|V712|V975m|V101w|V961w|V812|V818|V971|V971s|V919|V989|V116w|V102w|V973|Vi40)\\b[\\s]+",
-        "JaytechTablet": "TPC-PA762",
-        "BlaupunktTablet": "Endeavour 800NG|Endeavour 1010",
-        "DigmaTablet": "\\b(iDx10|iDx9|iDx8|iDx7|iDxD7|iDxD8|iDsQ8|iDsQ7|iDsQ8|iDsD10|iDnD7|3TS804H|iDsQ11|iDj7|iDs10)\\b",
-        "EvolioTablet": "ARIA_Mini_wifi|Aria[ _]Mini|Evolio X10|Evolio X7|Evolio X8|\\bEvotab\\b|\\bNeura\\b",
-        "LavaTablet": "QPAD E704|\\bIvoryS\\b|E-TAB IVORY|\\bE-TAB\\b",
-        "AocTablet": "MW0811|MW0812|MW0922|MTK8382|MW1031|MW0831|MW0821|MW0931|MW0712",
-        "MpmanTablet": "MP11 OCTA|MP10 OCTA|MPQC1114|MPQC1004|MPQC994|MPQC974|MPQC973|MPQC804|MPQC784|MPQC780|\\bMPG7\\b|MPDCG75|MPDCG71|MPDC1006|MP101DC|MPDC9000|MPDC905|MPDC706HD|MPDC706|MPDC705|MPDC110|MPDC100|MPDC99|MPDC97|MPDC88|MPDC8|MPDC77|MP709|MID701|MID711|MID170|MPDC703|MPQC1010",
-        "CelkonTablet": "CT695|CT888|CT[\\s]?910|CT7 Tab|CT9 Tab|CT3 Tab|CT2 Tab|CT1 Tab|C820|C720|\\bCT-1\\b",
-        "WolderTablet": "miTab \\b(DIAMOND|SPACE|BROOKLYN|NEO|FLY|MANHATTAN|FUNK|EVOLUTION|SKY|GOCAR|IRON|GENIUS|POP|MINT|EPSILON|BROADWAY|JUMP|HOP|LEGEND|NEW AGE|LINE|ADVANCE|FEEL|FOLLOW|LIKE|LINK|LIVE|THINK|FREEDOM|CHICAGO|CLEVELAND|BALTIMORE-GH|IOWA|BOSTON|SEATTLE|PHOENIX|DALLAS|IN 101|MasterChef)\\b",
-        "MiTablet": "\\bMI PAD\\b|\\bHM NOTE 1W\\b",
-        "NibiruTablet": "Nibiru M1|Nibiru Jupiter One",
-        "NexoTablet": "NEXO NOVA|NEXO 10|NEXO AVIO|NEXO FREE|NEXO GO|NEXO EVO|NEXO 3G|NEXO SMART|NEXO KIDDO|NEXO MOBI",
-        "LeaderTablet": "TBLT10Q|TBLT10I|TBL-10WDKB|TBL-10WDKBO2013|TBL-W230V2|TBL-W450|TBL-W500|SV572|TBLT7I|TBA-AC7-8G|TBLT79|TBL-8W16|TBL-10W32|TBL-10WKB|TBL-W100",
-        "UbislateTablet": "UbiSlate[\\s]?7C",
-        "PocketBookTablet": "Pocketbook",
-        "KocasoTablet": "\\b(TB-1207)\\b",
-        "HisenseTablet": "\\b(F5281|E2371)\\b",
-        "Hudl": "Hudl HT7S3|Hudl 2",
-        "TelstraTablet": "T-Hub2",
-        "GenericTablet": "Android.*\\b97D\\b|Tablet(?!.*PC)|BNTV250A|MID-WCDMA|LogicPD Zoom2|\\bA7EB\\b|CatNova8|A1_07|CT704|CT1002|\\bM721\\b|rk30sdk|\\bEVOTAB\\b|M758A|ET904|ALUMIUM10|Smartfren Tab|Endeavour 1010|Tablet-PC-4|Tagi Tab|\\bM6pro\\b|CT1020W|arc 10HD|\\bTP750\\b"
+    'tablets': {
+        'iPad': 'iPad|iPad.*Mobile',
+        'NexusTablet': 'Android.*Nexus[\\s]+(7|9|10)',
+        'SamsungTablet': 'SAMSUNG.*Tablet|Galaxy.*Tab|SC-01C|GT-P1000|GT-P1003|GT-P1010|GT-P3105|GT-P6210|GT-P6800|GT-P6810|GT-P7100|GT-P7300|GT-P7310|GT-P7500|GT-P7510|SCH-I800|SCH-I815|SCH-I905|SGH-I957|SGH-I987|SGH-T849|SGH-T859|SGH-T869|SPH-P100|GT-P3100|GT-P3108|GT-P3110|GT-P5100|GT-P5110|GT-P6200|GT-P7320|GT-P7511|GT-N8000|GT-P8510|SGH-I497|SPH-P500|SGH-T779|SCH-I705|SCH-I915|GT-N8013|GT-P3113|GT-P5113|GT-P8110|GT-N8010|GT-N8005|GT-N8020|GT-P1013|GT-P6201|GT-P7501|GT-N5100|GT-N5105|GT-N5110|SHV-E140K|SHV-E140L|SHV-E140S|SHV-E150S|SHV-E230K|SHV-E230L|SHV-E230S|SHW-M180K|SHW-M180L|SHW-M180S|SHW-M180W|SHW-M300W|SHW-M305W|SHW-M380K|SHW-M380S|SHW-M380W|SHW-M430W|SHW-M480K|SHW-M480S|SHW-M480W|SHW-M485W|SHW-M486W|SHW-M500W|GT-I9228|SCH-P739|SCH-I925|GT-I9200|GT-P5200|GT-P5210|GT-P5210X|SM-T311|SM-T310|SM-T310X|SM-T210|SM-T210R|SM-T211|SM-P600|SM-P601|SM-P605|SM-P900|SM-P901|SM-T217|SM-T217A|SM-T217S|SM-P6000|SM-T3100|SGH-I467|XE500|SM-T110|GT-P5220|GT-I9200X|GT-N5110X|GT-N5120|SM-P905|SM-T111|SM-T2105|SM-T315|SM-T320|SM-T320X|SM-T321|SM-T520|SM-T525|SM-T530NU|SM-T230NU|SM-T330NU|SM-T900|XE500T1C|SM-P605V|SM-P905V|SM-T337V|SM-T537V|SM-T707V|SM-T807V|SM-P600X|SM-P900X|SM-T210X|SM-T230|SM-T230X|SM-T325|GT-P7503|SM-T531|SM-T330|SM-T530|SM-T705|SM-T705C|SM-T535|SM-T331|SM-T800|SM-T700|SM-T537|SM-T807|SM-P907A|SM-T337A|SM-T537A|SM-T707A|SM-T807A|SM-T237|SM-T807P|SM-P607T|SM-T217T|SM-T337T|SM-T807T|SM-T116NQ|SM-P550|SM-T350|SM-T550|SM-T9000|SM-P9000|SM-T705Y|SM-T805|GT-P3113|SM-T710|SM-T810|SM-T815|SM-T360|SM-T533|SM-T113|SM-T335|SM-T715|SM-T560|SM-T670|SM-T677|SM-T377|SM-T567|SM-T357T|SM-T555|SM-T561|SM-T713|SM-T719|SM-T813|SM-T819|SM-T580|SM-T355Y|SM-T280|SM-T817A|SM-T820|SM-W700|SM-P580|SM-T587',
+        'Kindle': 'Kindle|Silk.*Accelerated|Android.*\\b(KFOT|KFTT|KFJWI|KFJWA|KFOTE|KFSOWI|KFTHWI|KFTHWA|KFAPWI|KFAPWA|WFJWAE|KFSAWA|KFSAWI|KFASWI|KFARWI|KFFOWI|KFGIWI|KFMEWI)\\b|Android.*Silk\/[0-9.]+ like Chrome\/[0-9.]+ (?!Mobile)',
+        'SurfaceTablet': 'Windows NT [0-9.]+; ARM;.*(Tablet|ARMBJS)',
+        'HPTablet': 'HP Slate (7|8|10)|HP ElitePad 900|hp-tablet|EliteBook.*Touch|HP 8|Slate 21|HP SlateBook 10',
+        'AsusTablet': '^.*PadFone((?!Mobile).)*$|Transformer|TF101|TF101G|TF300T|TF300TG|TF300TL|TF700T|TF700KL|TF701T|TF810C|ME171|ME301T|ME302C|ME371MG|ME370T|ME372MG|ME172V|ME173X|ME400C|Slider SL101|\\bK00F\\b|\\bK00C\\b|\\bK00E\\b|\\bK00L\\b|TX201LA|ME176C|ME102A|\\bM80TA\\b|ME372CL|ME560CG|ME372CG|ME302KL| K010 | K011 | K017 | K01E |ME572C|ME103K|ME170C|ME171C|\\bME70C\\b|ME581C|ME581CL|ME8510C|ME181C|P01Y|PO1MA|P01Z',
+        'BlackBerryTablet': 'PlayBook|RIM Tablet',
+        'HTCtablet': 'HTC_Flyer_P512|HTC Flyer|HTC Jetstream|HTC-P715a|HTC EVO View 4G|PG41200|PG09410',
+        'MotorolaTablet': 'xoom|sholest|MZ615|MZ605|MZ505|MZ601|MZ602|MZ603|MZ604|MZ606|MZ607|MZ608|MZ609|MZ615|MZ616|MZ617',
+        'NookTablet': 'Android.*Nook|NookColor|nook browser|BNRV200|BNRV200A|BNTV250|BNTV250A|BNTV400|BNTV600|LogicPD Zoom2',
+        'AcerTablet': 'Android.*; \\b(A100|A101|A110|A200|A210|A211|A500|A501|A510|A511|A700|A701|W500|W500P|W501|W501P|W510|W511|W700|G100|G100W|B1-A71|B1-710|B1-711|A1-810|A1-811|A1-830)\\b|W3-810|\\bA3-A10\\b|\\bA3-A11\\b|\\bA3-A20\\b|\\bA3-A30',
+        'ToshibaTablet': 'Android.*(AT100|AT105|AT200|AT205|AT270|AT275|AT300|AT305|AT1S5|AT500|AT570|AT700|AT830)|TOSHIBA.*FOLIO',
+        'LGTablet': '\\bL-06C|LG-V909|LG-V900|LG-V700|LG-V510|LG-V500|LG-V410|LG-V400|LG-VK810\\b',
+        'FujitsuTablet': 'Android.*\\b(F-01D|F-02F|F-05E|F-10D|M532|Q572)\\b',
+        'PrestigioTablet': 'PMP3170B|PMP3270B|PMP3470B|PMP7170B|PMP3370B|PMP3570C|PMP5870C|PMP3670B|PMP5570C|PMP5770D|PMP3970B|PMP3870C|PMP5580C|PMP5880D|PMP5780D|PMP5588C|PMP7280C|PMP7280C3G|PMP7280|PMP7880D|PMP5597D|PMP5597|PMP7100D|PER3464|PER3274|PER3574|PER3884|PER5274|PER5474|PMP5097CPRO|PMP5097|PMP7380D|PMP5297C|PMP5297C_QUAD|PMP812E|PMP812E3G|PMP812F|PMP810E|PMP880TD|PMT3017|PMT3037|PMT3047|PMT3057|PMT7008|PMT5887|PMT5001|PMT5002',
+        'LenovoTablet': 'Lenovo TAB|Idea(Tab|Pad)( A1|A10| K1|)|ThinkPad([ ]+)?Tablet|YT3-X90L|YT3-X90F|YT3-X90X|Lenovo.*(S2109|S2110|S5000|S6000|K3011|A3000|A3500|A1000|A2107|A2109|A1107|A5500|A7600|B6000|B8000|B8080)(-|)(FL|F|HV|H|)',
+        'DellTablet': 'Venue 11|Venue 8|Venue 7|Dell Streak 10|Dell Streak 7',
+        'YarvikTablet': 'Android.*\\b(TAB210|TAB211|TAB224|TAB250|TAB260|TAB264|TAB310|TAB360|TAB364|TAB410|TAB411|TAB420|TAB424|TAB450|TAB460|TAB461|TAB464|TAB465|TAB467|TAB468|TAB07-100|TAB07-101|TAB07-150|TAB07-151|TAB07-152|TAB07-200|TAB07-201-3G|TAB07-210|TAB07-211|TAB07-212|TAB07-214|TAB07-220|TAB07-400|TAB07-485|TAB08-150|TAB08-200|TAB08-201-3G|TAB08-201-30|TAB09-100|TAB09-211|TAB09-410|TAB10-150|TAB10-201|TAB10-211|TAB10-400|TAB10-410|TAB13-201|TAB274EUK|TAB275EUK|TAB374EUK|TAB462EUK|TAB474EUK|TAB9-200)\\b',
+        'MedionTablet': 'Android.*\\bOYO\\b|LIFE.*(P9212|P9514|P9516|S9512)|LIFETAB',
+        'ArnovaTablet': '97G4|AN10G2|AN7bG3|AN7fG3|AN8G3|AN8cG3|AN7G3|AN9G3|AN7dG3|AN7dG3ST|AN7dG3ChildPad|AN10bG3|AN10bG3DT|AN9G2',
+        'IntensoTablet': 'INM8002KP|INM1010FP|INM805ND|Intenso Tab|TAB1004',
+        'IRUTablet': 'M702pro',
+        'MegafonTablet': 'MegaFon V9|\\bZTE V9\\b|Android.*\\bMT7A\\b',
+        'EbodaTablet': 'E-Boda (Supreme|Impresspeed|Izzycomm|Essential)',
+        'AllViewTablet': 'Allview.*(Viva|Alldro|City|Speed|All TV|Frenzy|Quasar|Shine|TX1|AX1|AX2)',
+        'ArchosTablet': '\\b(101G9|80G9|A101IT)\\b|Qilive 97R|Archos5|\\bARCHOS (70|79|80|90|97|101|FAMILYPAD|)(b|c|)(G10| Cobalt| TITANIUM(HD|)| Xenon| Neon|XSK| 2| XS 2| PLATINUM| CARBON|GAMEPAD)\\b',
+        'AinolTablet': 'NOVO7|NOVO8|NOVO10|Novo7Aurora|Novo7Basic|NOVO7PALADIN|novo9-Spark',
+        'NokiaLumiaTablet': 'Lumia 2520',
+        'SonyTablet': 'Sony.*Tablet|Xperia Tablet|Sony Tablet S|SO-03E|SGPT12|SGPT13|SGPT114|SGPT121|SGPT122|SGPT123|SGPT111|SGPT112|SGPT113|SGPT131|SGPT132|SGPT133|SGPT211|SGPT212|SGPT213|SGP311|SGP312|SGP321|EBRD1101|EBRD1102|EBRD1201|SGP351|SGP341|SGP511|SGP512|SGP521|SGP541|SGP551|SGP621|SGP612|SOT31',
+        'PhilipsTablet': '\\b(PI2010|PI3000|PI3100|PI3105|PI3110|PI3205|PI3210|PI3900|PI4010|PI7000|PI7100)\\b',
+        'CubeTablet': 'Android.*(K8GT|U9GT|U10GT|U16GT|U17GT|U18GT|U19GT|U20GT|U23GT|U30GT)|CUBE U8GT',
+        'CobyTablet': 'MID1042|MID1045|MID1125|MID1126|MID7012|MID7014|MID7015|MID7034|MID7035|MID7036|MID7042|MID7048|MID7127|MID8042|MID8048|MID8127|MID9042|MID9740|MID9742|MID7022|MID7010',
+        'MIDTablet': 'M9701|M9000|M9100|M806|M1052|M806|T703|MID701|MID713|MID710|MID727|MID760|MID830|MID728|MID933|MID125|MID810|MID732|MID120|MID930|MID800|MID731|MID900|MID100|MID820|MID735|MID980|MID130|MID833|MID737|MID960|MID135|MID860|MID736|MID140|MID930|MID835|MID733|MID4X10',
+        'MSITablet': 'MSI \\b(Primo 73K|Primo 73L|Primo 81L|Primo 77|Primo 93|Primo 75|Primo 76|Primo 73|Primo 81|Primo 91|Primo 90|Enjoy 71|Enjoy 7|Enjoy 10)\\b',
+        'SMiTTablet': 'Android.*(\\bMID\\b|MID-560|MTV-T1200|MTV-PND531|MTV-P1101|MTV-PND530)',
+        'RockChipTablet': 'Android.*(RK2818|RK2808A|RK2918|RK3066)|RK2738|RK2808A',
+        'FlyTablet': 'IQ310|Fly Vision',
+        'bqTablet': 'Android.*(bq)?.*(Elcano|Curie|Edison|Maxwell|Kepler|Pascal|Tesla|Hypatia|Platon|Newton|Livingstone|Cervantes|Avant|Aquaris [E|M]10)|Maxwell.*Lite|Maxwell.*Plus',
+        'HuaweiTablet': 'MediaPad|MediaPad 7 Youth|IDEOS S7|S7-201c|S7-202u|S7-101|S7-103|S7-104|S7-105|S7-106|S7-201|S7-Slim',
+        'NecTablet': '\\bN-06D|\\bN-08D',
+        'PantechTablet': 'Pantech.*P4100',
+        'BronchoTablet': 'Broncho.*(N701|N708|N802|a710)',
+        'VersusTablet': 'TOUCHPAD.*[78910]|\\bTOUCHTAB\\b',
+        'ZyncTablet': 'z1000|Z99 2G|z99|z930|z999|z990|z909|Z919|z900',
+        'PositivoTablet': 'TB07STA|TB10STA|TB07FTA|TB10FTA',
+        'NabiTablet': 'Android.*\\bNabi',
+        'KoboTablet': 'Kobo Touch|\\bK080\\b|\\bVox\\b Build|\\bArc\\b Build',
+        'DanewTablet': 'DSlide.*\\b(700|701R|702|703R|704|802|970|971|972|973|974|1010|1012)\\b',
+        'TexetTablet': 'NaviPad|TB-772A|TM-7045|TM-7055|TM-9750|TM-7016|TM-7024|TM-7026|TM-7041|TM-7043|TM-7047|TM-8041|TM-9741|TM-9747|TM-9748|TM-9751|TM-7022|TM-7021|TM-7020|TM-7011|TM-7010|TM-7023|TM-7025|TM-7037W|TM-7038W|TM-7027W|TM-9720|TM-9725|TM-9737W|TM-1020|TM-9738W|TM-9740|TM-9743W|TB-807A|TB-771A|TB-727A|TB-725A|TB-719A|TB-823A|TB-805A|TB-723A|TB-715A|TB-707A|TB-705A|TB-709A|TB-711A|TB-890HD|TB-880HD|TB-790HD|TB-780HD|TB-770HD|TB-721HD|TB-710HD|TB-434HD|TB-860HD|TB-840HD|TB-760HD|TB-750HD|TB-740HD|TB-730HD|TB-722HD|TB-720HD|TB-700HD|TB-500HD|TB-470HD|TB-431HD|TB-430HD|TB-506|TB-504|TB-446|TB-436|TB-416|TB-146SE|TB-126SE',
+        'PlaystationTablet': 'Playstation.*(Portable|Vita)',
+        'TrekstorTablet': 'ST10416-1|VT10416-1|ST70408-1|ST702xx-1|ST702xx-2|ST80208|ST97216|ST70104-2|VT10416-2|ST10216-2A|SurfTab',
+        'PyleAudioTablet': '\\b(PTBL10CEU|PTBL10C|PTBL72BC|PTBL72BCEU|PTBL7CEU|PTBL7C|PTBL92BC|PTBL92BCEU|PTBL9CEU|PTBL9CUK|PTBL9C)\\b',
+        'AdvanTablet': 'Android.* \\b(E3A|T3X|T5C|T5B|T3E|T3C|T3B|T1J|T1F|T2A|T1H|T1i|E1C|T1-E|T5-A|T4|E1-B|T2Ci|T1-B|T1-D|O1-A|E1-A|T1-A|T3A|T4i)\\b ',
+        'DanyTechTablet': 'Genius Tab G3|Genius Tab S2|Genius Tab Q3|Genius Tab G4|Genius Tab Q4|Genius Tab G-II|Genius TAB GII|Genius TAB GIII|Genius Tab S1',
+        'GalapadTablet': 'Android.*\\bG1\\b',
+        'MicromaxTablet': 'Funbook|Micromax.*\\b(P250|P560|P360|P362|P600|P300|P350|P500|P275)\\b',
+        'KarbonnTablet': 'Android.*\\b(A39|A37|A34|ST8|ST10|ST7|Smart Tab3|Smart Tab2)\\b',
+        'AllFineTablet': 'Fine7 Genius|Fine7 Shine|Fine7 Air|Fine8 Style|Fine9 More|Fine10 Joy|Fine11 Wide',
+        'PROSCANTablet': '\\b(PEM63|PLT1023G|PLT1041|PLT1044|PLT1044G|PLT1091|PLT4311|PLT4311PL|PLT4315|PLT7030|PLT7033|PLT7033D|PLT7035|PLT7035D|PLT7044K|PLT7045K|PLT7045KB|PLT7071KG|PLT7072|PLT7223G|PLT7225G|PLT7777G|PLT7810K|PLT7849G|PLT7851G|PLT7852G|PLT8015|PLT8031|PLT8034|PLT8036|PLT8080K|PLT8082|PLT8088|PLT8223G|PLT8234G|PLT8235G|PLT8816K|PLT9011|PLT9045K|PLT9233G|PLT9735|PLT9760G|PLT9770G)\\b',
+        'YONESTablet': 'BQ1078|BC1003|BC1077|RK9702|BC9730|BC9001|IT9001|BC7008|BC7010|BC708|BC728|BC7012|BC7030|BC7027|BC7026',
+        'ChangJiaTablet': 'TPC7102|TPC7103|TPC7105|TPC7106|TPC7107|TPC7201|TPC7203|TPC7205|TPC7210|TPC7708|TPC7709|TPC7712|TPC7110|TPC8101|TPC8103|TPC8105|TPC8106|TPC8203|TPC8205|TPC8503|TPC9106|TPC9701|TPC97101|TPC97103|TPC97105|TPC97106|TPC97111|TPC97113|TPC97203|TPC97603|TPC97809|TPC97205|TPC10101|TPC10103|TPC10106|TPC10111|TPC10203|TPC10205|TPC10503',
+        'GUTablet': 'TX-A1301|TX-M9002|Q702|kf026',
+        'PointOfViewTablet': 'TAB-P506|TAB-navi-7-3G-M|TAB-P517|TAB-P-527|TAB-P701|TAB-P703|TAB-P721|TAB-P731N|TAB-P741|TAB-P825|TAB-P905|TAB-P925|TAB-PR945|TAB-PL1015|TAB-P1025|TAB-PI1045|TAB-P1325|TAB-PROTAB[0-9]+|TAB-PROTAB25|TAB-PROTAB26|TAB-PROTAB27|TAB-PROTAB26XL|TAB-PROTAB2-IPS9|TAB-PROTAB30-IPS9|TAB-PROTAB25XXL|TAB-PROTAB26-IPS10|TAB-PROTAB30-IPS10',
+        'OvermaxTablet': 'OV-(SteelCore|NewBase|Basecore|Baseone|Exellen|Quattor|EduTab|Solution|ACTION|BasicTab|TeddyTab|MagicTab|Stream|TB-08|TB-09)',
+        'HCLTablet': 'HCL.*Tablet|Connect-3G-2.0|Connect-2G-2.0|ME Tablet U1|ME Tablet U2|ME Tablet G1|ME Tablet X1|ME Tablet Y2|ME Tablet Sync',
+        'DPSTablet': 'DPS Dream 9|DPS Dual 7',
+        'VistureTablet': 'V97 HD|i75 3G|Visture V4( HD)?|Visture V5( HD)?|Visture V10',
+        'CrestaTablet': 'CTP(-)?810|CTP(-)?818|CTP(-)?828|CTP(-)?838|CTP(-)?888|CTP(-)?978|CTP(-)?980|CTP(-)?987|CTP(-)?988|CTP(-)?989',
+        'MediatekTablet': '\\bMT8125|MT8389|MT8135|MT8377\\b',
+        'ConcordeTablet': 'Concorde([ ]+)?Tab|ConCorde ReadMan',
+        'GoCleverTablet': 'GOCLEVER TAB|A7GOCLEVER|M1042|M7841|M742|R1042BK|R1041|TAB A975|TAB A7842|TAB A741|TAB A741L|TAB M723G|TAB M721|TAB A1021|TAB I921|TAB R721|TAB I720|TAB T76|TAB R70|TAB R76.2|TAB R106|TAB R83.2|TAB M813G|TAB I721|GCTA722|TAB I70|TAB I71|TAB S73|TAB R73|TAB R74|TAB R93|TAB R75|TAB R76.1|TAB A73|TAB A93|TAB A93.2|TAB T72|TAB R83|TAB R974|TAB R973|TAB A101|TAB A103|TAB A104|TAB A104.2|R105BK|M713G|A972BK|TAB A971|TAB R974.2|TAB R104|TAB R83.3|TAB A1042',
+        'ModecomTablet': 'FreeTAB 9000|FreeTAB 7.4|FreeTAB 7004|FreeTAB 7800|FreeTAB 2096|FreeTAB 7.5|FreeTAB 1014|FreeTAB 1001 |FreeTAB 8001|FreeTAB 9706|FreeTAB 9702|FreeTAB 7003|FreeTAB 7002|FreeTAB 1002|FreeTAB 7801|FreeTAB 1331|FreeTAB 1004|FreeTAB 8002|FreeTAB 8014|FreeTAB 9704|FreeTAB 1003',
+        'VoninoTablet': '\\b(Argus[ _]?S|Diamond[ _]?79HD|Emerald[ _]?78E|Luna[ _]?70C|Onyx[ _]?S|Onyx[ _]?Z|Orin[ _]?HD|Orin[ _]?S|Otis[ _]?S|SpeedStar[ _]?S|Magnet[ _]?M9|Primus[ _]?94[ _]?3G|Primus[ _]?94HD|Primus[ _]?QS|Android.*\\bQ8\\b|Sirius[ _]?EVO[ _]?QS|Sirius[ _]?QS|Spirit[ _]?S)\\b',
+        'ECSTablet': 'V07OT2|TM105A|S10OT1|TR10CS1',
+        'StorexTablet': "eZee[_']?(Tab|Go)[0-9]+|TabLC7|Looney Tunes Tab",
+        'VodafoneTablet': 'SmartTab([ ]+)?[0-9]+|SmartTabII10|SmartTabII7|VF-1497',
+        'EssentielBTablet': "Smart[ ']?TAB[ ]+?[0-9]+|Family[ ']?TAB2",
+        'RossMoorTablet': 'RM-790|RM-997|RMD-878G|RMD-974R|RMT-705A|RMT-701|RME-601|RMT-501|RMT-711',
+        'iMobileTablet': 'i-mobile i-note',
+        'TolinoTablet': 'tolino tab [0-9.]+|tolino shine',
+        'AudioSonicTablet': '\\bC-22Q|T7-QC|T-17B|T-17P\\b',
+        'AMPETablet': 'Android.* A78 ',
+        'SkkTablet': 'Android.* (SKYPAD|PHOENIX|CYCLOPS)',
+        'TecnoTablet': 'TECNO P9',
+        'JXDTablet': 'Android.* \\b(F3000|A3300|JXD5000|JXD3000|JXD2000|JXD300B|JXD300|S5800|S7800|S602b|S5110b|S7300|S5300|S602|S603|S5100|S5110|S601|S7100a|P3000F|P3000s|P101|P200s|P1000m|P200m|P9100|P1000s|S6600b|S908|P1000|P300|S18|S6600|S9100)\\b',
+        'iJoyTablet': 'Tablet (Spirit 7|Essentia|Galatea|Fusion|Onix 7|Landa|Titan|Scooby|Deox|Stella|Themis|Argon|Unique 7|Sygnus|Hexen|Finity 7|Cream|Cream X2|Jade|Neon 7|Neron 7|Kandy|Scape|Saphyr 7|Rebel|Biox|Rebel|Rebel 8GB|Myst|Draco 7|Myst|Tab7-004|Myst|Tadeo Jones|Tablet Boing|Arrow|Draco Dual Cam|Aurix|Mint|Amity|Revolution|Finity 9|Neon 9|T9w|Amity 4GB Dual Cam|Stone 4GB|Stone 8GB|Andromeda|Silken|X2|Andromeda II|Halley|Flame|Saphyr 9,7|Touch 8|Planet|Triton|Unique 10|Hexen 10|Memphis 4GB|Memphis 8GB|Onix 10)',
+        'FX2Tablet': 'FX2 PAD7|FX2 PAD10',
+        'XoroTablet': 'KidsPAD 701|PAD[ ]?712|PAD[ ]?714|PAD[ ]?716|PAD[ ]?717|PAD[ ]?718|PAD[ ]?720|PAD[ ]?721|PAD[ ]?722|PAD[ ]?790|PAD[ ]?792|PAD[ ]?900|PAD[ ]?9715D|PAD[ ]?9716DR|PAD[ ]?9718DR|PAD[ ]?9719QR|PAD[ ]?9720QR|TelePAD1030|Telepad1032|TelePAD730|TelePAD731|TelePAD732|TelePAD735Q|TelePAD830|TelePAD9730|TelePAD795|MegaPAD 1331|MegaPAD 1851|MegaPAD 2151',
+        'ViewsonicTablet': 'ViewPad 10pi|ViewPad 10e|ViewPad 10s|ViewPad E72|ViewPad7|ViewPad E100|ViewPad 7e|ViewSonic VB733|VB100a',
+        'OdysTablet': 'LOOX|XENO10|ODYS[ -](Space|EVO|Xpress|NOON)|\\bXELIO\\b|Xelio10Pro|XELIO7PHONETAB|XELIO10EXTREME|XELIOPT2|NEO_QUAD10',
+        'CaptivaTablet': 'CAPTIVA PAD',
+        'IconbitTablet': 'NetTAB|NT-3702|NT-3702S|NT-3702S|NT-3603P|NT-3603P|NT-0704S|NT-0704S|NT-3805C|NT-3805C|NT-0806C|NT-0806C|NT-0909T|NT-0909T|NT-0907S|NT-0907S|NT-0902S|NT-0902S',
+        'TeclastTablet': 'T98 4G|\\bP80\\b|\\bX90HD\\b|X98 Air|X98 Air 3G|\\bX89\\b|P80 3G|\\bX80h\\b|P98 Air|\\bX89HD\\b|P98 3G|\\bP90HD\\b|P89 3G|X98 3G|\\bP70h\\b|P79HD 3G|G18d 3G|\\bP79HD\\b|\\bP89s\\b|\\bA88\\b|\\bP10HD\\b|\\bP19HD\\b|G18 3G|\\bP78HD\\b|\\bA78\\b|\\bP75\\b|G17s 3G|G17h 3G|\\bP85t\\b|\\bP90\\b|\\bP11\\b|\\bP98t\\b|\\bP98HD\\b|\\bG18d\\b|\\bP85s\\b|\\bP11HD\\b|\\bP88s\\b|\\bA80HD\\b|\\bA80se\\b|\\bA10h\\b|\\bP89\\b|\\bP78s\\b|\\bG18\\b|\\bP85\\b|\\bA70h\\b|\\bA70\\b|\\bG17\\b|\\bP18\\b|\\bA80s\\b|\\bA11s\\b|\\bP88HD\\b|\\bA80h\\b|\\bP76s\\b|\\bP76h\\b|\\bP98\\b|\\bA10HD\\b|\\bP78\\b|\\bP88\\b|\\bA11\\b|\\bA10t\\b|\\bP76a\\b|\\bP76t\\b|\\bP76e\\b|\\bP85HD\\b|\\bP85a\\b|\\bP86\\b|\\bP75HD\\b|\\bP76v\\b|\\bA12\\b|\\bP75a\\b|\\bA15\\b|\\bP76Ti\\b|\\bP81HD\\b|\\bA10\\b|\\bT760VE\\b|\\bT720HD\\b|\\bP76\\b|\\bP73\\b|\\bP71\\b|\\bP72\\b|\\bT720SE\\b|\\bC520Ti\\b|\\bT760\\b|\\bT720VE\\b|T720-3GE|T720-WiFi',
+        'OndaTablet': '\\b(V975i|Vi30|VX530|V701|Vi60|V701s|Vi50|V801s|V719|Vx610w|VX610W|V819i|Vi10|VX580W|Vi10|V711s|V813|V811|V820w|V820|Vi20|V711|VI30W|V712|V891w|V972|V819w|V820w|Vi60|V820w|V711|V813s|V801|V819|V975s|V801|V819|V819|V818|V811|V712|V975m|V101w|V961w|V812|V818|V971|V971s|V919|V989|V116w|V102w|V973|Vi40)\\b[\\s]+',
+        'JaytechTablet': 'TPC-PA762',
+        'BlaupunktTablet': 'Endeavour 800NG|Endeavour 1010',
+        'DigmaTablet': '\\b(iDx10|iDx9|iDx8|iDx7|iDxD7|iDxD8|iDsQ8|iDsQ7|iDsQ8|iDsD10|iDnD7|3TS804H|iDsQ11|iDj7|iDs10)\\b',
+        'EvolioTablet': 'ARIA_Mini_wifi|Aria[ _]Mini|Evolio X10|Evolio X7|Evolio X8|\\bEvotab\\b|\\bNeura\\b',
+        'LavaTablet': 'QPAD E704|\\bIvoryS\\b|E-TAB IVORY|\\bE-TAB\\b',
+        'AocTablet': 'MW0811|MW0812|MW0922|MTK8382|MW1031|MW0831|MW0821|MW0931|MW0712',
+        'MpmanTablet': 'MP11 OCTA|MP10 OCTA|MPQC1114|MPQC1004|MPQC994|MPQC974|MPQC973|MPQC804|MPQC784|MPQC780|\\bMPG7\\b|MPDCG75|MPDCG71|MPDC1006|MP101DC|MPDC9000|MPDC905|MPDC706HD|MPDC706|MPDC705|MPDC110|MPDC100|MPDC99|MPDC97|MPDC88|MPDC8|MPDC77|MP709|MID701|MID711|MID170|MPDC703|MPQC1010',
+        'CelkonTablet': 'CT695|CT888|CT[\\s]?910|CT7 Tab|CT9 Tab|CT3 Tab|CT2 Tab|CT1 Tab|C820|C720|\\bCT-1\\b',
+        'WolderTablet': 'miTab \\b(DIAMOND|SPACE|BROOKLYN|NEO|FLY|MANHATTAN|FUNK|EVOLUTION|SKY|GOCAR|IRON|GENIUS|POP|MINT|EPSILON|BROADWAY|JUMP|HOP|LEGEND|NEW AGE|LINE|ADVANCE|FEEL|FOLLOW|LIKE|LINK|LIVE|THINK|FREEDOM|CHICAGO|CLEVELAND|BALTIMORE-GH|IOWA|BOSTON|SEATTLE|PHOENIX|DALLAS|IN 101|MasterChef)\\b',
+        'MiTablet': '\\bMI PAD\\b|\\bHM NOTE 1W\\b',
+        'NibiruTablet': 'Nibiru M1|Nibiru Jupiter One',
+        'NexoTablet': 'NEXO NOVA|NEXO 10|NEXO AVIO|NEXO FREE|NEXO GO|NEXO EVO|NEXO 3G|NEXO SMART|NEXO KIDDO|NEXO MOBI',
+        'LeaderTablet': 'TBLT10Q|TBLT10I|TBL-10WDKB|TBL-10WDKBO2013|TBL-W230V2|TBL-W450|TBL-W500|SV572|TBLT7I|TBA-AC7-8G|TBLT79|TBL-8W16|TBL-10W32|TBL-10WKB|TBL-W100',
+        'UbislateTablet': 'UbiSlate[\\s]?7C',
+        'PocketBookTablet': 'Pocketbook',
+        'KocasoTablet': '\\b(TB-1207)\\b',
+        'HisenseTablet': '\\b(F5281|E2371)\\b',
+        'Hudl': 'Hudl HT7S3|Hudl 2',
+        'TelstraTablet': 'T-Hub2',
+        'GenericTablet': 'Android.*\\b97D\\b|Tablet(?!.*PC)|BNTV250A|MID-WCDMA|LogicPD Zoom2|\\bA7EB\\b|CatNova8|A1_07|CT704|CT1002|\\bM721\\b|rk30sdk|\\bEVOTAB\\b|M758A|ET904|ALUMIUM10|Smartfren Tab|Endeavour 1010|Tablet-PC-4|Tagi Tab|\\bM6pro\\b|CT1020W|arc 10HD|\\bTP750\\b'
     },
-    "oss": {
-        "AndroidOS": "Android",
-        "BlackBerryOS": "blackberry|\\bBB10\\b|rim tablet os",
-        "PalmOS": "PalmOS|avantgo|blazer|elaine|hiptop|palm|plucker|xiino",
-        "SymbianOS": "Symbian|SymbOS|Series60|Series40|SYB-[0-9]+|\\bS60\\b",
-        "WindowsMobileOS": "Windows CE.*(PPC|Smartphone|Mobile|[0-9]{3}x[0-9]{3})|Window Mobile|Windows Phone [0-9.]+|WCE;",
-        "WindowsPhoneOS": "Windows Phone 10.0|Windows Phone 8.1|Windows Phone 8.0|Windows Phone OS|XBLWP7|ZuneWP7|Windows NT 6.[23]; ARM;",
-        "iOS": "\\biPhone.*Mobile|\\biPod|\\biPad",
-        "MeeGoOS": "MeeGo",
-        "MaemoOS": "Maemo",
-        "JavaOS": "J2ME\/|\\bMIDP\\b|\\bCLDC\\b",
-        "webOS": "webOS|hpwOS",
-        "badaOS": "\\bBada\\b",
-        "BREWOS": "BREW"
+    'oss': {
+        'AndroidOS': 'Android',
+        'BlackBerryOS': 'blackberry|\\bBB10\\b|rim tablet os',
+        'PalmOS': 'PalmOS|avantgo|blazer|elaine|hiptop|palm|plucker|xiino',
+        'SymbianOS': 'Symbian|SymbOS|Series60|Series40|SYB-[0-9]+|\\bS60\\b',
+        'WindowsMobileOS': 'Windows CE.*(PPC|Smartphone|Mobile|[0-9]{3}x[0-9]{3})|Window Mobile|Windows Phone [0-9.]+|WCE;',
+        'WindowsPhoneOS': 'Windows Phone 10.0|Windows Phone 8.1|Windows Phone 8.0|Windows Phone OS|XBLWP7|ZuneWP7|Windows NT 6.[23]; ARM;',
+        'iOS': '\\biPhone.*Mobile|\\biPod|\\biPad',
+        'MeeGoOS': 'MeeGo',
+        'MaemoOS': 'Maemo',
+        'JavaOS': 'J2ME\/|\\bMIDP\\b|\\bCLDC\\b',
+        'webOS': 'webOS|hpwOS',
+        'badaOS': '\\bBada\\b',
+        'BREWOS': 'BREW'
     },
-    "uas": {
-        "Chrome": "\\bCrMo\\b|CriOS|Android.*Chrome\/[.0-9]* (Mobile)?",
-        "Dolfin": "\\bDolfin\\b",
-        "Opera": "Opera.*Mini|Opera.*Mobi|Android.*Opera|Mobile.*OPR\/[0-9.]+|Coast\/[0-9.]+",
-        "Skyfire": "Skyfire",
-        "Edge": "Mobile Safari\/[.0-9]* Edge",
-        "IE": "IEMobile|MSIEMobile",
-        "Firefox": "fennec|firefox.*maemo|(Mobile|Tablet).*Firefox|Firefox.*Mobile|FxiOS",
-        "Bolt": "bolt",
-        "TeaShark": "teashark",
-        "Blazer": "Blazer",
-        "Safari": "Version.*Mobile.*Safari|Safari.*Mobile|MobileSafari",
-        "UCBrowser": "UC.*Browser|UCWEB",
-        "baiduboxapp": "baiduboxapp",
-        "baidubrowser": "baidubrowser",
-        "DiigoBrowser": "DiigoBrowser",
-        "Puffin": "Puffin",
-        "Mercury": "\\bMercury\\b",
-        "ObigoBrowser": "Obigo",
-        "NetFront": "NF-Browser",
-        "GenericBrowser": "NokiaBrowser|OviBrowser|OneBrowser|TwonkyBeamBrowser|SEMC.*Browser|FlyFlow|Minimo|NetFront|Novarra-Vision|MQQBrowser|MicroMessenger",
-        "PaleMoon": "Android.*PaleMoon|Mobile.*PaleMoon"
+    'uas': {
+        'Chrome': '\\bCrMo\\b|CriOS|Android.*Chrome\/[.0-9]* (Mobile)?',
+        'Dolfin': '\\bDolfin\\b',
+        'Opera': 'Opera.*Mini|Opera.*Mobi|Android.*Opera|Mobile.*OPR\/[0-9.]+|Coast\/[0-9.]+',
+        'Skyfire': 'Skyfire',
+        'Edge': 'Mobile Safari\/[.0-9]* Edge',
+        'IE': 'IEMobile|MSIEMobile',
+        'Firefox': 'fennec|firefox.*maemo|(Mobile|Tablet).*Firefox|Firefox.*Mobile|FxiOS',
+        'Bolt': 'bolt',
+        'TeaShark': 'teashark',
+        'Blazer': 'Blazer',
+        'Safari': 'Version.*Mobile.*Safari|Safari.*Mobile|MobileSafari',
+        'UCBrowser': 'UC.*Browser|UCWEB',
+        'baiduboxapp': 'baiduboxapp',
+        'baidubrowser': 'baidubrowser',
+        'DiigoBrowser': 'DiigoBrowser',
+        'Puffin': 'Puffin',
+        'Mercury': '\\bMercury\\b',
+        'ObigoBrowser': 'Obigo',
+        'NetFront': 'NF-Browser',
+        'GenericBrowser': 'NokiaBrowser|OviBrowser|OneBrowser|TwonkyBeamBrowser|SEMC.*Browser|FlyFlow|Minimo|NetFront|Novarra-Vision|MQQBrowser|MicroMessenger',
+        'PaleMoon': 'Android.*PaleMoon|Mobile.*PaleMoon'
     },
-    "props": {
-        "Mobile": "Mobile\/[VER]",
-        "Build": "Build\/[VER]",
-        "Version": "Version\/[VER]",
-        "VendorID": "VendorID\/[VER]",
-        "iPad": "iPad.*CPU[a-z ]+[VER]",
-        "iPhone": "iPhone.*CPU[a-z ]+[VER]",
-        "iPod": "iPod.*CPU[a-z ]+[VER]",
-        "Kindle": "Kindle\/[VER]",
-        "Chrome": [
-            "Chrome\/[VER]",
-            "CriOS\/[VER]",
-            "CrMo\/[VER]"
+    'props': {
+        'Mobile': 'Mobile\/[VER]',
+        'Build': 'Build\/[VER]',
+        'Version': 'Version\/[VER]',
+        'VendorID': 'VendorID\/[VER]',
+        'iPad': 'iPad.*CPU[a-z ]+[VER]',
+        'iPhone': 'iPhone.*CPU[a-z ]+[VER]',
+        'iPod': 'iPod.*CPU[a-z ]+[VER]',
+        'Kindle': 'Kindle\/[VER]',
+        'Chrome': [
+            'Chrome\/[VER]',
+            'CriOS\/[VER]',
+            'CrMo\/[VER]'
         ],
-        "Coast": [
-            "Coast\/[VER]"
+        'Coast': [
+            'Coast\/[VER]'
         ],
-        "Dolfin": "Dolfin\/[VER]",
-        "Firefox": [
-            "Firefox\/[VER]",
-            "FxiOS\/[VER]"
+        'Dolfin': 'Dolfin\/[VER]',
+        'Firefox': [
+            'Firefox\/[VER]',
+            'FxiOS\/[VER]'
         ],
-        "Fennec": "Fennec\/[VER]",
-        "Edge": "Edge\/[VER]",
-        "IE": [
-            "IEMobile\/[VER];",
-            "IEMobile [VER]",
-            "MSIE [VER];",
-            "Trident\/[0-9.]+;.*rv:[VER]"
+        'Fennec': 'Fennec\/[VER]',
+        'Edge': 'Edge\/[VER]',
+        'IE': [
+            'IEMobile\/[VER];',
+            'IEMobile [VER]',
+            'MSIE [VER];',
+            'Trident\/[0-9.]+;.*rv:[VER]'
         ],
-        "NetFront": "NetFront\/[VER]",
-        "NokiaBrowser": "NokiaBrowser\/[VER]",
-        "Opera": [
-            " OPR\/[VER]",
-            "Opera Mini\/[VER]",
-            "Version\/[VER]"
+        'NetFront': 'NetFront\/[VER]',
+        'NokiaBrowser': 'NokiaBrowser\/[VER]',
+        'Opera': [
+            ' OPR\/[VER]',
+            'Opera Mini\/[VER]',
+            'Version\/[VER]'
         ],
-        "Opera Mini": "Opera Mini\/[VER]",
-        "Opera Mobi": "Version\/[VER]",
-        "UC Browser": "UC Browser[VER]",
-        "MQQBrowser": "MQQBrowser\/[VER]",
-        "MicroMessenger": "MicroMessenger\/[VER]",
-        "baiduboxapp": "baiduboxapp\/[VER]",
-        "baidubrowser": "baidubrowser\/[VER]",
-        "SamsungBrowser": "SamsungBrowser\/[VER]",
-        "Iron": "Iron\/[VER]",
-        "Safari": [
-            "Version\/[VER]",
-            "Safari\/[VER]"
+        'Opera Mini': 'Opera Mini\/[VER]',
+        'Opera Mobi': 'Version\/[VER]',
+        'UC Browser': 'UC Browser[VER]',
+        'MQQBrowser': 'MQQBrowser\/[VER]',
+        'MicroMessenger': 'MicroMessenger\/[VER]',
+        'baiduboxapp': 'baiduboxapp\/[VER]',
+        'baidubrowser': 'baidubrowser\/[VER]',
+        'SamsungBrowser': 'SamsungBrowser\/[VER]',
+        'Iron': 'Iron\/[VER]',
+        'Safari': [
+            'Version\/[VER]',
+            'Safari\/[VER]'
         ],
-        "Skyfire": "Skyfire\/[VER]",
-        "Tizen": "Tizen\/[VER]",
-        "Webkit": "webkit[ \/][VER]",
-        "PaleMoon": "PaleMoon\/[VER]",
-        "Gecko": "Gecko\/[VER]",
-        "Trident": "Trident\/[VER]",
-        "Presto": "Presto\/[VER]",
-        "Goanna": "Goanna\/[VER]",
-        "iOS": " \\bi?OS\\b [VER][ ;]{1}",
-        "Android": "Android [VER]",
-        "BlackBerry": [
-            "BlackBerry[\\w]+\/[VER]",
-            "BlackBerry.*Version\/[VER]",
-            "Version\/[VER]"
+        'Skyfire': 'Skyfire\/[VER]',
+        'Tizen': 'Tizen\/[VER]',
+        'Webkit': 'webkit[ \/][VER]',
+        'PaleMoon': 'PaleMoon\/[VER]',
+        'Gecko': 'Gecko\/[VER]',
+        'Trident': 'Trident\/[VER]',
+        'Presto': 'Presto\/[VER]',
+        'Goanna': 'Goanna\/[VER]',
+        'iOS': ' \\bi?OS\\b [VER][ ;]{1}',
+        'Android': 'Android [VER]',
+        'BlackBerry': [
+            'BlackBerry[\\w]+\/[VER]',
+            'BlackBerry.*Version\/[VER]',
+            'Version\/[VER]'
         ],
-        "BREW": "BREW [VER]",
-        "Java": "Java\/[VER]",
-        "Windows Phone OS": [
-            "Windows Phone OS [VER]",
-            "Windows Phone [VER]"
+        'BREW': 'BREW [VER]',
+        'Java': 'Java\/[VER]',
+        'Windows Phone OS': [
+            'Windows Phone OS [VER]',
+            'Windows Phone [VER]'
         ],
-        "Windows Phone": "Windows Phone [VER]",
-        "Windows CE": "Windows CE\/[VER]",
-        "Windows NT": "Windows NT [VER]",
-        "Symbian": [
-            "SymbianOS\/[VER]",
-            "Symbian\/[VER]"
+        'Windows Phone': 'Windows Phone [VER]',
+        'Windows CE': 'Windows CE\/[VER]',
+        'Windows NT': 'Windows NT [VER]',
+        'Symbian': [
+            'SymbianOS\/[VER]',
+            'Symbian\/[VER]'
         ],
-        "webOS": [
-            "webOS\/[VER]",
-            "hpwOS\/[VER];"
+        'webOS': [
+            'webOS\/[VER]',
+            'hpwOS\/[VER];'
         ]
     },
-    "utils": {
-        "Bot": "Googlebot|facebookexternalhit|AdsBot-Google|Google Keyword Suggestion|Facebot|YandexBot|YandexMobileBot|bingbot|ia_archiver|AhrefsBot|Ezooms|GSLFbot|WBSearchBot|Twitterbot|TweetmemeBot|Twikle|PaperLiBot|Wotbox|UnwindFetchor|Exabot|MJ12bot|YandexImages|TurnitinBot|Pingdom",
-        "MobileBot": "Googlebot-Mobile|AdsBot-Google-Mobile|YahooSeeker\/M1A1-R2D2",
-        "DesktopMode": "WPDesktop",
-        "TV": "SonyDTV|HbbTV",
-        "WebKit": "(webkit)[ \/]([\\w.]+)",
-        "Console": "\\b(Nintendo|Nintendo WiiU|Nintendo 3DS|PLAYSTATION|Xbox)\\b",
-        "Watch": "SM-V700"
+    'utils': {
+        'Bot': 'Googlebot|facebookexternalhit|AdsBot-Google|Google Keyword Suggestion|Facebot|YandexBot|YandexMobileBot|bingbot|ia_archiver|AhrefsBot|Ezooms|GSLFbot|WBSearchBot|Twitterbot|TweetmemeBot|Twikle|PaperLiBot|Wotbox|UnwindFetchor|Exabot|MJ12bot|YandexImages|TurnitinBot|Pingdom',
+        'MobileBot': 'Googlebot-Mobile|AdsBot-Google-Mobile|YahooSeeker\/M1A1-R2D2',
+        'DesktopMode': 'WPDesktop',
+        'TV': 'SonyDTV|HbbTV',
+        'WebKit': '(webkit)[ \/]([\\w.]+)',
+        'Console': '\\b(Nintendo|Nintendo WiiU|Nintendo 3DS|PLAYSTATION|Xbox)\\b',
+        'Watch': 'SM-V700'
     }
 };
 
@@ -39187,7 +39187,7 @@ define(function () {
 /* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 // from https://github.com/indutny/self-signed/blob/gh-pages/lib/asn1.js
 // Fedor, you are amazing.
 
@@ -39316,7 +39316,7 @@ exports.signature = asn1.define('signature', function () {
 /* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 // from https://github.com/Rantanen/node-dtls/blob/25a7dc861bda38cfeac93a723500eea4f0ac2e86/Certificate.js
 // thanks to @Rantanen
 
@@ -39819,7 +39819,7 @@ function nonZero(len, crypto) {
 /* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var stringify = __webpack_require__(197);
@@ -39837,7 +39837,7 @@ module.exports = {
 /* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var utils = __webpack_require__(95);
@@ -40016,7 +40016,7 @@ module.exports = function (str, opts) {
 /* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var utils = __webpack_require__(95);
@@ -40240,7 +40240,7 @@ module.exports = __webpack_require__(13);
 /* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -40293,12 +40293,12 @@ PassThrough.prototype._transform = function (chunk, encoding, cb) {
 /* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 /*<replacement>*/
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 var Buffer = __webpack_require__(9).Buffer;
 /*</replacement>*/
@@ -40388,7 +40388,7 @@ module.exports = __webpack_require__(45);
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
-    "use strict";
+    'use strict';
 
     if (global.setImmediate) {
         return;
@@ -40402,8 +40402,8 @@ module.exports = __webpack_require__(45);
 
     function setImmediate(callback) {
       // Callback can either be a function or a string
-      if (typeof callback !== "function") {
-        callback = new Function("" + callback);
+      if (typeof callback !== 'function') {
+        callback = new Function('' + callback);
       }
       // Copy function arguments
       var args = new Array(arguments.length - 1);
@@ -40479,7 +40479,7 @@ module.exports = __webpack_require__(45);
             global.onmessage = function() {
                 postMessageIsAsynchronous = false;
             };
-            global.postMessage("", "*");
+            global.postMessage('', '*');
             global.onmessage = oldOnMessage;
             return postMessageIsAsynchronous;
         }
@@ -40490,23 +40490,23 @@ module.exports = __webpack_require__(45);
         // * https://developer.mozilla.org/en/DOM/window.postMessage
         // * http://www.whatwg.org/specs/web-apps/current-work/multipage/comms.html#crossDocumentMessages
 
-        var messagePrefix = "setImmediate$" + Math.random() + "$";
+        var messagePrefix = 'setImmediate$' + Math.random() + '$';
         var onGlobalMessage = function(event) {
             if (event.source === global &&
-                typeof event.data === "string" &&
+                typeof event.data === 'string' &&
                 event.data.indexOf(messagePrefix) === 0) {
                 runIfPresent(+event.data.slice(messagePrefix.length));
             }
         };
 
         if (global.addEventListener) {
-            global.addEventListener("message", onGlobalMessage, false);
+            global.addEventListener('message', onGlobalMessage, false);
         } else {
-            global.attachEvent("onmessage", onGlobalMessage);
+            global.attachEvent('onmessage', onGlobalMessage);
         }
 
         registerImmediate = function(handle) {
-            global.postMessage(messagePrefix + handle, "*");
+            global.postMessage(messagePrefix + handle, '*');
         };
     }
 
@@ -40527,7 +40527,7 @@ module.exports = __webpack_require__(45);
         registerImmediate = function(handle) {
             // Create a <script> element; its readystatechange event will be fired asynchronously once it is inserted
             // into the document. Do so, thus queuing up the task. Remember to clean up once it's been called.
-            var script = doc.createElement("script");
+            var script = doc.createElement('script');
             script.onreadystatechange = function () {
                 runIfPresent(handle);
                 script.onreadystatechange = null;
@@ -40549,7 +40549,7 @@ module.exports = __webpack_require__(45);
     attachTo = attachTo && attachTo.setTimeout ? attachTo : global;
 
     // Don't get fooled by e.g. browserify environments.
-    if ({}.toString.call(global.process) === "[object process]") {
+    if ({}.toString.call(global.process) === '[object process]') {
         // For Node.js before 0.9
         installNextTickImplementation();
 
@@ -40561,7 +40561,7 @@ module.exports = __webpack_require__(45);
         // For web workers, where supported
         installMessageChannelImplementation();
 
-    } else if (doc && "onreadystatechange" in doc.createElement("script")) {
+    } else if (doc && 'onreadystatechange' in doc.createElement('script')) {
         // For IE 6–8
         installReadyStateChangeImplementation();
 
@@ -40572,7 +40572,7 @@ module.exports = __webpack_require__(45);
 
     attachTo.setImmediate = setImmediate;
     attachTo.clearImmediate = clearImmediate;
-}(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
+}(typeof self === 'undefined' ? typeof global === 'undefined' ? this : global : self));
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7), __webpack_require__(5)))
 
@@ -40947,7 +40947,7 @@ exports.right = function(str){
 /* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var BASE58 = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
@@ -41153,14 +41153,14 @@ module.exports = UportLite;
 /* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+var _typeof = typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol' ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === 'function' && obj.constructor === Symbol && obj !== Symbol.prototype ? 'symbol' : typeof obj; };
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
@@ -41272,18 +41272,18 @@ exports.Contract = Contract;
 /* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+var _typeof = typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol' ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === 'function' && obj.constructor === Symbol && obj !== Symbol.prototype ? 'symbol' : typeof obj; };
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _JWT = __webpack_require__(103);
 
@@ -41297,7 +41297,7 @@ var _nets2 = _interopRequireDefault(_nets);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 var Credentials = function () {
   function Credentials() {
@@ -41456,10 +41456,10 @@ var configNetworks = function configNetworks(nets) {
 /* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
 exports.default = SimpleSigner;
@@ -41804,7 +41804,7 @@ SolidityCoder.prototype.encodeParams = function (types, params) {
 };
 
 SolidityCoder.prototype.encodeMultiWithOffset = function (types, solidityTypes, encodeds, dynamicOffset) {
-    var result = "";
+    var result = '';
     var self = this;
 
     types.forEach(function (type, i) {
@@ -41865,7 +41865,7 @@ SolidityCoder.prototype.encodeWithOffset = function (type, solidityType, encoded
         return (function () {
             var nestedName = solidityType.nestedName(type);
             var nestedStaticPartLength = solidityType.staticPartLength(nestedName);
-            var result = "";
+            var result = '';
 
 
             if (solidityType.isDynamicArray(nestedName)) {
@@ -41965,7 +41965,7 @@ module.exports = coder;
 /* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 // go env doesn't have and need XMLHttpRequest
@@ -41982,7 +41982,7 @@ if (typeof XMLHttpRequest === 'undefined') {
 /***/ (function(module, exports) {
 
 module.exports = function() {
-	throw new Error("define cannot be used indirect");
+	throw new Error('define cannot be used indirect');
 };
 
 
@@ -41990,7 +41990,7 @@ module.exports = function() {
 /* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 var window = __webpack_require__(167)
 var isFunction = __webpack_require__(77)
@@ -41999,10 +41999,10 @@ var xtend = __webpack_require__(221)
 
 module.exports = createXHR
 createXHR.XMLHttpRequest = window.XMLHttpRequest || noop
-createXHR.XDomainRequest = "withCredentials" in (new createXHR.XMLHttpRequest()) ? createXHR.XMLHttpRequest : window.XDomainRequest
+createXHR.XDomainRequest = 'withCredentials' in (new createXHR.XMLHttpRequest()) ? createXHR.XMLHttpRequest : window.XDomainRequest
 
-forEachArray(["get", "put", "post", "patch", "head", "delete"], function(method) {
-    createXHR[method === "delete" ? "del" : method] = function(uri, options, callback) {
+forEachArray(['get', 'put', 'post', 'patch', 'head', 'delete'], function(method) {
+    createXHR[method === 'delete' ? 'del' : method] = function(uri, options, callback) {
         options = initParams(uri, options, callback)
         options.method = method.toUpperCase()
         return _createXHR(options)
@@ -42027,7 +42027,7 @@ function initParams(uri, options, callback) {
 
     if (isFunction(options)) {
         callback = options
-        if (typeof uri === "string") {
+        if (typeof uri === 'string') {
             params = {uri:uri}
         }
     } else {
@@ -42044,8 +42044,8 @@ function createXHR(uri, options, callback) {
 }
 
 function _createXHR(options) {
-    if(typeof options.callback === "undefined"){
-        throw new Error("callback argument missing")
+    if(typeof options.callback === 'undefined'){
+        throw new Error('callback argument missing')
     }
 
     var called = false
@@ -42084,7 +42084,7 @@ function _createXHR(options) {
     function errorFunc(evt) {
         clearTimeout(timeoutTimer)
         if(!(evt instanceof Error)){
-            evt = new Error("" + (evt || "Unknown XMLHttpRequest Error") )
+            evt = new Error('' + (evt || 'Unknown XMLHttpRequest Error') )
         }
         evt.statusCode = 0
         return callback(evt, failureResponse)
@@ -42117,7 +42117,7 @@ function _createXHR(options) {
                 response.headers = parseHeaders(xhr.getAllResponseHeaders())
             }
         } else {
-            err = new Error("Internal XMLHttpRequest Error")
+            err = new Error('Internal XMLHttpRequest Error')
         }
         return callback(err, response, response.body)
     }
@@ -42135,7 +42135,7 @@ function _createXHR(options) {
     var key
     var aborted
     var uri = xhr.url = options.uri || options.url
-    var method = xhr.method = options.method || "GET"
+    var method = xhr.method = options.method || 'GET'
     var body = options.body || options.data
     var headers = xhr.headers = options.headers || {}
     var sync = !!options.sync
@@ -42150,11 +42150,11 @@ function _createXHR(options) {
         rawRequest: xhr
     }
 
-    if ("json" in options && options.json !== false) {
+    if ('json' in options && options.json !== false) {
         isJson = true
-        headers["accept"] || headers["Accept"] || (headers["Accept"] = "application/json") //Don't override existing accept header declared by user
-        if (method !== "GET" && method !== "HEAD") {
-            headers["content-type"] || headers["Content-Type"] || (headers["Content-Type"] = "application/json") //Don't override existing accept header declared by user
+        headers['accept'] || headers['Accept'] || (headers['Accept'] = 'application/json') //Don't override existing accept header declared by user
+        if (method !== 'GET' && method !== 'HEAD') {
+            headers['content-type'] || headers['Content-Type'] || (headers['Content-Type'] = 'application/json') //Don't override existing accept header declared by user
             body = JSON.stringify(options.json === true ? body : options.json)
         }
     }
@@ -42182,9 +42182,9 @@ function _createXHR(options) {
         timeoutTimer = setTimeout(function(){
             if (aborted) return
             aborted = true//IE9 may still call readystatechange
-            xhr.abort("timeout")
-            var e = new Error("XMLHttpRequest timeout")
-            e.code = "ETIMEDOUT"
+            xhr.abort('timeout')
+            var e = new Error('XMLHttpRequest timeout')
+            e.code = 'ETIMEDOUT'
             errorFunc(e)
         }, options.timeout )
     }
@@ -42196,15 +42196,15 @@ function _createXHR(options) {
             }
         }
     } else if (options.headers && !isEmpty(options.headers)) {
-        throw new Error("Headers cannot be set on an XDomainRequest object")
+        throw new Error('Headers cannot be set on an XDomainRequest object')
     }
 
-    if ("responseType" in options) {
+    if ('responseType' in options) {
         xhr.responseType = options.responseType
     }
 
-    if ("beforeSend" in options &&
-        typeof options.beforeSend === "function"
+    if ('beforeSend' in options &&
+        typeof options.beforeSend === 'function'
     ) {
         options.beforeSend(xhr)
     }
@@ -42220,11 +42220,11 @@ function _createXHR(options) {
 }
 
 function getXml(xhr) {
-    if (xhr.responseType === "document") {
+    if (xhr.responseType === 'document') {
         return xhr.responseXML
     }
-    var firefoxBugTakenEffect = xhr.responseXML && xhr.responseXML.documentElement.nodeName === "parsererror"
-    if (xhr.responseType === "" && !firefoxBugTakenEffect) {
+    var firefoxBugTakenEffect = xhr.responseXML && xhr.responseXML.documentElement.nodeName === 'parsererror'
+    if (xhr.responseType === '' && !firefoxBugTakenEffect) {
         return xhr.responseXML
     }
 
@@ -42288,10 +42288,10 @@ function extend() {
 /* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
 exports.uportQRDisplay = exports.getQRDataURI = exports.openQr = exports.closeQr = undefined;
@@ -42371,9 +42371,9 @@ exports.uportQRDisplay = uportQRDisplay;
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core"], factory);
+		define(['./core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -42575,9 +42575,9 @@ exports.uportQRDisplay = uportQRDisplay;
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3), __webpack_require__(105));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core", "./x64-core"], factory);
+		define(['./core', './x64-core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -42903,9 +42903,9 @@ exports.uportQRDisplay = uportQRDisplay;
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3), __webpack_require__(105));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core", "./x64-core"], factory);
+		define(['./core', './x64-core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -43226,7 +43226,7 @@ exports.uportQRDisplay = uportQRDisplay;
 /* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 // Note: adler32 takes 12% for level 0 and 2% for level 6.
@@ -43265,7 +43265,7 @@ module.exports = adler32;
 /* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 // Note: we can't get significant speed boost here.
@@ -43313,7 +43313,7 @@ module.exports = crc32;
 /* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 module.exports = {
@@ -43432,7 +43432,7 @@ var debugs = {};
 var debugEnviron;
 exports.debuglog = function(set) {
   if (isUndefined(debugEnviron))
-    debugEnviron = __webpack_require__.i({"NODE_ENV":"development"}).NODE_DEBUG || '';
+    debugEnviron = __webpack_require__.i({'NODE_ENV':'development'}).NODE_DEBUG || '';
   set = set.toUpperCase();
   if (!debugs[set]) {
     if (new RegExp('\\b' + set + '\\b', 'i').test(debugEnviron)) {
@@ -44229,7 +44229,7 @@ SolidityEvent.prototype.decode = function (data) {
     data.topics = data.topics || [];
 
     var argTopics = this._anonymous ? data.topics : data.topics.slice(1);
-    var indexedData = argTopics.map(function (topics) { return topics.slice(2); }).join("");
+    var indexedData = argTopics.map(function (topics) { return topics.slice(2); }).join('');
     var indexedParams = coder.decodeParams(this.types(true), indexedData);
 
     var notIndexedData = data.data.slice(2);
@@ -44389,14 +44389,14 @@ module.exports = Jsonrpc;
 /* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _ConnectCore2 = __webpack_require__(57);
 
@@ -44410,11 +44410,11 @@ var _qrdisplay = __webpack_require__(225);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === 'object' || typeof call === 'function') ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 /**
 *  Primary object for frontend interactions with uPort. Bundles all neccesary functionality.
@@ -44501,7 +44501,7 @@ exports.default = Connect;
 /* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /* WEBPACK VAR INJECTION */(function(global) {
 
 // compare and isBuffer taken from https://github.com/feross/buffer/blob/680e9e5e488f22aac27599a57dc844a6315928dd/index.js
@@ -44999,10 +44999,10 @@ var objectKeys = Object.keys || function (obj) {
 /* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
 exports.MNID = exports.Credentials = exports.SimpleSigner = exports.QRUtil = exports.ConnectCore = exports.Connect = undefined;
@@ -45063,7 +45063,7 @@ exports.UNZIP = 7;
  */
 function Zlib(mode) {
   if (mode < exports.DEFLATE || mode > exports.UNZIP)
-    throw new TypeError("Bad argument");
+    throw new TypeError('Bad argument');
 
   this.mode = mode;
   this.init_done = false;
@@ -45117,7 +45117,7 @@ Zlib.prototype.init = function(windowBits, level, memLevel, strategy, dictionary
       );
       break;
     default:
-      throw new Error("Unknown mode " + this.mode);
+      throw new Error('Unknown mode ' + this.mode);
   }
 
   if (status !== exports.Z_OK) {
@@ -45130,21 +45130,21 @@ Zlib.prototype.init = function(windowBits, level, memLevel, strategy, dictionary
 };
 
 Zlib.prototype.params = function() {
-  throw new Error("deflateParams Not supported");
+  throw new Error('deflateParams Not supported');
 };
 
 Zlib.prototype._writeCheck = function() {
   if (!this.init_done)
-    throw new Error("write before init");
+    throw new Error('write before init');
 
   if (this.mode === exports.NONE)
-    throw new Error("already finalized");
+    throw new Error('already finalized');
 
   if (this.write_in_progress)
-    throw new Error("write already in progress");
+    throw new Error('write already in progress');
 
   if (this.pending_close)
-    throw new Error("close is pending");
+    throw new Error('close is pending');
 };
 
 Zlib.prototype.write = function(flush, input, in_off, in_len, out, out_off, out_len) {
@@ -45185,7 +45185,7 @@ Zlib.prototype._write = function(flush, input, in_off, in_len, out, out_off, out
       flush !== exports.Z_FULL_FLUSH &&
       flush !== exports.Z_FINISH &&
       flush !== exports.Z_BLOCK) {
-    throw new Error("Invalid flush value");
+    throw new Error('Invalid flush value');
   }
 
   if (input == null) {
@@ -45220,7 +45220,7 @@ Zlib.prototype._write = function(flush, input, in_off, in_len, out, out_off, out
       var status = zlib_inflate.inflate(strm, flush);
       break;
     default:
-      throw new Error("Unknown mode " + this.mode);
+      throw new Error('Unknown mode ' + this.mode);
   }
 
   if (status !== exports.Z_STREAM_END && status !== exports.Z_OK) {
@@ -45903,9 +45903,9 @@ util.inherits(Unzip, Zlib);
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3), __webpack_require__(52), __webpack_require__(54), __webpack_require__(53), __webpack_require__(11));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core", "./enc-base64", "./md5", "./evpkdf", "./cipher-core"], factory);
+		define(['./core', './enc-base64', './md5', './evpkdf', './cipher-core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -46140,9 +46140,9 @@ util.inherits(Unzip, Zlib);
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core"], factory);
+		define(['./core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -46294,9 +46294,9 @@ util.inherits(Unzip, Zlib);
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3), __webpack_require__(11));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core", "./cipher-core"], factory);
+		define(['./core', './cipher-core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -46365,9 +46365,9 @@ util.inherits(Unzip, Zlib);
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3), __webpack_require__(105), __webpack_require__(246), __webpack_require__(243), __webpack_require__(52), __webpack_require__(54), __webpack_require__(144), __webpack_require__(226), __webpack_require__(262), __webpack_require__(228), __webpack_require__(263), __webpack_require__(227), __webpack_require__(261), __webpack_require__(143), __webpack_require__(257), __webpack_require__(53), __webpack_require__(11), __webpack_require__(247), __webpack_require__(249), __webpack_require__(248), __webpack_require__(251), __webpack_require__(250), __webpack_require__(252), __webpack_require__(253), __webpack_require__(254), __webpack_require__(256), __webpack_require__(255), __webpack_require__(244), __webpack_require__(242), __webpack_require__(264), __webpack_require__(260), __webpack_require__(259), __webpack_require__(258));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core", "./x64-core", "./lib-typedarrays", "./enc-utf16", "./enc-base64", "./md5", "./sha1", "./sha256", "./sha224", "./sha512", "./sha384", "./sha3", "./ripemd160", "./hmac", "./pbkdf2", "./evpkdf", "./cipher-core", "./mode-cfb", "./mode-ctr", "./mode-ctr-gladman", "./mode-ofb", "./mode-ecb", "./pad-ansix923", "./pad-iso10126", "./pad-iso97971", "./pad-zeropadding", "./pad-nopadding", "./format-hex", "./aes", "./tripledes", "./rc4", "./rabbit", "./rabbit-legacy"], factory);
+		define(['./core', './x64-core', './lib-typedarrays', './enc-utf16', './enc-base64', './md5', './sha1', './sha256', './sha224', './sha512', './sha384', './sha3', './ripemd160', './hmac', './pbkdf2', './evpkdf', './cipher-core', './mode-cfb', './mode-ctr', './mode-ctr-gladman', './mode-ofb', './mode-ecb', './pad-ansix923', './pad-iso10126', './pad-iso97971', './pad-zeropadding', './pad-nopadding', './format-hex', './aes', './tripledes', './rc4', './rabbit', './rabbit-legacy'], factory);
 	}
 	else {
 		// Global (browser)
@@ -46388,9 +46388,9 @@ util.inherits(Unzip, Zlib);
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core"], factory);
+		define(['./core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -46422,7 +46422,7 @@ util.inherits(Unzip, Zlib);
 	        // Convert other array views to uint8
 	        if (
 	            typedArray instanceof Int8Array ||
-	            (typeof Uint8ClampedArray !== "undefined" && typedArray instanceof Uint8ClampedArray) ||
+	            (typeof Uint8ClampedArray !== 'undefined' && typedArray instanceof Uint8ClampedArray) ||
 	            typedArray instanceof Int16Array ||
 	            typedArray instanceof Uint16Array ||
 	            typedArray instanceof Int32Array ||
@@ -46469,9 +46469,9 @@ util.inherits(Unzip, Zlib);
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3), __webpack_require__(11));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core", "./cipher-core"], factory);
+		define(['./core', './cipher-core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -46552,9 +46552,9 @@ util.inherits(Unzip, Zlib);
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3), __webpack_require__(11));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core", "./cipher-core"], factory);
+		define(['./core', './cipher-core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -46673,9 +46673,9 @@ util.inherits(Unzip, Zlib);
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3), __webpack_require__(11));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core", "./cipher-core"], factory);
+		define(['./core', './cipher-core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -46736,9 +46736,9 @@ util.inherits(Unzip, Zlib);
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3), __webpack_require__(11));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core", "./cipher-core"], factory);
+		define(['./core', './cipher-core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -46781,9 +46781,9 @@ util.inherits(Unzip, Zlib);
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3), __webpack_require__(11));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core", "./cipher-core"], factory);
+		define(['./core', './cipher-core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -46840,9 +46840,9 @@ util.inherits(Unzip, Zlib);
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3), __webpack_require__(11));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core", "./cipher-core"], factory);
+		define(['./core', './cipher-core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -46894,9 +46894,9 @@ util.inherits(Unzip, Zlib);
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3), __webpack_require__(11));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core", "./cipher-core"], factory);
+		define(['./core', './cipher-core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -46943,9 +46943,9 @@ util.inherits(Unzip, Zlib);
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3), __webpack_require__(11));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core", "./cipher-core"], factory);
+		define(['./core', './cipher-core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -46988,9 +46988,9 @@ util.inherits(Unzip, Zlib);
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3), __webpack_require__(11));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core", "./cipher-core"], factory);
+		define(['./core', './cipher-core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -47023,9 +47023,9 @@ util.inherits(Unzip, Zlib);
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3), __webpack_require__(11));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core", "./cipher-core"], factory);
+		define(['./core', './cipher-core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -47073,9 +47073,9 @@ util.inherits(Unzip, Zlib);
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3), __webpack_require__(144), __webpack_require__(143));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core", "./sha1", "./hmac"], factory);
+		define(['./core', './sha1', './hmac'], factory);
 	}
 	else {
 		// Global (browser)
@@ -47223,9 +47223,9 @@ util.inherits(Unzip, Zlib);
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3), __webpack_require__(52), __webpack_require__(54), __webpack_require__(53), __webpack_require__(11));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core", "./enc-base64", "./md5", "./evpkdf", "./cipher-core"], factory);
+		define(['./core', './enc-base64', './md5', './evpkdf', './cipher-core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -47418,9 +47418,9 @@ util.inherits(Unzip, Zlib);
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3), __webpack_require__(52), __webpack_require__(54), __webpack_require__(53), __webpack_require__(11));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core", "./enc-base64", "./md5", "./evpkdf", "./cipher-core"], factory);
+		define(['./core', './enc-base64', './md5', './evpkdf', './cipher-core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -47615,9 +47615,9 @@ util.inherits(Unzip, Zlib);
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3), __webpack_require__(52), __webpack_require__(54), __webpack_require__(53), __webpack_require__(11));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core", "./enc-base64", "./md5", "./evpkdf", "./cipher-core"], factory);
+		define(['./core', './enc-base64', './md5', './evpkdf', './cipher-core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -47759,9 +47759,9 @@ util.inherits(Unzip, Zlib);
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core"], factory);
+		define(['./core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -48031,9 +48031,9 @@ util.inherits(Unzip, Zlib);
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3), __webpack_require__(226));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core", "./sha256"], factory);
+		define(['./core', './sha256'], factory);
 	}
 	else {
 		// Global (browser)
@@ -48116,9 +48116,9 @@ util.inherits(Unzip, Zlib);
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3), __webpack_require__(105), __webpack_require__(228));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core", "./x64-core", "./sha512"], factory);
+		define(['./core', './x64-core', './sha512'], factory);
 	}
 	else {
 		// Global (browser)
@@ -48204,9 +48204,9 @@ util.inherits(Unzip, Zlib);
 		// CommonJS
 		module.exports = exports = factory(__webpack_require__(3), __webpack_require__(52), __webpack_require__(54), __webpack_require__(53), __webpack_require__(11));
 	}
-	else if (typeof define === "function" && define.amd) {
+	else if (typeof define === 'function' && define.amd) {
 		// AMD
-		define(["./core", "./enc-base64", "./md5", "./evpkdf", "./cipher-core"], factory);
+		define(['./core', './enc-base64', './md5', './evpkdf', './cipher-core'], factory);
 	}
 	else {
 		// Global (browser)
@@ -48976,256 +48976,256 @@ util.inherits(Unzip, Zlib);
 
 module.exports = [
 	{
-		"constant": true,
-		"inputs": [
+		'constant': true,
+		'inputs': [
 			{
-				"name": "_owner",
-				"type": "address"
+				'name': '_owner',
+				'type': 'address'
 			}
 		],
-		"name": "name",
-		"outputs": [
+		'name': 'name',
+		'outputs': [
 			{
-				"name": "o_name",
-				"type": "bytes32"
+				'name': 'o_name',
+				'type': 'bytes32'
 			}
 		],
-		"type": "function"
+		'type': 'function'
 	},
 	{
-		"constant": true,
-		"inputs": [
+		'constant': true,
+		'inputs': [
 			{
-				"name": "_name",
-				"type": "bytes32"
+				'name': '_name',
+				'type': 'bytes32'
 			}
 		],
-		"name": "owner",
-		"outputs": [
+		'name': 'owner',
+		'outputs': [
 			{
-				"name": "",
-				"type": "address"
+				'name': '',
+				'type': 'address'
 			}
 		],
-		"type": "function"
+		'type': 'function'
 	},
 	{
-		"constant": true,
-		"inputs": [
+		'constant': true,
+		'inputs': [
 			{
-				"name": "_name",
-				"type": "bytes32"
+				'name': '_name',
+				'type': 'bytes32'
 			}
 		],
-		"name": "content",
-		"outputs": [
+		'name': 'content',
+		'outputs': [
 			{
-				"name": "",
-				"type": "bytes32"
+				'name': '',
+				'type': 'bytes32'
 			}
 		],
-		"type": "function"
+		'type': 'function'
 	},
 	{
-		"constant": true,
-		"inputs": [
+		'constant': true,
+		'inputs': [
 			{
-				"name": "_name",
-				"type": "bytes32"
+				'name': '_name',
+				'type': 'bytes32'
 			}
 		],
-		"name": "addr",
-		"outputs": [
+		'name': 'addr',
+		'outputs': [
 			{
-				"name": "",
-				"type": "address"
+				'name': '',
+				'type': 'address'
 			}
 		],
-		"type": "function"
+		'type': 'function'
 	},
 	{
-		"constant": false,
-		"inputs": [
+		'constant': false,
+		'inputs': [
 			{
-				"name": "_name",
-				"type": "bytes32"
+				'name': '_name',
+				'type': 'bytes32'
 			}
 		],
-		"name": "reserve",
-		"outputs": [],
-		"type": "function"
+		'name': 'reserve',
+		'outputs': [],
+		'type': 'function'
 	},
 	{
-		"constant": true,
-		"inputs": [
+		'constant': true,
+		'inputs': [
 			{
-				"name": "_name",
-				"type": "bytes32"
+				'name': '_name',
+				'type': 'bytes32'
 			}
 		],
-		"name": "subRegistrar",
-		"outputs": [
+		'name': 'subRegistrar',
+		'outputs': [
 			{
-				"name": "",
-				"type": "address"
+				'name': '',
+				'type': 'address'
 			}
 		],
-		"type": "function"
+		'type': 'function'
 	},
 	{
-		"constant": false,
-		"inputs": [
+		'constant': false,
+		'inputs': [
 			{
-				"name": "_name",
-				"type": "bytes32"
+				'name': '_name',
+				'type': 'bytes32'
 			},
 			{
-				"name": "_newOwner",
-				"type": "address"
+				'name': '_newOwner',
+				'type': 'address'
 			}
 		],
-		"name": "transfer",
-		"outputs": [],
-		"type": "function"
+		'name': 'transfer',
+		'outputs': [],
+		'type': 'function'
 	},
 	{
-		"constant": false,
-		"inputs": [
+		'constant': false,
+		'inputs': [
 			{
-				"name": "_name",
-				"type": "bytes32"
+				'name': '_name',
+				'type': 'bytes32'
 			},
 			{
-				"name": "_registrar",
-				"type": "address"
+				'name': '_registrar',
+				'type': 'address'
 			}
 		],
-		"name": "setSubRegistrar",
-		"outputs": [],
-		"type": "function"
+		'name': 'setSubRegistrar',
+		'outputs': [],
+		'type': 'function'
 	},
 	{
-		"constant": false,
-		"inputs": [],
-		"name": "Registrar",
-		"outputs": [],
-		"type": "function"
+		'constant': false,
+		'inputs': [],
+		'name': 'Registrar',
+		'outputs': [],
+		'type': 'function'
 	},
 	{
-		"constant": false,
-		"inputs": [
+		'constant': false,
+		'inputs': [
 			{
-				"name": "_name",
-				"type": "bytes32"
+				'name': '_name',
+				'type': 'bytes32'
 			},
 			{
-				"name": "_a",
-				"type": "address"
+				'name': '_a',
+				'type': 'address'
 			},
 			{
-				"name": "_primary",
-				"type": "bool"
+				'name': '_primary',
+				'type': 'bool'
 			}
 		],
-		"name": "setAddress",
-		"outputs": [],
-		"type": "function"
+		'name': 'setAddress',
+		'outputs': [],
+		'type': 'function'
 	},
 	{
-		"constant": false,
-		"inputs": [
+		'constant': false,
+		'inputs': [
 			{
-				"name": "_name",
-				"type": "bytes32"
+				'name': '_name',
+				'type': 'bytes32'
 			},
 			{
-				"name": "_content",
-				"type": "bytes32"
+				'name': '_content',
+				'type': 'bytes32'
 			}
 		],
-		"name": "setContent",
-		"outputs": [],
-		"type": "function"
+		'name': 'setContent',
+		'outputs': [],
+		'type': 'function'
 	},
 	{
-		"constant": false,
-		"inputs": [
+		'constant': false,
+		'inputs': [
 			{
-				"name": "_name",
-				"type": "bytes32"
+				'name': '_name',
+				'type': 'bytes32'
 			}
 		],
-		"name": "disown",
-		"outputs": [],
-		"type": "function"
+		'name': 'disown',
+		'outputs': [],
+		'type': 'function'
 	},
 	{
-		"anonymous": false,
-		"inputs": [
+		'anonymous': false,
+		'inputs': [
 			{
-				"indexed": true,
-				"name": "_name",
-				"type": "bytes32"
+				'indexed': true,
+				'name': '_name',
+				'type': 'bytes32'
 			},
 			{
-				"indexed": false,
-				"name": "_winner",
-				"type": "address"
+				'indexed': false,
+				'name': '_winner',
+				'type': 'address'
 			}
 		],
-		"name": "AuctionEnded",
-		"type": "event"
+		'name': 'AuctionEnded',
+		'type': 'event'
 	},
 	{
-		"anonymous": false,
-		"inputs": [
+		'anonymous': false,
+		'inputs': [
 			{
-				"indexed": true,
-				"name": "_name",
-				"type": "bytes32"
+				'indexed': true,
+				'name': '_name',
+				'type': 'bytes32'
 			},
 			{
-				"indexed": false,
-				"name": "_bidder",
-				"type": "address"
+				'indexed': false,
+				'name': '_bidder',
+				'type': 'address'
 			},
 			{
-				"indexed": false,
-				"name": "_value",
-				"type": "uint256"
+				'indexed': false,
+				'name': '_value',
+				'type': 'uint256'
 			}
 		],
-		"name": "NewBid",
-		"type": "event"
+		'name': 'NewBid',
+		'type': 'event'
 	},
 	{
-		"anonymous": false,
-		"inputs": [
+		'anonymous': false,
+		'inputs': [
 			{
-				"indexed": true,
-				"name": "name",
-				"type": "bytes32"
+				'indexed': true,
+				'name': 'name',
+				'type': 'bytes32'
 			}
 		],
-		"name": "Changed",
-		"type": "event"
+		'name': 'Changed',
+		'type': 'event'
 	},
 	{
-		"anonymous": false,
-		"inputs": [
+		'anonymous': false,
+		'inputs': [
 			{
-				"indexed": true,
-				"name": "name",
-				"type": "bytes32"
+				'indexed': true,
+				'name': 'name',
+				'type': 'bytes32'
 			},
 			{
-				"indexed": true,
-				"name": "addr",
-				"type": "address"
+				'indexed': true,
+				'name': 'addr',
+				'type': 'address'
 			}
 		],
-		"name": "PrimaryChanged",
-		"type": "event"
+		'name': 'PrimaryChanged',
+		'type': 'event'
 	}
 ];
 
@@ -49235,110 +49235,110 @@ module.exports = [
 
 module.exports = [
 	{
-		"constant": true,
-		"inputs": [
+		'constant': true,
+		'inputs': [
 			{
-				"name": "_name",
-				"type": "bytes32"
+				'name': '_name',
+				'type': 'bytes32'
 			}
 		],
-		"name": "owner",
-		"outputs": [
+		'name': 'owner',
+		'outputs': [
 			{
-				"name": "",
-				"type": "address"
+				'name': '',
+				'type': 'address'
 			}
 		],
-		"type": "function"
+		'type': 'function'
 	},
 	{
-		"constant": false,
-		"inputs": [
+		'constant': false,
+		'inputs': [
 			{
-				"name": "_name",
-				"type": "bytes32"
+				'name': '_name',
+				'type': 'bytes32'
 			},
 			{
-				"name": "_refund",
-				"type": "address"
+				'name': '_refund',
+				'type': 'address'
 			}
 		],
-		"name": "disown",
-		"outputs": [],
-		"type": "function"
+		'name': 'disown',
+		'outputs': [],
+		'type': 'function'
 	},
 	{
-		"constant": true,
-		"inputs": [
+		'constant': true,
+		'inputs': [
 			{
-				"name": "_name",
-				"type": "bytes32"
+				'name': '_name',
+				'type': 'bytes32'
 			}
 		],
-		"name": "addr",
-		"outputs": [
+		'name': 'addr',
+		'outputs': [
 			{
-				"name": "",
-				"type": "address"
+				'name': '',
+				'type': 'address'
 			}
 		],
-		"type": "function"
+		'type': 'function'
 	},
 	{
-		"constant": false,
-		"inputs": [
+		'constant': false,
+		'inputs': [
 			{
-				"name": "_name",
-				"type": "bytes32"
+				'name': '_name',
+				'type': 'bytes32'
 			}
 		],
-		"name": "reserve",
-		"outputs": [],
-		"type": "function"
+		'name': 'reserve',
+		'outputs': [],
+		'type': 'function'
 	},
 	{
-		"constant": false,
-		"inputs": [
+		'constant': false,
+		'inputs': [
 			{
-				"name": "_name",
-				"type": "bytes32"
+				'name': '_name',
+				'type': 'bytes32'
 			},
 			{
-				"name": "_newOwner",
-				"type": "address"
+				'name': '_newOwner',
+				'type': 'address'
 			}
 		],
-		"name": "transfer",
-		"outputs": [],
-		"type": "function"
+		'name': 'transfer',
+		'outputs': [],
+		'type': 'function'
 	},
 	{
-		"constant": false,
-		"inputs": [
+		'constant': false,
+		'inputs': [
 			{
-				"name": "_name",
-				"type": "bytes32"
+				'name': '_name',
+				'type': 'bytes32'
 			},
 			{
-				"name": "_a",
-				"type": "address"
+				'name': '_a',
+				'type': 'address'
 			}
 		],
-		"name": "setAddr",
-		"outputs": [],
-		"type": "function"
+		'name': 'setAddr',
+		'outputs': [],
+		'type': 'function'
 	},
 	{
-		"anonymous": false,
-		"inputs": [
+		'anonymous': false,
+		'inputs': [
 			{
-				"indexed": true,
-				"name": "name",
-				"type": "bytes32"
+				'indexed': true,
+				'name': 'name',
+				'type': 'bytes32'
 			}
 		],
-		"name": "Changed",
-		"type": "event"
+		'name': 'Changed',
+		'type': 'event'
 	}
 ];
 
@@ -49348,149 +49348,149 @@ module.exports = [
 
 module.exports = [
 	{
-		"constant": false,
-		"inputs": [
+		'constant': false,
+		'inputs': [
 			{
-				"name": "from",
-				"type": "bytes32"
+				'name': 'from',
+				'type': 'bytes32'
 			},
 			{
-				"name": "to",
-				"type": "address"
+				'name': 'to',
+				'type': 'address'
 			},
 			{
-				"name": "value",
-				"type": "uint256"
+				'name': 'value',
+				'type': 'uint256'
 			}
 		],
-		"name": "transfer",
-		"outputs": [],
-		"type": "function"
+		'name': 'transfer',
+		'outputs': [],
+		'type': 'function'
 	},
 	{
-		"constant": false,
-		"inputs": [
+		'constant': false,
+		'inputs': [
 			{
-				"name": "from",
-				"type": "bytes32"
+				'name': 'from',
+				'type': 'bytes32'
 			},
 			{
-				"name": "to",
-				"type": "address"
+				'name': 'to',
+				'type': 'address'
 			},
 			{
-				"name": "indirectId",
-				"type": "bytes32"
+				'name': 'indirectId',
+				'type': 'bytes32'
 			},
 			{
-				"name": "value",
-				"type": "uint256"
+				'name': 'value',
+				'type': 'uint256'
 			}
 		],
-		"name": "icapTransfer",
-		"outputs": [],
-		"type": "function"
+		'name': 'icapTransfer',
+		'outputs': [],
+		'type': 'function'
 	},
 	{
-		"constant": false,
-		"inputs": [
+		'constant': false,
+		'inputs': [
 			{
-				"name": "to",
-				"type": "bytes32"
+				'name': 'to',
+				'type': 'bytes32'
 			}
 		],
-		"name": "deposit",
-		"outputs": [],
-		"payable": true,
-		"type": "function"
+		'name': 'deposit',
+		'outputs': [],
+		'payable': true,
+		'type': 'function'
 	},
 	{
-		"anonymous": false,
-		"inputs": [
+		'anonymous': false,
+		'inputs': [
 			{
-				"indexed": true,
-				"name": "from",
-				"type": "address"
+				'indexed': true,
+				'name': 'from',
+				'type': 'address'
 			},
 			{
-				"indexed": false,
-				"name": "value",
-				"type": "uint256"
+				'indexed': false,
+				'name': 'value',
+				'type': 'uint256'
 			}
 		],
-		"name": "AnonymousDeposit",
-		"type": "event"
+		'name': 'AnonymousDeposit',
+		'type': 'event'
 	},
 	{
-		"anonymous": false,
-		"inputs": [
+		'anonymous': false,
+		'inputs': [
 			{
-				"indexed": true,
-				"name": "from",
-				"type": "address"
+				'indexed': true,
+				'name': 'from',
+				'type': 'address'
 			},
 			{
-				"indexed": true,
-				"name": "to",
-				"type": "bytes32"
+				'indexed': true,
+				'name': 'to',
+				'type': 'bytes32'
 			},
 			{
-				"indexed": false,
-				"name": "value",
-				"type": "uint256"
+				'indexed': false,
+				'name': 'value',
+				'type': 'uint256'
 			}
 		],
-		"name": "Deposit",
-		"type": "event"
+		'name': 'Deposit',
+		'type': 'event'
 	},
 	{
-		"anonymous": false,
-		"inputs": [
+		'anonymous': false,
+		'inputs': [
 			{
-				"indexed": true,
-				"name": "from",
-				"type": "bytes32"
+				'indexed': true,
+				'name': 'from',
+				'type': 'bytes32'
 			},
 			{
-				"indexed": true,
-				"name": "to",
-				"type": "address"
+				'indexed': true,
+				'name': 'to',
+				'type': 'address'
 			},
 			{
-				"indexed": false,
-				"name": "value",
-				"type": "uint256"
+				'indexed': false,
+				'name': 'value',
+				'type': 'uint256'
 			}
 		],
-		"name": "Transfer",
-		"type": "event"
+		'name': 'Transfer',
+		'type': 'event'
 	},
 	{
-		"anonymous": false,
-		"inputs": [
+		'anonymous': false,
+		'inputs': [
 			{
-				"indexed": true,
-				"name": "from",
-				"type": "bytes32"
+				'indexed': true,
+				'name': 'from',
+				'type': 'bytes32'
 			},
 			{
-				"indexed": true,
-				"name": "to",
-				"type": "address"
+				'indexed': true,
+				'name': 'to',
+				'type': 'address'
 			},
 			{
-				"indexed": false,
-				"name": "indirectId",
-				"type": "bytes32"
+				'indexed': false,
+				'name': 'indirectId',
+				'type': 'bytes32'
 			},
 			{
-				"indexed": false,
-				"name": "value",
-				"type": "uint256"
+				'indexed': false,
+				'name': 'value',
+				'type': 'uint256'
 			}
 		],
-		"name": "IcapTransfer",
-		"type": "event"
+		'name': 'IcapTransfer',
+		'type': 'event'
 	}
 ];
 
@@ -49499,14 +49499,14 @@ module.exports = [
 /***/ (function(module, exports) {
 
 module.exports = {
-	"version": "0.18.4"
+	'version': '0.18.4'
 };
 
 /***/ }),
 /* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 
@@ -49563,7 +49563,7 @@ module.exports = {
 /* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 var utils   = __webpack_require__(106);
@@ -51425,7 +51425,7 @@ exports.deflateTune = deflateTune;
 /* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 // See state defs from inflate.js
@@ -51758,7 +51758,7 @@ module.exports = function inflate_fast(strm, start) {
 /* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 
@@ -53303,7 +53303,7 @@ exports.inflateUndermine = inflateUndermine;
 /* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 
@@ -53637,7 +53637,7 @@ module.exports = function inflate_table(type, lens, lens_index, codes, table, ta
 /* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 
@@ -54846,7 +54846,7 @@ exports._tr_align = _tr_align;
 /* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 
@@ -54882,7 +54882,7 @@ module.exports = ZStream;
 /* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /* WEBPACK VAR INJECTION */(function(process, Buffer) {
 
 (function() {
@@ -54939,7 +54939,7 @@ module.exports = crc32;
 /* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
 var crc_table = [];
@@ -54997,7 +54997,7 @@ module.exports = crc32;
 /* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
 function pushBits(arr, n, value) {
@@ -55144,19 +55144,19 @@ function encode(data, parse_url) {
         data = new Buffer(data);
         str = data.toString();
     } else {
-        throw new Error("Bad data");
+        throw new Error('Bad data');
     }
 
     if (/^[0-9]+$/.test(str)) {
         if (data.length > 7089) {
-            throw new Error("Too much data");
+            throw new Error('Too much data');
         }
         return encode_numeric(str);
     }
 
     if (/^[0-9A-Z \$%\*\+\.\/\:\-]+$/.test(str)) {
         if (data.length > 4296) {
-            throw new Error("Too much data");
+            throw new Error('Too much data');
         }
         return encode_alphanum(str);
     }
@@ -55166,7 +55166,7 @@ function encode(data, parse_url) {
     }
 
     if (data.length > 2953) {
-        throw new Error("Too much data");
+        throw new Error('Too much data');
     }
     return encode_8bit(data);
 }
@@ -55180,7 +55180,7 @@ module.exports = encode;
 /* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
 // {{{1 Galois Field Math
@@ -55265,7 +55265,7 @@ module.exports = function calculate_ec(msg, ec_len) {
 /* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
 // {{{1 Initialize matrix with zeros
@@ -55625,7 +55625,7 @@ module.exports = {
 /* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
 var zlib = __webpack_require__(241);
@@ -55697,7 +55697,7 @@ module.exports = {
 /* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
 var encode = __webpack_require__(278);
@@ -55821,7 +55821,7 @@ function getTemplate(message, ec_level) {
             return _deepCopy(version);
         }
     }
-    throw new Error("Too much data");
+    throw new Error('Too much data');
 }
 
 // {{{1 Fill template
@@ -55885,7 +55885,7 @@ module.exports = {
 /* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /* WEBPACK VAR INJECTION */(function(process, Buffer) {
 
 var Readable = __webpack_require__(35).Readable;
@@ -56014,7 +56014,7 @@ module.exports = {
 /* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 
 
 function matrix2path(matrix) {
@@ -57848,7 +57848,7 @@ module.exports = SolidityFunction;
 /* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /*
     This file is part of web3.js.
 
@@ -58134,7 +58134,7 @@ module.exports = DB;
 /* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /*
     This file is part of web3.js.
 
@@ -58174,7 +58174,7 @@ var Iban = __webpack_require__(111);
 var transfer = __webpack_require__(315);
 
 var blockCall = function (args) {
-    return (utils.isString(args[0]) && args[0].indexOf('0x') === 0) ? "eth_getBlockByHash" : "eth_getBlockByNumber";
+    return (utils.isString(args[0]) && args[0].indexOf('0x') === 0) ? 'eth_getBlockByHash' : 'eth_getBlockByNumber';
 };
 
 var transactionFromBlockCall = function (args) {
@@ -58553,7 +58553,7 @@ module.exports = Net;
 /* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /*
     This file is part of web3.js.
 
@@ -58745,7 +58745,7 @@ module.exports = Shh;
 /* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+'use strict';
 /*
     This file is part of web3.js.
 
