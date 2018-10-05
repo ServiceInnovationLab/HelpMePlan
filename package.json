@@ -21,7 +21,7 @@
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
     "mustache-loader": "^0.4.1",
-    "uport-connect": "^0.6.4",
+    "uport-connect": "^0.7.8",
     "web3-provider-engine": "^13.2.8"
   },
   "devDependencies": {
