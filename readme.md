@@ -17,11 +17,13 @@ This project is templated using [moustache](https://mustache.github.io/) bundled
 
 ### Running server
 - `npm start`
- - this runs our stock express server which grabs compiled assets from the `dist` folder
 
+This runs our stock express server which grabs compiled assets from the `dist` folder
 
-then check out `localhost:8080`
+then check out http://localhost:8080
 
 ### Publishing to Github Pages
 
 - `npm run publish`
+
+This updated the static build at https://serviceinnovationlab.github.io/HelpMePlan/
