@@ -52,7 +52,7 @@ const uportConnect = function() {
     // Do something
     console.log('Received credentials', credentials);
     // Attest specific credentials
-    if (typeof credentials['nz_resident'] == 'undefined') {
+    if (typeof credentials.nz_resident == 'undefined') {
       $('#uportModal').modal('show');
       $('#uportModal').on('click', 'button.save', function() {
         var nz_resident = $('#uport_resident').val();
@@ -60,7 +60,7 @@ const uportConnect = function() {
           uportError('You need to provide an answer for every question');
         } else {
           uport.attestCredentials({
-            sub: credentials['address'],
+            sub: credentials.address,
             claim: {
               nz_resident: nz_resident,
             },
@@ -70,7 +70,7 @@ const uportConnect = function() {
         }
       });
     } else {
-      uportConnected(credentials['nz_resident'], credentials);
+      uportConnected(credentials.nz_resident, credentials);
     }
   },
   function(error) {
@@ -88,8 +88,8 @@ function uportConnected(nz_resident, credentials) {
 
   // Load User Image
   console.log(credentials);
-  if (typeof credentials['image'] != 'undefined' && typeof credentials['image']['contentUrl'] != 'undefined') {
-    var image_url = 'https://ipfs.io' + credentials['image']['contentUrl'];
+  if (typeof credentials.image != 'undefined' && typeof credentials.image.contentUrl != 'undefined') {
+    var image_url = 'https://ipfs.io' + credentials.image.contentUrl;
     $('#uport_img').attr('src', image_url);
     $('#uport_img').removeClass('hidden');
   }
@@ -100,13 +100,13 @@ function uportConnected(nz_resident, credentials) {
     {nz_resident_answer = 'Yes';}
   user_obj['citizenOrResident?'] = nz_resident_answer;
   user_obj['proofOfIdentity?'] = 'Yes';
-  user_obj['livingInNZ?'] = (credentials['country'] == 'NZ') ? 'Yes' : 'No';
+  user_obj['livingInNZ?'] = (credentials.country == 'NZ') ? 'Yes' : 'No';
 
   // Change hero text
-  $('h1.hero').first().text('What can I help you with, '+credentials['name'].substr(0,5)+'?');
+  $('h1.hero').first().text('What can I help you with, '+credentials.name.substr(0,5)+'?');
 
   // Change anonymous toggle
-  $('.bootstrap-switch-handle-on').text(credentials['name'].substr(0,5));
+  $('.bootstrap-switch-handle-on').text(credentials.name.substr(0,5));
   $("[name='setting-anonymous']").bootstrapSwitch('state', true, true);
 
   $('#input input[type="checkbox"]').attr('checked', 'checked');
@@ -271,9 +271,9 @@ function createBizRuleCards(obj) {
     var rule_id = business_rule.name + counter;
     createRulePanel(business_rule, rule_id);
 
-    for (var requirement_name in business_rule['requirements']) {
-      if (business_rule['requirements'].hasOwnProperty(requirement_name)) {
-        var requirement = business_rule['requirements'][requirement_name];
+    for (var requirement_name in business_rule.requirements) {
+      if (business_rule.requirements.hasOwnProperty(requirement_name)) {
+        var requirement = business_rule.requirements[requirement_name];
         createChildren(requirement_name, requirement, rule_id);
       }
     }
@@ -315,13 +315,13 @@ function createRequirementPanel(requirement_name, requirement_value, rule_id) {
   var parent_panel = document.getElementById(rule_id);
 
   var view_data = {};
-  view_data['requirement_name'] = requirement_names[requirement_name];
+  view_data.requirement_name = requirement_names[requirement_name];
   if (typeof requirement_value !== 'object' && requirement_value !== null) {
-    view_data['requirement_value'] = requirement_value;
-    view_data['requirement_data_attr'] = requirement_name;
+    view_data.requirement_value = requirement_value;
+    view_data.requirement_data_attr = requirement_name;
     var template = $('#requirementTpl').html();
   } else {
-    view_data['id'] = getValidId(rule_id + requirement_name);
+    view_data.id = getValidId(rule_id + requirement_name);
     var template = $('#benefitPanelTpl').html();
   }
   $(parent_panel).append(Mustache.to_html(template, view_data));
