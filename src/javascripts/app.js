@@ -97,7 +97,7 @@ function uportConnected(nz_resident, credentials) {
   // Load user object
   var nz_resident_answer = 'No';
   if (['yes', 'y', '1', 'true'].includes(nz_resident.toLowerCase()))
-    nz_resident_answer = 'Yes';
+    {nz_resident_answer = 'Yes';}
   user_obj['citizenOrResident?'] = nz_resident_answer;
   user_obj['proofOfIdentity?'] = 'Yes';
   user_obj['livingInNZ?'] = (credentials['country'] == 'NZ') ? 'Yes' : 'No';
